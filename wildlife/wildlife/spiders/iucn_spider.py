@@ -12,12 +12,12 @@ class IucnSpider(scrapy.Spider):
     # DONT NECESSARILY WORK - NEED TO CHECK WEBSITE
     species_list = ["panthera_tigris", "elephas_maximus", "gorilla_gorilla"]
 
-    def start_requests(self):
+    async def start(self):
         for sp in self.species_list:
             url = f"https://apiv3.iucnredlist.org/api/v3/species/{sp}?token={API_TOKEN}"
-            yield scrapy.Request(url, callback=self.parse_species)
+            yield scrapy.Request(url, callback=self.parse)
 
-    def parse_species(self, response):
+    def parse(self, response):
         data = json.loads(response.text)
         result = data.get("result", [{}])[0]
 

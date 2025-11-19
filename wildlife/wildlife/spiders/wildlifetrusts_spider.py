@@ -5,7 +5,7 @@ import scrapy
 class WildlifeTrustsSpider(scrapy.Spider):
     name = "wildlife_trusts"
     allowed_domains = ["wildlifetrusts.org"]
-    start_urls = ["https://www.wildlifetrusts.org/wildlife-explorer"]
+   
 
     # DONT NECESSARILY WORK - NEED TO CHECK WEBSITE
     selectors = {
@@ -16,6 +16,12 @@ class WildlifeTrustsSpider(scrapy.Spider):
         "status": "div.field--tag::text",
         "next_page": "a.pager__link--next::attr(href)"
     }
+
+    async def start(self):
+        start_urls = ["https://www.wildlifetrusts.org/wildlife-explorer"]
+        
+        for url in start_urls:
+            yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
         for link in response.css(self.selectors["links"]).getall():

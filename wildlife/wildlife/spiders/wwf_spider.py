@@ -5,7 +5,6 @@ import scrapy
 class WwfSpider(scrapy.Spider):
     name = "wwf"
     allowed_domains = ["worldwildlife.org"]
-    start_urls = ["https://www.worldwildlife.org/species/"]
 
     # DONT NECESSARILY WORK - NEED TO CHECK WEBSITE
     selectors = {
@@ -16,6 +15,13 @@ class WwfSpider(scrapy.Spider):
         "threats": "div.threats p::text",
         "habitat": "div.habitat p::text"
     }
+
+    async def start(self):
+        start_urls = ["https://www.worldwildlife.org/species/"]
+        
+        for url in start_urls:
+            yield scrapy.Request(url=url, callback=self.parse)
+
 
     def parse(self, response):
         for link in response.css(self.selectors["links"]).getall():
