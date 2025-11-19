@@ -7,10 +7,10 @@ API_TOKEN = "PUT_YOUR_TOKEN_HERE"
 
 class IucnSpider(scrapy.Spider):
     name = "iucn"
-    allowed_domains = ["apiv3.iucnredlist.org"]
+    # allowed_domains = ["apiv3.iucnredlist.org"]
 
     # DONT NECESSARILY WORK - NEED TO CHECK WEBSITE
-    species_list = ["panthera_tigris", "elephas_maximus", "gorilla_gorilla"]
+    # species_list = ["panthera_tigris", "elephas_maximus", "gorilla_gorilla"]
 
     async def start(self):
         for sp in self.species_list:
