@@ -1,3 +1,7 @@
+
+# import dotenv 
+# import os
+
 # Scrapy settings for wildlife project
 #
 # For simplicity, this file contains only settings considered important or
@@ -17,17 +21,19 @@ ADDONS = {}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "wildlife (+http://www.yourdomain.com)"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Concurrency and throttling settings
 #CONCURRENT_REQUESTS = 16
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
-DOWNLOAD_DELAY = 1
+DOWNLOAD_DELAY = 2
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -40,15 +46,28 @@ DOWNLOAD_DELAY = 1
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    "wildlife.middlewares.WildlifeSpiderMiddleware": 543,
-#}
+# SPIDER_MIDDLEWARES = {
+#     "scrapy_zyte_api.ScrapyZyteAPISpiderMiddleware": 100,
+#     "scrapy_zyte_api.ScrapyZyteAPIRefererSpiderMiddleware": 1000,
+# }
 
+# SCRAPY_POET_PROVIDERS = {
+#     "scrapy_zyte_api.providers.ZyteApiProvider": 1100,
+# }
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    "wildlife.middlewares.WildlifeDownloaderMiddleware": 543,
-#}
+# DOWNLOADER_MIDDLEWARES = {
+#    #"wildlife.middlewares.WildlifeDownloaderMiddleware": 543,
+#     'scrapy_zyte_api.ScrapyZyteAPIDownloaderMiddleware': 1000,
+# }
+
+# dotenv.load_dotenv(dotenv_path="secrets.env")
+# ZYTE_API_KEY = os.getenv("ZYTE_API")
+
+
+# ZYTE_API_TRANSPARENT_MODE = True
+# REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
+# TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
