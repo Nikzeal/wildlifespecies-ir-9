@@ -1,0 +1,1244 @@
+{
+    "urlkey": "org,worldwildlife)/species",
+    "timestamp": "20251016171628",
+    "url": "https://www.worldwildlife.org/species/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "T45HNPEG7QWRZMIE77IAL4J7VXCUCGZV",
+    "length": "25287",
+    "offset": "1023796888",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/warc/CC-MAIN-20251016145047-20251016175047-00683.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species",
+    "timestamp": "20251018195333",
+    "url": "https://www.worldwildlife.org/species/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "UDIBWVEYCIA523UYQREXYNEYQKREYXLK",
+    "length": "25288",
+    "offset": "1050421959",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648667071.85/warc/CC-MAIN-20251018185701-20251018215701-00683.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species-categories/big-cats/species/directory",
+    "timestamp": "20251011163051",
+    "url": "https://www.worldwildlife.org/species-categories/big-cats/species/directory",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "FYHL45WQVB6TCMQBT56EL563B3KWS37Z",
+    "length": "21995",
+    "offset": "1064044039",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358693.72/warc/CC-MAIN-20251011152422-20251011182422-00911.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species-categories/primates/species/directory",
+    "timestamp": "20251007214525",
+    "url": "https://www.worldwildlife.org/species-categories/primates/species/directory",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "AUZDSPTAM2ZXXQR7GHSP534DTOTLPOFG",
+    "length": "22024",
+    "offset": "1079377954",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358303.82/warc/CC-MAIN-20251007202507-20251007232507-00020.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/african-elephant",
+    "timestamp": "20251006201233",
+    "url": "https://www.worldwildlife.org/species/african-elephant",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "T2FFRYZMBXJ7IP3IUFI5QKDQEEJJMOQ7",
+    "length": "33970",
+    "offset": "1081388749",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358252.37/warc/CC-MAIN-20251006191251-20251006221251-00093.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/african-forest-elephant",
+    "timestamp": "20251011164140",
+    "url": "https://www.worldwildlife.org/species/african-forest-elephant",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "Y37TKAZCS5KVDIOALLOOUBRPG4TZP52B",
+    "length": "33764",
+    "offset": "1031572962",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358693.72/warc/CC-MAIN-20251011152422-20251011182422-00293.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/arctic-fox",
+    "timestamp": "20251016225033",
+    "url": "https://worldwildlife.org/species/arctic-fox",
+    "mime": "unk",
+    "mime-detected": "application/octet-stream",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "598",
+    "offset": "20604889",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00530.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/arctic-fox"
+}
+{
+    "urlkey": "org,worldwildlife)/species/arctic-fox",
+    "timestamp": "20251016225033",
+    "url": "https://www.worldwildlife.org/species/arctic-fox",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1020",
+    "offset": "30052094",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00185.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/arctic-fox/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/arctic-fox",
+    "timestamp": "20251016225033",
+    "url": "https://www.worldwildlife.org/species/arctic-fox/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "KXB6I75ZSHKSTLBLXYC64G3SC7ERJ4UB",
+    "length": "26163",
+    "offset": "1044335572",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00342.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bactrian-camel",
+    "timestamp": "20251007223019",
+    "url": "https://www.worldwildlife.org/species/bactrian-camel",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "404",
+    "digest": "FLYQCWB5XVSX3IBVVADMAJ4UDA3BFXNN",
+    "length": "21260",
+    "offset": "31757105",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358303.82/crawldiagnostics/CC-MAIN-20251007202507-20251007232507-00912.warc.gz"
+}
+{
+    "urlkey": "org,worldwildlife)/species/big-leaf-mahogany",
+    "timestamp": "20251013214213",
+    "url": "https://www.worldwildlife.org/species/big-leaf-mahogany",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "404",
+    "digest": "IAQ4XT4KVD4Y5YNVOP5X2XBOFW73WOGA",
+    "length": "21269",
+    "offset": "30573833",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359004.73/crawldiagnostics/CC-MAIN-20251013203450-20251013233450-00687.warc.gz"
+}
+{
+    "urlkey": "org,worldwildlife)/species/black-rhino",
+    "timestamp": "20251006202308",
+    "url": "https://www.worldwildlife.org/species/black-rhino",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "IAUYJALORGI2YHUYXIZ3TGHXOY4ETAFZ",
+    "length": "34272",
+    "offset": "1063119668",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358252.37/warc/CC-MAIN-20251006191251-20251006221251-00747.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/black-rhino",
+    "timestamp": "20251008092410",
+    "url": "https://www.worldwildlife.org/species/black-rhino/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "E4ARS3EFL7UCAXDRCIH7TEYQKWRHDRTF",
+    "length": "34275",
+    "offset": "1022059245",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00556.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/black-spider-monkey?ref=minimallyuseful.com",
+    "timestamp": "20251010051358",
+    "url": "https://www.worldwildlife.org/species/black-spider-monkey?ref=minimallyuseful.com",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "AV5YI7P3AE2SUSKC37R36EVUXQRSZKJS",
+    "length": "29219",
+    "offset": "1045921492",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358512.22/warc/CC-MAIN-20251010045559-20251010075559-00696.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bluefin-tuna",
+    "timestamp": "20251015174355",
+    "url": "https://www.worldwildlife.org/species/bluefin-tuna/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1038",
+    "offset": "34808924",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/crawldiagnostics/CC-MAIN-20251015164442-20251015194442-00812.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bluefin-tuna",
+    "timestamp": "20251016115725",
+    "url": "https://www.worldwildlife.org/species/bluefin-tuna",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1035",
+    "offset": "37723349",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663798.77/crawldiagnostics/CC-MAIN-20251016113935-20251016143935-00803.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bluefin-tuna?ref=ladridosybigotes.com",
+    "timestamp": "20251014163021",
+    "url": "https://www.worldwildlife.org/species/bluefin-tuna?ref=ladridosybigotes.com",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1059",
+    "offset": "31760247",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359217.71/crawldiagnostics/CC-MAIN-20251014153314-20251014183314-00917.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bonobo",
+    "timestamp": "20251015152917",
+    "url": "https://www.worldwildlife.org/species/bonobo",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1017",
+    "offset": "31417494",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/crawldiagnostics/CC-MAIN-20251015133709-20251015163709-00278.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/bonobo/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bonobo",
+    "timestamp": "20251015152917",
+    "url": "https://www.worldwildlife.org/species/bonobo/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "V2ZNFXETXOBQ2VAVHNEUDXUYOJYAFQ3V",
+    "length": "27375",
+    "offset": "1020292817",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/warc/CC-MAIN-20251015133709-20251015163709-00297.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bornean-elephant",
+    "timestamp": "20251018193359",
+    "url": "https://www.worldwildlife.org/species/bornean-elephant",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1051",
+    "offset": "33118809",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648667071.85/crawldiagnostics/CC-MAIN-20251018185701-20251018215701-00360.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/elephant/asian-elephant/bornean-elephant/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/bornean-orangutan",
+    "timestamp": "20251016163308",
+    "url": "https://www.worldwildlife.org/species/bornean-orangutan",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1048",
+    "offset": "34197611",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/crawldiagnostics/CC-MAIN-20251016145047-20251016175047-00084.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/orangutan/bornean-orangutan/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/cheetah",
+    "timestamp": "20251016092502",
+    "url": "https://www.worldwildlife.org/species/cheetah",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1019",
+    "offset": "33397672",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/crawldiagnostics/CC-MAIN-20251016083149-20251016113149-00243.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/cheetah/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/cheetah",
+    "timestamp": "20251016092503",
+    "url": "https://www.worldwildlife.org/species/cheetah/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "EEAHHVCQMNKGTPEITEMRUFFRZUERZAMN",
+    "length": "28948",
+    "offset": "1035358552",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/warc/CC-MAIN-20251016083149-20251016113149-00972.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/chimpanzee",
+    "timestamp": "20251010062339",
+    "url": "https://www.worldwildlife.org/species/chimpanzee",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "STLXG44D77CK7VH2RWMKODFO2G75E4WJ",
+    "length": "29334",
+    "offset": "1046629459",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358512.22/warc/CC-MAIN-20251010045559-20251010075559-00241.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/chimpanzee",
+    "timestamp": "20251016210941",
+    "url": "http://worldwildlife.org/species/chimpanzee",
+    "mime": "unk",
+    "mime-detected": "application/octet-stream",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "615",
+    "offset": "1398669",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00643.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/chimpanzee"
+}
+{
+    "urlkey": "org,worldwildlife)/species/chimpanzee",
+    "timestamp": "20251016210941",
+    "url": "https://www.worldwildlife.org/species/chimpanzee",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1019",
+    "offset": "29993576",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00241.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/chimpanzee/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/chimpanzee",
+    "timestamp": "20251016210941",
+    "url": "https://www.worldwildlife.org/species/chimpanzee/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "NWPBL3BAHPSJ4FCTJFAE6CFUO7I2IXN5",
+    "length": "25870",
+    "offset": "1056520263",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00334.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/directory?amp;direction=desc&sort=extinction_status",
+    "timestamp": "20251018195332",
+    "url": "https://www.worldwildlife.org/species/directory?sort=extinction_status&amp;direction=desc",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1060",
+    "offset": "33950923",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648667071.85/crawldiagnostics/CC-MAIN-20251018185701-20251018215701-00654.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/directory?direction=desc",
+    "timestamp": "20251006201425",
+    "url": "https://www.worldwildlife.org/species/directory?direction=desc",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "UXT34AXHBOAVESRQKEQ73LENNWMUCDZH",
+    "length": "24109",
+    "offset": "1080194464",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358252.37/warc/CC-MAIN-20251006191251-20251006221251-00124.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/directory?direction=desc&page=2&sort=extinction_status",
+    "timestamp": "20251016171628",
+    "url": "https://www.worldwildlife.org/species/directory?direction=desc&page=2&sort=extinction_status",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "963",
+    "offset": "31199126",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/crawldiagnostics/CC-MAIN-20251016145047-20251016175047-00289.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/directory?direction=desc&page=2&sort=extinction_statusin",
+    "timestamp": "20251007224005",
+    "url": "https://www.worldwildlife.org/species/directory?direction=desc&page=2&sort=extinction_statusIn",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "SPMHGZYNK4FOZXNCS5HLIDORUX3HBHGS",
+    "length": "24107",
+    "offset": "1100879714",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358303.82/warc/CC-MAIN-20251007202507-20251007232507-00390.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/directory?direction=desc&ref=blog.iwonder.com&sort=extinction_status",
+    "timestamp": "20251010053604",
+    "url": "https://www.worldwildlife.org/species/directory?direction=desc&sort=extinction_status&ref=blog.iwonder.com",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "ALY2SECQREQ62D3BYEMAIO4KMZFWSAZF",
+    "length": "24144",
+    "offset": "1048919480",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358512.22/warc/CC-MAIN-20251010045559-20251010075559-00296.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/directory?location=angola&page=2",
+    "timestamp": "20251008101051",
+    "url": "https://www.worldwildlife.org/species/directory?location=Angola&page=2",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "K7PAUKOFMX6GAEZUTEUOZATH3W7GWIW4",
+    "length": "24081",
+    "offset": "1126821637",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/warc/CC-MAIN-20251008085453-20251008115453-00549.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/directory?sort=extinction_status...desc",
+    "timestamp": "20251006200259",
+    "url": "https://www.worldwildlife.org/species/directory?sort=extinction_status...desc",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "6DKDCHUMFLLHYOIIPSPASMUPFG2V4VWG",
+    "length": "24129",
+    "offset": "1074320974",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358252.37/warc/CC-MAIN-20251006191251-20251006221251-00809.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/dolphin-and-porpoise/ganges-river-dolphin",
+    "timestamp": "20251016092004",
+    "url": "https://www.worldwildlife.org/species/dolphin-and-porpoise/ganges-river-dolphin/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "T42E5AZ2ZZJUS7TE2FOAHOSH3PYBQX3U",
+    "length": "26721",
+    "offset": "1045264976",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/warc/CC-MAIN-20251016083149-20251016113149-00864.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/dolphin-and-porpoise/indus-river-dolphin",
+    "timestamp": "20251016161250",
+    "url": "https://www.worldwildlife.org/species/dolphin-and-porpoise/indus-river-dolphin/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "HYE27R6DGCT3EXIED5HL3INBP6E7AC7D",
+    "length": "26269",
+    "offset": "1034329069",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/warc/CC-MAIN-20251016145047-20251016175047-00344.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/elephant/african-elephant/african-forest-elephant",
+    "timestamp": "20251016170639",
+    "url": "https://www.worldwildlife.org/species/elephant/african-elephant/african-forest-elephant/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "QOH3J72A46X3RF3BNG5XQXURTCWJL4ME",
+    "length": "30002",
+    "offset": "997996474",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/warc/CC-MAIN-20251016145047-20251016175047-00785.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/elephant/asian-elephant/bornean-elephant",
+    "timestamp": "20251018193359",
+    "url": "https://www.worldwildlife.org/species/elephant/asian-elephant/bornean-elephant/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "2YXC3WAHOXOAH4HP57U2IFT5JA763HM6",
+    "length": "27195",
+    "offset": "1020093449",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648667071.85/warc/CC-MAIN-20251018185701-20251018215701-00624.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/elephant/asian-elephant/sri-lankan-elephant",
+    "timestamp": "20251016223002",
+    "url": "https://www.worldwildlife.org/species/elephant/asian-elephant/sri-lankan-elephant/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "BM2HMFG563ZRNDKCLHKJ2WKGILFRM2CJ",
+    "length": "25191",
+    "offset": "1012654807",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00469.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/elephant?utm_campaign=wild-classroom&utm_content=elephant-resources&utm_medium=web&utm_source=partner-site",
+    "timestamp": "20251010054553",
+    "url": "https://www.worldwildlife.org/species/elephant?utm_campaign=wild-classroom&utm_medium=web&utm_source=partner-site&utm_content=elephant-resources",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "JQULSACVNHYU4AUJC6FOMRC77L6N2FOH",
+    "length": "33798",
+    "offset": "1043660001",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358512.22/warc/CC-MAIN-20251010045559-20251010075559-00507.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/fin-whale",
+    "timestamp": "20251016215940",
+    "url": "https://www.worldwildlife.org/species/fin-whale",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1033",
+    "offset": "32822638",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00044.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/whale/fin-whale/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/ganges-river-dolphin?fbclid=iwar15itbd1se7n-axgr6ldyxntrw42iwkassn3cnxmq6-thybgsltkunkbek",
+    "timestamp": "20251016092003",
+    "url": "https://www.worldwildlife.org/species/ganges-river-dolphin?fbclid=IwAR15iTbD1Se7n-AxGR6ldyxntRW42IWKASsN3cnxMQ6-THybGSLtKuNKbEk",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1116",
+    "offset": "31446989",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/crawldiagnostics/CC-MAIN-20251016083149-20251016113149-00680.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/dolphin-and-porpoise/ganges-river-dolphin/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/giant-tortoise",
+    "timestamp": "20251013215711",
+    "url": "https://www.worldwildlife.org/species/giant-tortoise",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "4MLUTRIDDDALVK335P2EF6F4IABIEJLR",
+    "length": "27373",
+    "offset": "1065309672",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359004.73/warc/CC-MAIN-20251013203450-20251013233450-00836.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/great-white-shark",
+    "timestamp": "20251016231825",
+    "url": "http://worldwildlife.org/species/great-white-shark",
+    "mime": "unk",
+    "mime-detected": "application/octet-stream",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "619",
+    "offset": "973219",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00620.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/great-white-shark"
+}
+{
+    "urlkey": "org,worldwildlife)/species/great-white-shark",
+    "timestamp": "20251016231825",
+    "url": "https://www.worldwildlife.org/species/great-white-shark",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "952",
+    "offset": "33154130",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00790.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/shark/great-white-shark/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/hector-s-dolphin",
+    "timestamp": "20251010161849",
+    "url": "https://www.worldwildlife.org/species/hector-s-dolphin/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "LTB3WIUGVDU3Z4XK5MJPAWTLFMPMSXT6",
+    "length": "31257",
+    "offset": "1065363706",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358552.48/warc/CC-MAIN-20251010142308-20251010172308-00948.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/indus-river-dolphin",
+    "timestamp": "20251016161250",
+    "url": "https://www.worldwildlife.org/species/indus-river-dolphin",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "962",
+    "offset": "31900109",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/crawldiagnostics/CC-MAIN-20251016145047-20251016175047-00690.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/dolphin-and-porpoise/indus-river-dolphin/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/kemps-ridley-sea-turtle",
+    "timestamp": "20251014170957",
+    "url": "https://www.worldwildlife.org/species/kemps-ridley-sea-turtle",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1031",
+    "offset": "32389439",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359217.71/crawldiagnostics/CC-MAIN-20251014153314-20251014183314-00586.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/kemps-ridley-sea-turtle/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/kemps-ridley-sea-turtle",
+    "timestamp": "20251014170957",
+    "url": "https://www.worldwildlife.org/species/kemps-ridley-sea-turtle/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "404",
+    "digest": "FRFGRMLL2QUL2QC56UR6LBYMX4XO3RKD",
+    "length": "20788",
+    "offset": "33953893",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359217.71/crawldiagnostics/CC-MAIN-20251014153314-20251014183314-00901.warc.gz"
+}
+{
+    "urlkey": "org,worldwildlife)/species/loggerhead-turtle",
+    "timestamp": "20251015165457",
+    "url": "https://www.worldwildlife.org/species/loggerhead-turtle",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1043",
+    "offset": "35957189",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/crawldiagnostics/CC-MAIN-20251015164442-20251015194442-00126.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/sea-turtle/loggerhead-turtle/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/north-atlantic-right-whale",
+    "timestamp": "20251016094212",
+    "url": "https://www.worldwildlife.org/species/north-atlantic-right-whale",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1054",
+    "offset": "34604158",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/crawldiagnostics/CC-MAIN-20251016083149-20251016113149-00038.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/whale/north-atlantic-right-whale/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/orangutan",
+    "timestamp": "20251015173458",
+    "url": "https://www.worldwildlife.org/species/orangutan",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1016",
+    "offset": "31750468",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/crawldiagnostics/CC-MAIN-20251015164442-20251015194442-00968.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/orangutan/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/orangutan",
+    "timestamp": "20251015173458",
+    "url": "https://www.worldwildlife.org/species/orangutan/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "GOBDIWJJYST7CBZK4XWSMPZDVVOGYJ5Z",
+    "length": "28328",
+    "offset": "1016145077",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/warc/CC-MAIN-20251015164442-20251015194442-00927.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/orangutan",
+    "timestamp": "20251016230555",
+    "url": "http://worldwildlife.org/species/orangutan",
+    "mime": "unk",
+    "mime-detected": "application/octet-stream",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "616",
+    "offset": "1435328",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00518.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/orangutan"
+}
+{
+    "urlkey": "org,worldwildlife)/species/orangutan",
+    "timestamp": "20251016230555",
+    "url": "https://www.worldwildlife.org/species/orangutan",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1021",
+    "offset": "32633833",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00968.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/orangutan/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/orangutan",
+    "timestamp": "20251016230555",
+    "url": "https://www.worldwildlife.org/species/orangutan/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "QMQGBQSEZ5GGFOTEVJVVQ3YZ4AAHXDU2",
+    "length": "28333",
+    "offset": "1020065621",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00927.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/orangutan/bornean-orangutan",
+    "timestamp": "20251016163308",
+    "url": "https://www.worldwildlife.org/species/orangutan/bornean-orangutan/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "HXEQZJ6KLXDND3LKB7VDH4VNFY4O7YDN",
+    "length": "28417",
+    "offset": "1036891530",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/warc/CC-MAIN-20251016145047-20251016175047-00375.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/pangolin",
+    "timestamp": "20251006162756",
+    "url": "https://www.worldwildlife.org/species/pangolin",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "NO4LNMGKZ2K4A26YMU5G6GY6AMINANB3",
+    "length": "31742",
+    "offset": "1103341377",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358250.36/warc/CC-MAIN-20251006160254-20251006190254-00487.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/pangolin?ref=questofai.org",
+    "timestamp": "20251015143033",
+    "url": "https://www.worldwildlife.org/species/pangolin?ref=questofai.org",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1037",
+    "offset": "30519821",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/crawldiagnostics/CC-MAIN-20251015133709-20251015163709-00173.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/pangolin/?ref=questofai.org"
+}
+{
+    "urlkey": "org,worldwildlife)/species/pangolin?ref=questofai.org",
+    "timestamp": "20251015143034",
+    "url": "https://www.worldwildlife.org/species/pangolin/?ref=questofai.org",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "WII7S33C6R6N5ZKDHB6CDOTJ5CP6QDRI",
+    "length": "27612",
+    "offset": "1004093761",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/warc/CC-MAIN-20251015133709-20251015163709-00718.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/pelican",
+    "timestamp": "20251010065101",
+    "url": "https://www.worldwildlife.org/species/pelican",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "404",
+    "digest": "VASUPSPINA3N4LBMRKW6RNHA37EHGYF5",
+    "length": "21252",
+    "offset": "30076228",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358512.22/crawldiagnostics/CC-MAIN-20251010045559-20251010075559-00235.warc.gz"
+}
+{
+    "urlkey": "org,worldwildlife)/species/penguin",
+    "timestamp": "20251013211223",
+    "url": "https://www.worldwildlife.org/species/penguin",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "KINYWNA3FZPO5FBPI6KVC32F4XBLUBSN",
+    "length": "28886",
+    "offset": "1043487357",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359004.73/warc/CC-MAIN-20251013203450-20251013233450-00241.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/red-panda?ref=minimallyuseful.com",
+    "timestamp": "20251015141900",
+    "url": "https://www.worldwildlife.org/species/red-panda?ref=minimallyuseful.com",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1039",
+    "offset": "33373809",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/crawldiagnostics/CC-MAIN-20251015133709-20251015163709-00217.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/red-panda/?ref=minimallyuseful.com"
+}
+{
+    "urlkey": "org,worldwildlife)/species/red-panda?ref=minimallyuseful.com",
+    "timestamp": "20251015141901",
+    "url": "https://www.worldwildlife.org/species/red-panda/?ref=minimallyuseful.com",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "QKQPGIUNAPIDJH2SPHXUF76CP4Q27NEF",
+    "length": "26497",
+    "offset": "1068679784",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359357.38/warc/CC-MAIN-20251015133709-20251015163709-00546.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/sea-lions",
+    "timestamp": "20251007211544",
+    "url": "https://www.worldwildlife.org/species/sea-lions",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "7OQBAUYBC35RUZRSM75SKZAWSVQPXM4F",
+    "length": "30523",
+    "offset": "1093532924",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358303.82/warc/CC-MAIN-20251007202507-20251007232507-00382.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/sea-turtle/loggerhead-turtle",
+    "timestamp": "20251015165457",
+    "url": "https://www.worldwildlife.org/species/sea-turtle/loggerhead-turtle/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "47AYGZD5KXZK4LKAX75SIUDIIYGYI53S",
+    "length": "27003",
+    "offset": "1021679060",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/warc/CC-MAIN-20251015164442-20251015194442-00808.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/sea-turtle?ref=questofai.org",
+    "timestamp": "20251012112513",
+    "url": "https://www.worldwildlife.org/species/sea-turtle?ref=questofai.org",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "NLGJQHVGVXCDP46UYKS2YSDDXPS2CJW3",
+    "length": "34660",
+    "offset": "1071953309",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358757.89/warc/CC-MAIN-20251012100427-20251012130427-00707.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/shark",
+    "timestamp": "20251016123248",
+    "url": "https://www.worldwildlife.org/species/shark",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1018",
+    "offset": "35353592",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663798.77/crawldiagnostics/CC-MAIN-20251016113935-20251016143935-00466.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/shark/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/shark",
+    "timestamp": "20251016123248",
+    "url": "https://www.worldwildlife.org/species/shark/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "D7VC476GOQA2KSA2Y3Y4DWXWHK2U2PDC",
+    "length": "31835",
+    "offset": "1021611983",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663798.77/warc/CC-MAIN-20251016113935-20251016143935-00013.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/shark/great-white-shark",
+    "timestamp": "20251016231825",
+    "url": "https://www.worldwildlife.org/species/shark/great-white-shark/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "YLGU2B42QLZVNB2BL3PBBPAMMEBWXTEO",
+    "length": "25072",
+    "offset": "1035648493",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00091.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/shark/whale-shark",
+    "timestamp": "20251016172159",
+    "url": "https://www.worldwildlife.org/species/shark/whale-shark/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "CHR25SNZULW5J5LXSMG5KRIE3UJ7TKOK",
+    "length": "26873",
+    "offset": "1027112649",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/warc/CC-MAIN-20251016145047-20251016175047-00835.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/snow-leopard",
+    "timestamp": "20251016093058",
+    "url": "https://www.worldwildlife.org/species/snow-leopard",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1028",
+    "offset": "32643910",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/crawldiagnostics/CC-MAIN-20251016083149-20251016113149-00602.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/snow-leopard/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/snow-leopard",
+    "timestamp": "20251016093058",
+    "url": "https://www.worldwildlife.org/species/snow-leopard/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "AFJILJACNHDTAW6SZJAN56VDBO4TLUD5",
+    "length": "30672",
+    "offset": "1042326492",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/warc/CC-MAIN-20251016083149-20251016113149-00709.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/sri-lankan-elephant",
+    "timestamp": "20251016223002",
+    "url": "https://www.worldwildlife.org/species/sri-lankan-elephant",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1051",
+    "offset": "32872905",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/crawldiagnostics/CC-MAIN-20251016210746-20251017000746-00521.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/elephant/asian-elephant/sri-lankan-elephant/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/sumatran-elephant",
+    "timestamp": "20251011041246",
+    "url": "https://www.worldwildlife.org/species/sumatran-elephant",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "N77G4HUAUI7XKY4HPAPZICFVZMWI4GGA",
+    "length": "33066",
+    "offset": "1080992252",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358621.26/warc/CC-MAIN-20251011025302-20251011055302-00626.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/tiger",
+    "timestamp": "20251006173759",
+    "url": "https://www.worldwildlife.org/species/tiger",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "KNEFSJAOG4NCMQVLFQ22Q5OVVZMHVVLN",
+    "length": "37941",
+    "offset": "1072062680",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358250.36/warc/CC-MAIN-20251006160254-20251006190254-00148.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/tiger",
+    "timestamp": "20251014163209",
+    "url": "https://www.worldwildlife.org/species/tiger/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "ZOBJRDORFLXTEJA6Z27PJPBXEGHXVHZO",
+    "length": "34483",
+    "offset": "1074034778",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359217.71/warc/CC-MAIN-20251014153314-20251014183314-00155.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/tiger?utm_medium=about-page-banner&utm_source=tigermad.com",
+    "timestamp": "20251014163209",
+    "url": "https://www.worldwildlife.org/species/tiger?utm_source=tigermad.com&utm_medium=about-page-banner",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "963",
+    "offset": "31435712",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359217.71/crawldiagnostics/CC-MAIN-20251014153314-20251014183314-00599.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/tiger/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/tree-kangaroo",
+    "timestamp": "20251009103504",
+    "url": "https://www.worldwildlife.org/species/tree-kangaroo",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "YB2LEQH6Z46VW5X4VXAQHAFQQV4JV6SK",
+    "length": "27470",
+    "offset": "1051562643",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358434.74/warc/CC-MAIN-20251009100738-20251009130738-00580.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/tuna/bluefin-tuna",
+    "timestamp": "20251014163021",
+    "url": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "KTWOG6W4Q7LQ5EFHAYPWY5TLIGGCADU3",
+    "length": "26291",
+    "offset": "1051492725",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359217.71/warc/CC-MAIN-20251014153314-20251014183314-00511.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/tuna/bluefin-tuna",
+    "timestamp": "20251015174355",
+    "url": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "WGGSUBJE4XCJQTA3D4YFTIQ2GOEH2WUQ",
+    "length": "26189",
+    "offset": "1040042591",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/warc/CC-MAIN-20251015164442-20251015194442-00511.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/tuna/bluefin-tuna",
+    "timestamp": "20251016115725",
+    "url": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "CIFVIM4ZDMO45CYEBHUWH4Y4PE5ZPLD5",
+    "length": "26193",
+    "offset": "1020923971",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663798.77/warc/CC-MAIN-20251016113935-20251016143935-00511.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/western-lowland-gorilla?ref=minimallyuseful.com",
+    "timestamp": "20251007213654",
+    "url": "https://www.worldwildlife.org/species/western-lowland-gorilla?ref=minimallyuseful.com",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "C4Z3BLMH36WI5L2CIUREKZOEPCEKI3QV",
+    "length": "31344",
+    "offset": "1074806756",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358303.82/warc/CC-MAIN-20251007202507-20251007232507-00756.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/whale-shark",
+    "timestamp": "20251016172159",
+    "url": "https://www.worldwildlife.org/species/whale-shark/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1039",
+    "offset": "31954525",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664048.78/crawldiagnostics/CC-MAIN-20251016145047-20251016175047-00641.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/shark/whale-shark/"
+}
+{
+    "urlkey": "org,worldwildlife)/species/whale-shark?utm_campaign=20240530&utm_medium=planeta+mauna+loa&utm_source=newsletter",
+    "timestamp": "20251010155144",
+    "url": "https://www.worldwildlife.org/species/whale-shark?utm_source=newsletter&utm_medium=planeta+mauna+loa&utm_campaign=20240530",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "SU2RIDPBNO2V5RK7R2RMJABSUFT4W37N",
+    "length": "32182",
+    "offset": "1054246436",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358552.48/warc/CC-MAIN-20251010142308-20251010172308-00067.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/whale/fin-whale",
+    "timestamp": "20251016215940",
+    "url": "https://www.worldwildlife.org/species/whale/fin-whale/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "POLXPI7KUMRLB6CHADO46PBXA7TQTRVC",
+    "length": "26918",
+    "offset": "987642033",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648664484.95/warc/CC-MAIN-20251016210746-20251017000746-00913.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/whale/north-atlantic-right-whale",
+    "timestamp": "20251016094212",
+    "url": "https://www.worldwildlife.org/species/whale/north-atlantic-right-whale/",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "UUFS2DE6YIERGWA45EVGCYCHDN72K5RJ",
+    "length": "27416",
+    "offset": "1042715901",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648663606.90/warc/CC-MAIN-20251016083149-20251016113149-00987.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species/wolf",
+    "timestamp": "20251008104919",
+    "url": "https://www.worldwildlife.org/species/wolf",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "404",
+    "digest": "SPG3UMMLOHWZJOREUXA647VZNURR3QBU",
+    "length": "21250",
+    "offset": "31407082",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648358322.61/crawldiagnostics/CC-MAIN-20251008085453-20251008115453-00253.warc.gz"
+}
+{
+    "urlkey": "org,worldwildlife)/species/wwfbinaryitem9108.pdf.%20",
+    "timestamp": "20251014170629",
+    "url": "https://www.worldwildlife.org/species/WWFBinaryitem9108.pdf.%20",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "404",
+    "digest": "3KG63DVZQX3NIZKLRPAN6EU3GHRTV72D",
+    "length": "20785",
+    "offset": "33170591",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359217.71/crawldiagnostics/CC-MAIN-20251014153314-20251014183314-00240.warc.gz"
+}
+{
+    "urlkey": "org,worldwildlife)/species/yangtze-finless-porpoise",
+    "timestamp": "20251013221154",
+    "url": "https://www.worldwildlife.org/species/yangtze-finless-porpoise",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "D5ZIIC2FS6BRSFD3IRIZMKRRWJA2TYD7",
+    "length": "28919",
+    "offset": "1032027359",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359004.73/warc/CC-MAIN-20251013203450-20251013233450-00412.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
+{
+    "urlkey": "org,worldwildlife)/species?direction=asc&sort=extinction_status",
+    "timestamp": "20251015173607",
+    "url": "https://www.worldwildlife.org/species/?sort=extinction_status&direction=asc",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "301",
+    "digest": "3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ",
+    "length": "1390",
+    "offset": "32409065",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/crawldiagnostics/CC-MAIN-20251015164442-20251015194442-00402.warc.gz",
+    "redirect": "https://www.worldwildlife.org/species/?sort=status"
+}
+{
+    "urlkey": "org,worldwildlife)/species?sort=status",
+    "timestamp": "20251015173607",
+    "url": "https://www.worldwildlife.org/species/?sort=status",
+    "mime": "text/html",
+    "mime-detected": "text/html",
+    "status": "200",
+    "digest": "ZCBKAFCZIXSE7UFZ5I2J7XLPJSXJA7AH",
+    "length": "25560",
+    "offset": "1077941306",
+    "filename": "crawl-data/CC-MAIN-2025-43/segments/1759648359478.59/warc/CC-MAIN-20251015164442-20251015194442-00053.warc.gz",
+    "languages": "eng",
+    "encoding": "UTF-8"
+}
