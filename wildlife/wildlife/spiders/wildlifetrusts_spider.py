@@ -5,6 +5,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 import scrapy
 from warcio.archiveiterator import ArchiveIterator
+from wildlife.utils.text_cleaner import clean_text
 
 # run command: python3 -m scrapy crawl wildlife_trusts
 
@@ -25,7 +26,7 @@ def extract_wt_species_data(html_text, source_url):
     summary_div = soup.find("div", class_="species-summary")
     if summary_div:
         summary = summary_div.get_text(strip=True)
-        data["summary"] = summary
+        data["summary"] = clean_text(summary)
 
     # ---------- SCIENTIFIC NAME ----------
     sci_div = soup.find("div", class_=lambda c: c and "species-scientific-name" in c)
@@ -45,7 +46,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         status = cons_div.get_text(strip=True)
-        data["conservation_status"] = status
+        data["conservation_status"] = clean_text(status)
 
     # ---------- STATISTICS ----------
     stats_div = soup.find("div", class_=lambda c: c and "species-statistics" in c)
@@ -55,7 +56,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         stats_text = stats_div.get_text(separator="\n", strip=True)
-        data["statistics"] = stats_text
+        data["statistics"] = clean_text(stats_text)
 
     # ---------- ABOUT ----------
     about_div = soup.find("div", class_=lambda c: c and "species-about" in c)
@@ -65,7 +66,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         about_text = about_div.get_text(strip=True)
-        data["about"] = about_text
+        data["about"] = clean_text(about_text)
 
     # ---------- HOW TO IDENTIFY ----------
     id_div = soup.find("div", class_=lambda c: c and "species-identify" in c)
@@ -75,7 +76,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         id_text = id_div.get_text(strip=True)
-        data["how_to_identify"] = id_text
+        data["how_to_identify"] = clean_text(id_text)
 
     # ---------- DISTRIBUTION ----------
     dis_div = soup.find("div", class_=lambda c: c and "species-distribution" in c)
@@ -85,7 +86,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         dis_text = dis_div.get_text(strip=True)
-        data["distribution"] = dis_text
+        data["distribution"] = clean_text(dis_text)
 
     # ---------- DID YOU KNOW ----------
     dyk_div = soup.find("div", class_=lambda c: c and "species-did-you-know" in c)
@@ -95,7 +96,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         dyk_text = dyk_div.get_text(strip=True)
-        data["did_you_know"] = dyk_text
+        data["did_you_know"] = clean_text(dyk_text)
 
     return data
 
