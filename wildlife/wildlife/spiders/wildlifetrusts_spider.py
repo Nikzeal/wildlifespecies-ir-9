@@ -103,12 +103,20 @@ def extract_wt_species_data(html_text, source_url):
 
 class WildlifeTrustsSpider(scrapy.Spider):
     name = "wildlife_trusts"
+
+    def __init__(self):
+        self.collected = []
    
     async def start(self):
 
         index_url = "http://index.commoncrawl.org/CC-MAIN-2025-43-index?url=www.wildlifetrusts.org/wildlife-explorer/*&output=json"
 
         yield scrapy.Request(index_url, callback=self.parse_index)
+
+    def close(self, reason):
+        json_filename = "wt-all_wildlifetrusts_animals.json"
+        with open(json_filename, "w", encoding="utf-8") as f:
+            json.dump(self.collected, f, indent=2, ensure_ascii=False)
 
     def parse_index(self, response):
         for line in response.text.splitlines():
@@ -145,11 +153,12 @@ class WildlifeTrustsSpider(scrapy.Spider):
             html_text = html_bytes.decode("utf-8", errors="ignore")
 
             extracted = extract_wt_species_data(html_text, response.meta["original_url"])
+            self.collected.append(extracted)
 
-            # JSON FILE OUTPUT
-            json_filename = f"wt-{safe_filename(response.meta['original_url'])}.json"
-            with open(json_filename, "w", encoding="utf-8") as f:
-                json.dump(extracted, f, indent=2, ensure_ascii=False)
+            # JSON FILE OUTPUT x each species
+            #json_filename = f"wt-{safe_filename(response.meta['original_url'])}.json"
+            #with open(json_filename, "w", encoding="utf-8") as f:
+            #    json.dump(extracted, f, indent=2, ensure_ascii=False)
 
             # HTML FILE OUTPUT
             #filename = f"wwf-{safe_filename(response.meta['original_url'])}.html"
