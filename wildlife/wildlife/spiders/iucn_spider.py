@@ -16,7 +16,7 @@ class IucnSpider(scrapy.Spider):
         # start_urls = [
         #     "rhttps://www.iucnredlist.org/search?seachType=species"]
 
-        index_url = "http://index.commoncrawl.org/CC-MAIN-2024-10-index?url=www.iucnredlist.org*&output=json"
+        index_url = "http://index.commoncrawl.org/CC-MAIN-2024-10-index?url=www.iucnredlist.org/species/*&output=json"
 
         yield scrapy.Request(index_url, callback=self.parse_index)
 

@@ -6,9 +6,6 @@ import scrapy
 class WildlifeTrustsSpider(scrapy.Spider):
     name = "wildlife_trusts"
     # allowed_domains = ["wildlifetrusts.org"]
-   
-
-  
 
     async def start(self):
         start_urls = ["https://www.wildlifetrusts.org/wildlife-explorer"]
