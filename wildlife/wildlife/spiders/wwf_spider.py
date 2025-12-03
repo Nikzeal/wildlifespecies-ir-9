@@ -69,22 +69,16 @@ def extract_wwf_species_data(html_text, source_url):
     return data
 
 class WwfSpider(scrapy.Spider):
-    
     name = "wwf"
-    #allowed_domains = ["worldwildlife.org"]
+
+    def __init__(self):
+        self.collected = []
+   
 
     async def start(self):
-        # start_urls = [
-        #     "https://www.worldwildlife.org/species/?page=1",
-        #     # "https://www.worldwildlife.org/species/?page=2",
-        #     # "https://www.worldwildlife.org/species/?page=3",
-        #     # "https://www.worldwildlife.org/species/?page=4",
-        #     # "https://www.worldwildlife.org/species/?page=5"] 
-        # ]
-
         index_url = "http://index.commoncrawl.org/CC-MAIN-2025-43-index?url=www.worldwildlife.org/species/*&output=json"
-
         yield scrapy.Request(index_url, callback=self.parse_index)
+
 
 
     def parse_index(self, response):
@@ -121,16 +115,14 @@ class WwfSpider(scrapy.Spider):
             if record.rec_type == "response":
                 html_bytes = record.content_stream().read()
                 html_text = html_bytes.decode("utf-8", errors="ignore")
+
                 extracted = extract_wwf_species_data(html_text, response.meta["original_url"])
 
-                json_filename = f"wwf-{safe_filename(response.meta['original_url'])}.json"
+                self.collected.append(extracted)
+
+                json_filename = "ww-all_wwf_species.json"
                 with open(json_filename, "w", encoding="utf-8") as f:
-                    json.dump(extracted, f, indent=2, ensure_ascii=False)
+                    json.dump(self.collected, f, indent=2, ensure_ascii=False)
 
                 
-
-                # filename = f"wwf-{safe_filename(response.meta['original_url'])}.html"
-
-                # Path(filename).write_text(html_text, encoding="utf-8")
-                # self.log(f"Saved {filename}"
 

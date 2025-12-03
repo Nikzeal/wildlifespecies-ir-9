@@ -4,10 +4,10 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 # Download only once
-#nltk.download("punkt_tab")
-#nltk.download("stopwords")
+# nltk.download("punkt_tab")
+# nltk.download("stopwords")
 
-#nltk.download("wordnet")
+# nltk.download("wordnet")
 from nltk.stem import WordNetLemmatizer
 
 STOPWORDS = set(stopwords.words("english"))
