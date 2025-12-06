@@ -1,705 +1,732 @@
 [
   {
     "url": "https://www.worldwildlife.org/species/yangtze-finless-porpoise",
+    "name": "Yangtze Finless Porpoise",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/yangtze_finless_porpoise_7.23.2012_image2_HI_105590.jpg/hero_small/2mg7v1x0rm_yangtze_finless_porpoise_7.23.2012_image2_HI_105590.jpg",
+    "status": "Critically Endangered",
+    "population": "1000-1800",
+    "scientific_name": "Neophocaena asiaeorientalis ssp. asiaeorientalis",
+    "length": "6.2 feet",
+    "habitats": "Lakes & Rivers",
+    "places": "Yangtze",
     "overview": "The Yangtze River, the longest river in Asia, used to be one of the only two rivers in the world that was home to two different species of dolphin—the Yangtze finless porpoise and the Baiji dolphin. However, in 2006 the Baiji dolphin was declared functionally extinct. This was the first time in history that an entire species of dolphin had been wiped off the planet because of human activity. Its close cousin, the Yangtze finless porpoise, is known for its mischievous smile and has a level of intelligence comparable to that of a gorilla.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
       "Finless porpoises need an abundant food supply for survival. The destruction of the Baiji dolphin food supply was central to its extinction. Overfishing is the main factor that contributes to the decrease in finless porpoises’ food supply, but pollution and ship movement are factors as well."
     ],
-    "facts": {}
+    "related_species": [
+      "Vaquita",
+      "Hector's Dolphin",
+      "Amazon River Dolphin",
+      "Ganges River Dolphin",
+      "Indus River Dolphin",
+      "Irrawaddy Dolphin",
+      "Giant Panda",
+      "Snow Leopard",
+      "Dolphins and Porpoises"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/WWFBinaryitem9108.pdf.%20",
-    "threats": [],
-    "facts": {}
+    "name": "Sorry, we couldn’t find the page you’re looking for."
   },
   {
     "url": "https://www.worldwildlife.org/species/wolf",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/whale/north-atlantic-right-whale/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/whale/fin-whale/",
-    "threats": [],
-    "facts": {}
+    "name": "Page Not Found"
   },
   {
     "url": "https://www.worldwildlife.org/species/whale-shark?utm_source=newsletter&utm_medium=planeta+mauna+loa&utm_campaign=20240530",
+    "name": "Whale Shark",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Whale_Shark_Homepage_Image/hero_small/1qve1nybjy_Whale_Shark_Homepage.jpg",
+    "status": "Endangered",
+    "scientific_name": "Rhincodon typus",
+    "weight": "around 11 tons",
+    "length": "up to 60 feet",
+    "habitats": "Oceans",
+    "places": "Mesoamerican Reef,Southwest Indian Ocean,Southwest Pacific Ocean and Indonesia,Eastern Pacific Ocean",
     "overview": "Like human fingerprints, whale sharks have a unique pattern of spots which allow individual sharks to be identified. By taking photos and cataloguing them, WWF has identified 458 different whale sharks in the Philippines.",
-    "why_they_matter": "The whale shark is the biggest fish and shark in the world. These gentle marine giants roam the oceans around the globe, generally alone. However, large numbers of whale sharks often gather in areas with abundant plankton food—making them prime tourist attractions.The distribution of whale sharks indicates the presence of plankton and the overall health of our oceans.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Whale shark meat on a drying rack. Pamilacan Island, Philippines.",
       "Whale sharks are highly valued on international markets. Demand for their meat, fins and oil remains a threat to the species, particularly by unregulated fisheries. They are victims of bycatch, the accidental capture of non-target species in fishing gear. And whale shark tourism presents a threat to the species as it can interrupt their feeding and sharks can be injured by boat propellers."
     ],
-    "facts": {}
+    "why_they_matter": "The whale shark is the biggest fish and shark in the world. These gentle marine giants roam the oceans around the globe, generally alone. However, large numbers of whale sharks often gather in areas with abundant plankton food—making them prime tourist attractions.The distribution of whale sharks indicates the presence of plankton and the overall health of our oceans.",
+    "related_species": [
+      "Great White Shark",
+      "Sea Turtle",
+      "Vaquita",
+      "Dugong",
+      "Humphead Wrasse",
+      "Pacific Salmon",
+      "Dolphins and Porpoises",
+      "Whale",
+      "Seals",
+      "Sea Lions",
+      "Marine Iguana",
+      "Tuna",
+      "Bluefin Tuna",
+      "Sei Whale",
+      "Yellowfin Tuna",
+      "Hawksbill Turtle",
+      "Skipjack Tuna",
+      "Loggerhead Turtle",
+      "Leatherback Turtle",
+      "Green Turtle",
+      "Olive Ridley Turtle",
+      "Albacore Tuna",
+      "Bigeye Tuna",
+      "North Atlantic Right Whale",
+      "Blue Whale",
+      "Fin Whale",
+      "Bowhead Whale",
+      "Gray Whale",
+      "Hector's Dolphin",
+      "Galápagos Penguin",
+      "Shark",
+      "Polar Bear",
+      "Narwhal",
+      "Beluga",
+      "Rhino"
+    ]
   },
   {
-    "url": "https://www.worldwildlife.org/species/whale-shark/",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/whale-shark/"
   },
   {
     "url": "https://www.worldwildlife.org/species/western-lowland-gorilla?ref=minimallyuseful.com",
+    "name": "Western Lowland Gorilla",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Western_Lowland_Gorilla/hero_small/9jqnmeu6xk_Gorilla_07.24.2012_Help.jpg",
+    "status": "Critically Endangered",
+    "population": "Unknown",
+    "scientific_name": "Gorilla gorilla gorilla",
+    "weight": "up to 440 pounds",
+    "places": "Congo Basin",
     "overview": "The western lowland gorilla is the most numerous and widespread of all gorilla subspecies. Populations can be found in Cameroon, the Central African Republic, Equatorial Guinea, Gabon, and the Republic of Congo, with possibly some remnant populations in the Democratic Republic of the Congo. The exact number of western lowland gorillas is not known because they inhabit some of the most dense and remote rain forests in Africa. However, significant populations still exist, including in the remote swampy forests of the Republic of Congo.",
-    "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Poaching",
-      "The hunting and killing of gorillas is illegal but still, the animals are killed for bushmeat or during the capture of baby gorillas for pets. Timber and other companies have opened areas of once remote forest, facilitating poaching and the bushmeat trade. Poaching also carries dangers for humans, as Ebola may be spread through the butchering and handling of gorilla and other primate meat.",
-      "Disease",
-      "Central Africa is home to not only gorillas but also the deadly Ebola virus. Ebola has caused a number of massive gorilla and chimpanzee die-offs in the remote forests at the heart of the primates’ ranges. Some scientists estimate that it has killed about one-third of the wild gorilla population in the early 2000s. The toll has been even greater in some areas, such as the Minkébé Forest in northeastern Gabon—once considered one of the most important populations—where the virus may have killed more than 90% of the region’s gorillas and chimpanzees.",
-      "Habitat loss",
-      "Only about 22% of western lowland gorillas live inside protected areas, so the majority of these gorillas are unprotected and highly vulnerable to poachers. Large areas of gorilla forest have already been fragmented as a result of selective commercial logging, the construction of roads, or the expansion of human settlements.",
-      "There is also a strong link between habitat loss and the bushmeat trade. As previously inaccessible forests are opend up by timber companies and others, commercial hunters gain access to areas where gorillas roam and often use logging vehicles to transport bushmeat to far-away markets, as well as sell meat to employees of logging companies."
-    ],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/tuna/bluefin-tuna/",
-    "threats": [],
-    "facts": {}
+    "related_species": [
+      "Cross River Gorilla",
+      "Mountain Gorilla",
+      "Eastern Lowland Gorilla",
+      "Chimpanzee",
+      "African Elephant",
+      "African forest elephant",
+      "Gorilla",
+      "Bonobo"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/tree-kangaroo",
+    "name": "Tree Kangaroo",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Tree_Kangaroo/hero_small/4d8rbbqvt6_TreeKangaroo_1600x1200px.jpg",
+    "status": "Least Concern",
+    "scientific_name": "Dendrolagus sp.",
+    "weight": "up to 32 pounds",
+    "length": "16 to 30 inches, tail length additional 16 to 34 inches",
     "overview": "In 1990, a new species of tree kangaroo, the golden-mantled tree kangaroo, was discovered in the Torricelli Mountains of Papua New Guinea. It had a chestnut-brown coat, pale belly and a double stripe of gold down its back. A second population of the marsupial was discovered on the Indonesian side of the New Guinea island in 2005, but there are few of these animals and their population is thought to be decreasing. Scientists estimate that the golden-mantled tree kangaroo has been extirpated from 99% of its historical range, its numbers driven low by habitat destruction and hunting.",
-    "why_they_matter": "Millions of years ago the ancestors of Macropods—the family of marsupials that includes kangaroos and wallabies—descended from the trees. But one group of Macropods, known as tree kangaroos, eventually returned to that arboreal life.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Tropical rainforest in Papua New Guinea.",
       "Indigenous peoples throughout the tree kangaroo’s range hunt the animals for food, sometimes using dogs to track them down. For several species, hunting alone has driven these marsupials close to extinction."
     ],
-    "facts": {}
+    "why_they_matter": "Millions of years ago the ancestors of Macropods—the family of marsupials that includes kangaroos and wallabies—descended from the trees. But one group of Macropods, known as tree kangaroos, eventually returned to that arboreal life."
   },
   {
-    "url": "https://www.worldwildlife.org/species/tiger?utm_source=tigermad.com&utm_medium=about-page-banner",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/tiger?utm_source=tigermad.com&utm_medium=about-page-banner"
   },
   {
     "url": "https://www.worldwildlife.org/species/tiger/",
-    "threats": [],
-    "facts": {}
+    "name": "Tiger"
   },
   {
     "url": "https://www.worldwildlife.org/species/tiger",
+    "name": "Tiger",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Tiger_resting_Bandhavgarh_National_Park_India/hero_small/6aofsvaglm_Medium_WW226365.jpg",
+    "status": "Endangered",
+    "population": "About 5,574",
+    "scientific_name": "Panthera tigris",
+    "weight": "220–660 pounds",
+    "length": "6–10 feet",
+    "habitats": "Tropical rainforests, evergreen forests, temperate forests, mangrove swamps, grasslands, and savannas",
+    "places": "Amur-Heilong",
     "overview": "After a century of decline, overall wild tiger numbers are starting to tick upward. Based on the best available information, tiger populations are stable or increasing in India, Nepal, Bhutan, Russia and China. About 5,574 tigers remain in the wild, according to the Global Tiger Forum, but much more work is needed to protect this species if we are to secure its future in the wild. In some areas, including much of Southeast Asia, tigers are still in crisis and declining in number.",
     "why_they_matter": "This big cat is a critical part of ecosystems and cultures. If forests are emptied of every last tiger, all that will remain are distant legends and zoo sightings.",
-    "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Poaching and Illegal Wildlife Trade",
-      "Poaching is the most immediate threat to wild tigers. Every part of the tiger—from whisker to tail—has been found in illegal wildlife markets. A result of persistent demand, their bones, and other body parts are used for modern health tonics and folk remedies, and their skins are sought after as status symbols among some Asian cultures.",
-      "There are often limited resources for guarding protected areas in the countries where tigers live. Even countries with strong enforcement of tiger protection laws continue to fight a never-ending battle against poaching, which is now often orchestrated by transnational crime syndicates that rake in significant profits from wildlife crime and undermine the security of local communities.",
-      "The impact from the death of a single tiger at the hands of poachers reaches beyond one single loss. If a female tiger with cubs is killed, her cubs will most likely die without their mother, and the female's potential for future breeding is lost. If a male is killed, his death can result in intense competition for his territory among surviving males in the population, leading to potential injury and death.",
-      "Habitat loss",
-      "Tigers have lost an estimated 95% of their historical range. Their habitat has been destroyed, degraded, and fragmented by human activities. The clearing of forests for agriculture and timber, as well as the building of road networks and other development activities, pose serious threats to tiger habitats. Tigers need wide swaths of habitat for their survival since they have large home ranges and are very territorial. Fewer tigers can survive in small, scattered islands of habitat, which leads to a higher risk of inbreeding and makes tigers more vulnerable to poaching as they venture beyond protected areas to establish their territories. This underscores the need to ensure habitat connectivity between the protected areas where tigers live.",
-      "Human-Wildlife Conflict",
-      "People and tigers increasingly compete for space. As forests shrink and prey becomes scarce, tigers are forced to leave protected areas in search of food and to establish territories. This takes them into human-dominated areas that lie between habitat fragments, where they can hunt domestic livestock that many local communities depend on for their livelihood. In retaliation, tigers are sometimes killed or captured. “Conflict” tigers can end up for sale in black markets. Local community dependence on forests for fuel wood, food, and timber heightens the risk of tiger attacks on people.",
-      "Effects of Climate Change",
-      "One of the world’s largest, and most uniquely-adapted, tiger populations are found in the Sundarbans—a large mangrove forest area shared by India and Bangladesh on the coast of the Indian Ocean. It is also the only coastal mangrove tiger habitat in the world. These mangrove forests harbor a variety of species, including tigers, and protect coastal regions from storm surges and wind damage. However, rising sea levels caused by climate change threaten to wipe out these forests and the last remaining habitat of this tiger population. According to a WWF study, without mitigation efforts, projected sea-level rise—about a foot by 2070—could destroy nearly the entire Sundarbans tiger habitat.",
-      "Tiger \"Farms\" and Captive Tigers",
-      "Current estimates indicate that there are more than 8,000 tigers being held in more than 200 centers in East and Southeast Asia, with roughly three-quarters of these tigers located in China. The current scale of commercial captive breeding efforts within these farms is a significant obstacle to the recovery and protection of wild tiger populations because they perpetuate the demand for tiger products, serve as a cover for illegal trade and undermine enforcement efforts. WWF is engaging with governments in countries with active tiger farms, and advocates ending breeding and phasing out the farms. WWF also advocates for improved regulation of thecaptive tiger population in the US.It is estimated that approximately 5,000 tigers reside in the US, and we must ensure that these animals are not exploited by, or contributing to, the illegal trade in tigers and their parts."
-    ],
-    "facts": {}
+    "related_species": [
+      "Sunda Tiger",
+      "Continental Tiger",
+      "Lion",
+      "Jaguar",
+      "Snow Leopard",
+      "Amur Leopard",
+      "Cheetah"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/sumatran-elephant",
+    "name": "Sumatran Elephant",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Sumatran_elephants_08.10.2012_Species/hero_small/26meo6d750_MID_247517.jpg",
+    "status": "Critically Endangered",
+    "population": "2,400 – 2,800",
+    "scientific_name": "Elephas maximus sumatranus",
+    "weight": "approximately 5 tons",
+    "length": "up to 20 feet",
+    "habitats": "Broadleaf moist tropical forests",
+    "places": "Borneo and Sumatra",
     "overview": "Sumatran elephants feed on a variety of plants and deposit seeds wherever they go, contributing to a healthy forest ecosystem. They also share their lush forest habitat with several other endangered species, such as the Sumatran rhino, tiger, and orangutan, and countless other species that all benefit from an elephant population that thrives in a healthy habitat.",
     "why_they_matter": "Sumatran elephants feed on a variety of plants and deposit seeds wherever they go, contributing to a healthy forest ecosystem.",
-    "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Nearly 70 percent of the Sumatran elephant’s habitat has been destroyed in one generation.",
-      "Poaching",
-      "Sumatran elephants typically have smaller tusks but they are enough to tempt poachers who kill the animals and sell their tusks on the illegal ivory market. Only male Asian elephants have tusks so every poaching event further skews the sex ratio further constraining breeding rates for the species.",
-      "Deforestation and Habitat Loss",
-      "In 2012, the Sumatran elephant was changed from “Endangered” to “Critically Endangered” because half of its population has been lost in one generation—a decline that is largely due to habitat loss and as a result human-elephant conflict. Sumatra has experienced one of the highest rates of deforestation within the Asian elephant’s range, which has resulted in local extinctions of elephants in many areas. Over two-thirds of its natural lowland forest has been razed in the past 25 years and nearly 70 percent of the Sumatran elephant’s habitat has been destroyed in one generation.In Sumatra’s Riau province, pulp and paper industries and oil palm plantations have caused some of the world’s most rapid rates of deforestation. Elephant numbers have declined by a staggering 80 percent in less than 25 years, confining some herds to small forest patches. These populations are not likely to survive in the long-term. The Lampung province has seen its number of elephant herds decline from twelve in the 1980s to only three by 2002. Just two of the remaining herds are considered biologically viable.",
-      "Human-Elephant Conflict",
-      "As a result of the rapid development and deforestation in Sumatra, elephants often come into contact with human settlements. They raid crops, trample homes and sometimes even hurt or kill people. Those affected sometimes retaliate and poison or shoot elephants.",
-      "\"Unless deforestation on the island of Sumatra is halted, we could possibly see the Sumatran elephant be restricted to just a few remote populations within our lifetimes.\""
-    ],
-    "facts": {}
+    "related_species": [
+      "Sri Lankan Elephant",
+      "Indian Elephant",
+      "Sunda Tiger",
+      "Sumatran Orangutan",
+      "Sumatran Rhino",
+      "Bornean Orangutan",
+      "Bornean Elephant"
+    ]
   },
   {
-    "url": "https://www.worldwildlife.org/species/sri-lankan-elephant",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/sri-lankan-elephant"
   },
   {
     "url": "https://www.worldwildlife.org/species/snow-leopard/",
-    "threats": [],
-    "facts": {}
+    "name": "Snow Leopard"
   },
   {
-    "url": "https://www.worldwildlife.org/species/snow-leopard",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/shark/whale-shark/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/shark/great-white-shark/",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/snow-leopard"
   },
   {
     "url": "https://www.worldwildlife.org/species/shark/",
-    "threats": [],
-    "facts": {}
+    "name": "Sharks"
   },
   {
-    "url": "https://www.worldwildlife.org/species/shark",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/shark"
   },
   {
     "url": "https://www.worldwildlife.org/species/sea-turtle?ref=questofai.org",
+    "name": "Sea Turtle",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Sea_Turtle_Hol_Chan_Marine_Reserve_WW1105958/hero_small/5fv88fm3v6_Sea_Turtle_Hol_Chan_Marine_Reserve_WW1105958.jpg",
+    "status": "Endangered",
+    "scientific_name": "Cheloniidae and Dermochelyidae families",
+    "length": "2-6 ft.",
+    "habitats": "Open water and coasts",
+    "places": "Mesoamerican Reef,Southwest Indian Ocean,Southwest Pacific Ocean and Indonesia,The Galápagos,Eastern Pacific Ocean",
     "overview": "For more than 100 million years sea turtles have covered vast distances across the world's oceans, filling a vital role in the balance of marine habitats.",
-    "why_they_matter": "Sea turtles are a fundamental link in marine ecosystems. They help maintain the health of seagrass beds and coral reefs that benefit commercially valuable species such as shrimp, lobster, and tuna. Sea turtles are the live representatives of a group of reptiles that have existed on Earth and traveled our seas for the last 100 million years. Turtles have major cultural significance and tourism value. Five of the seven species are found around the world, mainly in tropical and subtropical waters. The remaining two species, though, have relatively restricted ranges: Kemp's ridley is found mainly off the coasts of Texas and eastern Mexico and along the eastern US seaboard while the flatback turtle is located around northern Australia and southern Papua New Guinea.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Sea turtles journey between land and sea and swim thousands of ocean miles during their long lifetimes. They wait decades until they can reproduce, returning to the same beaches where they were born to lay their eggs. Females can lay hundreds of eggs in one nesting season, yet few will yield hatchlings that survive their first year of life. Beyond these significant natural challenges, sea turtles face multiple threats caused by humans, such as bycatch in commercial fishing gear, illegal trade, consumption, and climate change.",
-      "Bycatch",
-      "Worldwide, hundreds of thousands of sea turtles are accidentally caught in shrimp trawl nets, on longline hooks and in fishing gill nets every year. They become fisheries' bycatch—animals accidentally caught in nets intended for other species.",
-      "Sea turtles need to reach the surface to breathe and therefore many drown once caught. Incidental capture by fishing gear is the greatest threat to most sea turtles, especially endangered loggerheads, greens, and leatherbacks. This threat is increasing as fishing activity expands.",
-      "Overharvesting and Illegal trade",
-      "Sea turtles continue to be harvested unsustainably both for human consumption and trade of their parts. Turtle meat and eggs are a source of food and income for many people around the world. Some also kill turtles for medicine and religious ceremonies. Tens of thousands of sea turtles are lost this way every year, devastating populations of already endangered greens and hawksbills.",
-      "Killing of turtles for both domestic and international markets continues as well. International trade in all sea turtle species and their parts is prohibited under theConvention on International Trade in Endangered Species of Wild Fauna and Flora (CITES), a global agreement among governments to regulate or ban international trade in species under threat. Still, illegal trafficking persists and advances in technology and connectivity have led to an increased ease of buyers and sellers connecting globally online further facilitating the trade.",
-      "Habitat loss",
-      "Sea turtles are dependent on beaches for nesting. Uncontrolled coastal development, vehicle traffic on beaches, and other human activities have directly destroyed or disturbed sea turtle nesting beaches around the world. For example, lights from roads and buildings disorient hatchlings away from the sea, and vehicle traffic on beaches compacts the sand, making it impossible for female turtles to dig nests. Turtle feeding grounds such as coral reefs and seagrass beds are damaged and destroyed by activities onshore, including sedimentation from clearing of land and nutrient run-off from agriculture. Beach restoration projects for protecting seaside buildings have also been found to be harmful, through dredging and sand filling.",
-      "Climate Change",
-      "All stages of a sea turtle's life are affected by environmental conditions such as temperature—even the sex of offspring. Unusually warm temperatures caused by climate change are disrupting the normal ratios, resulting in fewer male hatchlings.",
-      "Warmer sea surface temperatures can also lead to the loss of important foraging grounds for sea turtles, while increasingly severe storms and sea level rise can destroy critical nesting beaches and damage nests.",
-      "Pollution",
-      "Sea turtles can mistake floating plastic materials for jellyfish and can choke on them when they try to eat them. These encounters are often fatal. Lost or discarded fishing gear—called ghost gear—entangles sea turtles and can drown or render a turtle unable to feed or swim. Trash on beaches can trap hatchlings and prevent them from reaching the ocean. Oil spills also poison sea turtles of all ages."
+      "Sea turtles journey between land and sea and swim thousands of ocean miles during their long lifetimes. They wait decades until they can reproduce, returning to the same beaches where they were born to lay their eggs. Females can lay hundreds of eggs in one nesting season, yet few will yield hatchlings that survive their first year of life. Beyond these significant natural challenges, sea turtles face multiple threats caused by humans, such as bycatch in commercial fishing gear, illegal trade, consumption, and climate change."
     ],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/sea-turtle/loggerhead-turtle/",
-    "threats": [],
-    "facts": {}
+    "why_they_matter": "Sea turtles are a fundamental link in marine ecosystems. They help maintain the health of seagrass beds and coral reefs that benefit commercially valuable species such as shrimp, lobster, and tuna. Sea turtles are the live representatives of a group of reptiles that have existed on Earth and traveled our seas for the last 100 million years. Turtles have major cultural significance and tourism value. Five of the seven species are found around the world, mainly in tropical and subtropical waters. The remaining two species, though, have relatively restricted ranges: Kemp's ridley is found mainly off the coasts of Texas and eastern Mexico and along the eastern US seaboard while the flatback turtle is located around northern Australia and southern Papua New Guinea.",
+    "related_species": [
+      "Hawksbill Turtle",
+      "Loggerhead Turtle",
+      "Leatherback Turtle",
+      "Green Turtle",
+      "Olive Ridley Turtle",
+      "Vaquita",
+      "Whale Shark",
+      "Dugong",
+      "Humphead Wrasse",
+      "Pacific Salmon",
+      "Dolphins and Porpoises",
+      "Whale",
+      "Seals",
+      "Sea Lions",
+      "Marine Iguana",
+      "Tuna",
+      "Bluefin Tuna",
+      "Sei Whale",
+      "Yellowfin Tuna",
+      "Hawksbill Turtle",
+      "Skipjack Tuna",
+      "Great White Shark",
+      "Loggerhead Turtle",
+      "Leatherback Turtle",
+      "Green Turtle",
+      "Olive Ridley Turtle",
+      "Albacore Tuna",
+      "Bigeye Tuna",
+      "North Atlantic Right Whale",
+      "Blue Whale",
+      "Fin Whale",
+      "Bowhead Whale",
+      "Gray Whale",
+      "Hector's Dolphin",
+      "Galápagos Penguin",
+      "Shark",
+      "Polar Bear",
+      "Narwhal",
+      "Beluga",
+      "Rhino",
+      "Giant Tortoise"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/sea-lions",
+    "name": "Sea Lions",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Galapagos_sea_lions/hero_small/51u4huntbw_Medium_WW288551.jpg",
+    "status": "Endangered",
+    "scientific_name": "Zalophus wollebaeki",
+    "weight": "around 400 pounds",
+    "length": "6 feet long",
+    "habitats": "Oceans",
+    "places": "The Galápagos",
     "overview": "Sea lions haul out in large colonies on rocks and sandy shores on the Islands. They move into the water to feed and cool off as needed.",
-    "why_they_matter": "The sea lion is the most common mammal in the Galápagos.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
       "Introduced species, such as dogs, carry diseases that can spread to sea lions. They are vulnerable to the effects of climate change on ocean currents, which impacts their fish prey abundance. They are also victims of bycatch in fisheries."
     ],
-    "facts": {}
+    "why_they_matter": "The sea lion is the most common mammal in the Galápagos.",
+    "related_species": [
+      "Sea Turtle",
+      "Vaquita",
+      "Whale Shark",
+      "Dugong",
+      "Humphead Wrasse",
+      "Pacific Salmon",
+      "Dolphins and Porpoises",
+      "Whale",
+      "Seals",
+      "Marine Iguana",
+      "Tuna",
+      "Bluefin Tuna",
+      "Sei Whale",
+      "Yellowfin Tuna",
+      "Hawksbill Turtle",
+      "Skipjack Tuna",
+      "Great White Shark",
+      "Loggerhead Turtle",
+      "Leatherback Turtle",
+      "Green Turtle",
+      "Olive Ridley Turtle",
+      "Albacore Tuna",
+      "Bigeye Tuna",
+      "North Atlantic Right Whale",
+      "Blue Whale",
+      "Fin Whale",
+      "Bowhead Whale",
+      "Gray Whale",
+      "Hector's Dolphin",
+      "Galápagos Penguin",
+      "Shark",
+      "Polar Bear",
+      "Narwhal",
+      "Beluga",
+      "Giant Tortoise"
+    ]
   },
   {
-    "url": "https://www.worldwildlife.org/species/red-panda/?ref=minimallyuseful.com",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/red-panda?ref=minimallyuseful.com",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/red-panda?ref=minimallyuseful.com"
   },
   {
     "url": "https://www.worldwildlife.org/species/penguin",
+    "name": "Penguin",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/HERO_Penguins_Antarctica/hero_small/2tcsbqkcyj_Medium_WW267491.jpg",
+    "scientific_name": "Spheniscidae",
+    "weight": "2 pounds to 80 pounds",
+    "habitats": "Oceans, Coasts",
     "overview": "Penguins are a family of 17 to 19 species of birds that live primarily in the Southern Hemisphere. They include the tiny blue penguins of Australia and New Zealand, the majestic emperor penguins of Antarctica and king penguins found on many sub- Antarctic islands, the endangered African penguin and the Galápagos penguin—the only penguin to be found north of the equator.",
-    "why_they_matter": "Penguins may not be able to fly across the sky, but they can fly underwater as well as any fish. Instead of wings, these birds have flippers that can propel their streamlined bodies up to 15 miles per hour through the sea in pursuit of a meal.",
-    "threats": [
-      "Bycatch",
-      "Commercial fishing in the Southern Ocean region can force many penguin species to compete for the fish they eat. The practice can also lead to accidental capture and drowning in fishing nets.",
-      "Effects of Climate Change",
-      "Climate change is a growing concern for penguins that live in Antarctica—the emperor penguin and the Adelie penguin. These species depend on sea ice for access to food and for places to breed. But the sea ice has been disappearing, and penguin populations along with it. A 2008 WWF study estimated that 50% of the emperor penguins and 75% of the Adelie penguins will likely decline or disappear if global average temperatures rise above pre-industrial levels by just 2 degrees C—a scenario that could be reached in less than 40 years.",
-      "“From polar bears in the Arctic to penguins in Antarctic, climate change is having a devastating impact on animals around the world.”"
-    ],
-    "facts": {}
+    "why_they_matter": "Penguins may not be able to fly across the sky, but they can fly underwater as well as any fish. Instead of wings, these birds have flippers that can propel their streamlined bodies up to 15 miles per hour through the sea in pursuit of a meal."
   },
   {
     "url": "https://www.worldwildlife.org/species/pelican",
-    "threats": [],
-    "facts": {}
+    "name": "Page Not Found"
   },
   {
-    "url": "https://www.worldwildlife.org/species/pangolin/?ref=questofai.org",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/pangolin?ref=questofai.org",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/pangolin?ref=questofai.org"
   },
   {
     "url": "https://www.worldwildlife.org/species/pangolin",
+    "name": "Pangolin",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Pangolin_1_27_16_Magazine/hero_small/5cm9ciocmd_IMG_0815_2_2000x1271.jpg",
+    "weight": "4.4-7 lbs",
+    "habitats": "Forests and Grasslands",
+    "places": "Viet Nam,Namibia,Kavango Zambezi Transfrontier Conservation Area (KAZA),Southern Africa",
     "overview": "Pangolin comes from ‘penggulung,’ the Malay word for roller – the action a pangolin takes in self-defense.",
     "why_they_matter": "Pangolins are sometimes mistaken as reptiles, but they are actually scaly-skinned mammals. When in danger, the pangolin can roll into a ball, exposing only the tough scales for protection. Little is known about this elusive creature, so it’s difficult to estimate wild population sizes. But given the demand for pangolin meat and scales, and the massive seizures of pangolin scales that occurred in 2019 and 2020, the population is believed to be in decline.",
-    "threats": [
-      "Illegal Wildlife Trade",
-      "West and central Africa is a hot spot for pangolin poaching and illegal wildlife trafficking, with an estimated 8.5 million pangolins taken from the wild for the illegal trade from 2014-2021.",
-      "Recently, seven metric tons of pangolin scales were confiscated in Ogun state in Nigeria. The Chinese national arrested is suspected of being behind a transnational smuggling operation of pangolin scales.",
-      "Although the number of seizures of illegally traded pangolin scales has decreased significantly in China due to strengthened law enforcement and increased public awareness of their protected status, the illegal wildlife trade is still the greatest threat to pangolins.",
-      "Are pangolins the most trafficked mammal in the world?",
-      "Pangolins are the most trafficked mammals in the world, with most trafficking in African species smuggled to Asia. Pangolins are in high demand in countries like China and Viet Nam. Their meat is considered a delicacy and pangolin scales are used in traditional medicine and folk remedies to treat a range of ailments from asthma to rheumatism and arthritis. There is also demand in the Americas for their skins used to make leather products like boots, bags, and belts. All eight IUCN-recognized pangolin species are protected under national and international laws, but that is not stopping the massive international illegal trade in pangolins, which has increased in recent years due to growing demand.",
-      "More than 1,000,000 pangolins were trafficked over a 10-year period, with 2019 data indicating that a pangolin is poached every three minutes."
-    ],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/orangutan/bornean-orangutan/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/orangutan/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/orangutan",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "http://worldwildlife.org/species/orangutan",
-    "threats": [],
-    "facts": {}
+    "related_species": [
+      "Saola",
+      "Asian Elephant",
+      "Irrawaddy Dolphin",
+      "Black Rhino",
+      "White Rhino",
+      "African savanna elephant",
+      "Rhino",
+      "Cheetah",
+      "African Wild Dog",
+      "Lion",
+      "African Elephant"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/orangutan/",
-    "threats": [],
-    "facts": {}
+    "name": "Orangutan"
   },
   {
-    "url": "https://www.worldwildlife.org/species/orangutan",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/orangutan"
   },
   {
-    "url": "https://www.worldwildlife.org/species/north-atlantic-right-whale",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/orangutan/",
+    "name": "Orangutan"
   },
   {
-    "url": "https://www.worldwildlife.org/species/loggerhead-turtle",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/orangutan"
+  },
+  {
+    "url": "https://www.worldwildlife.org/species/north-atlantic-right-whale"
+  },
+  {
+    "url": "https://www.worldwildlife.org/species/loggerhead-turtle"
   },
   {
     "url": "https://www.worldwildlife.org/species/kemps-ridley-sea-turtle/",
-    "threats": [],
-    "facts": {}
+    "name": "Sorry, we couldn’t find the page you’re looking for."
   },
   {
-    "url": "https://www.worldwildlife.org/species/kemps-ridley-sea-turtle",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/kemps-ridley-sea-turtle"
   },
   {
-    "url": "https://www.worldwildlife.org/species/indus-river-dolphin",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/indus-river-dolphin"
   },
   {
     "url": "https://www.worldwildlife.org/species/hector-s-dolphin/",
+    "name": "Hector's Dolphin",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Hectors_Dolphin/hero_small/977k5v8nb3_shutterstock_1205907409.jpg",
+    "status": "Endangered",
+    "population": "estimated at 7000",
+    "scientific_name": "Cephalorhynchus hectori",
+    "weight": "up to 110 pounds",
+    "length": "4 feet",
+    "habitats": "Oceans",
     "overview": "Hector’s dolphins are the smallest and rarest marine dolphins in the world. They have distinct black facial markings, short stocky bodies and a dorsal fin shaped like a Mickey Mouse ear. There is a subspecies of Hector’s dolphin known as Maui’s dolphin that is critically endangered and estimated to have a population of only 55. They are found only in the shallow coastal waters along western shores of New Zealand’s North Island.",
-    "why_they_matter": "Hector’s and Maui’s dolphins only live in New Zealand’s shallow coastal waters. They are both at risk of becoming extinct.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Hector’s dolphin caught in a gillnet.",
       "Living close to shore is a problem for the dolphins. Bycatch—becoming tangled in recreational and commercial gill and trawl nets—is the biggest threat they face.  Gillnets, for example, are made of a fine mesh that dolphins are unable to detect underwater and they accidentally swim into them and become caught. Other threats include being struck by boats, pollution in their habitat, coastal development and seabed mining."
     ],
-    "facts": {}
+    "why_they_matter": "Hector’s and Maui’s dolphins only live in New Zealand’s shallow coastal waters. They are both at risk of becoming extinct.",
+    "related_species": [
+      "Vaquita",
+      "Yangtze Finless Porpoise",
+      "Amazon River Dolphin",
+      "Ganges River Dolphin",
+      "Indus River Dolphin",
+      "Irrawaddy Dolphin",
+      "Sea Turtle",
+      "Whale Shark",
+      "Dugong",
+      "Humphead Wrasse",
+      "Pacific Salmon",
+      "Dolphins and Porpoises",
+      "Whale",
+      "Seals",
+      "Sea Lions",
+      "Marine Iguana",
+      "Tuna",
+      "Bluefin Tuna",
+      "Sei Whale",
+      "Yellowfin Tuna",
+      "Hawksbill Turtle",
+      "Skipjack Tuna",
+      "Great White Shark",
+      "Loggerhead Turtle",
+      "Leatherback Turtle",
+      "Green Turtle",
+      "Olive Ridley Turtle",
+      "Albacore Tuna",
+      "Bigeye Tuna",
+      "North Atlantic Right Whale",
+      "Blue Whale",
+      "Fin Whale",
+      "Bowhead Whale",
+      "Gray Whale",
+      "Galápagos Penguin",
+      "Shark",
+      "Polar Bear",
+      "Narwhal",
+      "Beluga"
+    ]
   },
   {
-    "url": "https://www.worldwildlife.org/species/great-white-shark",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "http://worldwildlife.org/species/great-white-shark",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/great-white-shark"
   },
   {
     "url": "https://www.worldwildlife.org/species/giant-tortoise",
+    "name": "Giant Tortoise",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/HERO_Giant_Tortoise/hero_small/1cylh0cts4_Medium_WW288394.jpg",
+    "status": "Vulnerable",
+    "weight": "up to 700 pounds",
+    "length": "up to 4 feet long",
+    "places": "The Galápagos",
     "overview": "There are many subspecies of giant tortoises that are found on different islands and have different appearances. Those that live on the larger islands where there is more rain have “dome” shaped shells, while those that live in drier conditions are smaller tortoises and have a “saddleback” shell.",
-    "why_they_matter": "The giant tortoise is an iconic species from the Galápagos and is only found on these islands. They are the largest living tortoise in the world.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
       "The giant tortoise is threatened by introduced species to the islands, such as dogs and cats which prey on young tortoises, and cattle which compete for grazing vegetation."
     ],
-    "facts": {}
+    "why_they_matter": "The giant tortoise is an iconic species from the Galápagos and is only found on these islands. They are the largest living tortoise in the world.",
+    "related_species": [
+      "Sea Turtle",
+      "Leatherback Turtle",
+      "Sei Whale",
+      "Green Turtle",
+      "Whale",
+      "Marine Iguana",
+      "Galápagos Penguin",
+      "Sea Lions",
+      "Great White Shark",
+      "Tuna",
+      "Albacore Tuna",
+      "Bigeye Tuna",
+      "Skipjack Tuna",
+      "Shark"
+    ]
   },
   {
-    "url": "https://www.worldwildlife.org/species/ganges-river-dolphin?fbclid=IwAR15iTbD1Se7n-AxGR6ldyxntRW42IWKASsN3cnxMQ6-THybGSLtKuNKbEk",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/ganges-river-dolphin?fbclid=IwAR15iTbD1Se7n-AxGR6ldyxntRW42IWKASsN3cnxMQ6-THybGSLtKuNKbEk"
   },
   {
-    "url": "https://www.worldwildlife.org/species/fin-whale",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/fin-whale"
   },
   {
     "url": "https://www.worldwildlife.org/species/elephant?utm_campaign=wild-classroom&utm_medium=web&utm_source=partner-site&utm_content=elephant-resources",
+    "name": "Elephant",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/hero_small/3v49raxlb8_WW187785.jpg",
+    "weight": "4-6 tons",
+    "length": "18-24 ft.",
     "overview": "Once common throughout Africa and Asia, elephant populations have experienced significant declines over the last century. The greatest threat to African elephants is poaching for the illegal ivory trade, while Asian elephant populations are most at risk from habitat loss and resulting human-elephant conflict.",
-    "why_they_matter": "Elephants help maintain forest and savanna ecosystems for other species and are integrally tied to rich biodiversity. Elephants are important ecosystem engineers. They make pathways in dense forested habitat that allow passage for other animals. An elephant footprint can also enable a micro-ecosystem that, when filled with water, can provide a home for tadpoles and other organisms.",
     "threats": [
-      "African elephant populations have fallen from an estimated 12 million a century ago to some 400,000. In recent years, at least 20,000 elephants have been killed in Africa each year for their tusks. African forest elephants have been the worst hit. Their populations declined by 62% between 2002-2011 and they have lost 30% of their geographical range, with African savanna elephants declining by 30% between 2007-2014. This dramatic decline has continued and even accelerated with cumulative losses of up to 90% in some landscapes between 2011 and 2015. Today, the greatest threat to African elephants is wildlife crime, primarily poaching for the illegal ivory trade, while the greatest threat to Asian elephants is habitat loss, which results in human-elephant conflict. WWF has advocated for an end to commercial elephant ivory sales in the US and other major markets like China, Thailand, and Hong Kong as the most effective and efficient solution to end this illegal ivory trade.",
-      "Habitat Loss",
-      "Elephants are also losing their habitats and ancient migratory routes due to expanding human settlements into their habitat, agricultural development, and the construction of infrastructure such as roads, canals, and fences that fragment their habitat. As a result, human-elephant conflict is rising as more and more elephants come into close contact with humans. This often leads to elephants destroying crops and property, as well as occasional human casualties. These negative interactions can result in the retaliatory killing of elephants.",
-      "Illegal Ivory Trade",
-      "In 1989, the Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES)—a global agreement among governments to regulate or ban international trade in species under threat—banned the international commercial trade in elephant ivory. Poaching rates dropped following the action, but began to surge again around 2010, due to renewed consumer interest in purchasing elephant ivory, largely in Asia. After campaigns by WWF and other conservation groups, governments in problematic ivory markets like Hong Kong, Thailand, the US and the UK were pushed to take action to clamp down on illegal and unregulated domestic trade that was fueling the poaching.",
-      "The real game changer is China—by far the largest market for elephant ivory—which banned domestic trade of elephant ivory as of January 1, 2018. Since then, Chinese consumer desire for elephant ivory has dropped and wholesale prices of elephant ivory, even on the black market, have declined. WWF has been working since to reduce consumer demand for elephant ivory and ensure the ban is effectively enforced."
+      "African elephant populations have fallen from an estimated 12 million a century ago to some 400,000. In recent years, at least 20,000 elephants have been killed in Africa each year for their tusks. African forest elephants have been the worst hit. Their populations declined by 62% between 2002-2011 and they have lost 30% of their geographical range, with African savanna elephants declining by 30% between 2007-2014. This dramatic decline has continued and even accelerated with cumulative losses of up to 90% in some landscapes between 2011 and 2015. Today, the greatest threat to African elephants is wildlife crime, primarily poaching for the illegal ivory trade, while the greatest threat to Asian elephants is habitat loss, which results in human-elephant conflict. WWF has advocated for an end to commercial elephant ivory sales in the US and other major markets like China, Thailand, and Hong Kong as the most effective and efficient solution to end this illegal ivory trade."
     ],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/elephant/asian-elephant/sri-lankan-elephant/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/elephant/asian-elephant/bornean-elephant/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/elephant/african-elephant/african-forest-elephant/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/dolphin-and-porpoise/indus-river-dolphin/",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/dolphin-and-porpoise/ganges-river-dolphin/",
-    "threats": [],
-    "facts": {}
+    "why_they_matter": "Elephants help maintain forest and savanna ecosystems for other species and are integrally tied to rich biodiversity. Elephants are important ecosystem engineers. They make pathways in dense forested habitat that allow passage for other animals. An elephant footprint can also enable a micro-ecosystem that, when filled with water, can provide a home for tadpoles and other organisms.",
+    "related_species": [
+      "African Elephant",
+      "Asian Elephant",
+      "Bornean Elephant"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/directory?sort=extinction_status...desc",
-    "threats": [],
-    "facts": {
-      "1": ""
-    }
+    "name": "Species List"
   },
   {
     "url": "https://www.worldwildlife.org/species/directory?location=Angola&page=2",
-    "threats": [],
-    "facts": {
-      "2": ""
-    }
+    "name": "Species List"
   },
   {
     "url": "https://www.worldwildlife.org/species/directory?direction=desc&sort=extinction_status&ref=blog.iwonder.com",
-    "threats": [],
-    "facts": {
-      "1": ""
-    }
+    "name": "Species List"
   },
   {
     "url": "https://www.worldwildlife.org/species/directory?direction=desc&page=2&sort=extinction_statusIn",
-    "threats": [],
-    "facts": {
-      "2": ""
-    }
+    "name": "Species List"
   },
   {
-    "url": "https://www.worldwildlife.org/species/directory?direction=desc&page=2&sort=extinction_status",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/directory?direction=desc&page=2&sort=extinction_status"
   },
   {
     "url": "https://www.worldwildlife.org/species/directory?direction=desc",
-    "threats": [],
-    "facts": {
-      "1": ""
-    }
+    "name": "Species List"
   },
   {
-    "url": "https://www.worldwildlife.org/species/directory?sort=extinction_status&amp;direction=desc",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/directory?sort=extinction_status&amp;direction=desc"
   },
   {
     "url": "https://www.worldwildlife.org/species/chimpanzee/",
-    "threats": [],
-    "facts": {}
+    "name": "Chimpanzee"
+  },
+  {
+    "url": "https://www.worldwildlife.org/species/chimpanzee"
   },
   {
     "url": "https://www.worldwildlife.org/species/chimpanzee",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "http://worldwildlife.org/species/chimpanzee",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://www.worldwildlife.org/species/chimpanzee",
+    "name": "Chimpanzees",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/HERO_Chimpanzee_Uganda/hero_small/5ww9mfzphi_Medium_WW215321.jpg",
+    "status": "Endangered",
+    "population": "172,700 to 299,700",
+    "scientific_name": "Pan troglodytes",
+    "habitats": "Forests (moist and dry forests), Savannah Woodlands, and Grassland-Forest mosaics",
+    "places": "Congo Basin",
     "overview": "Like us, chimps are highly social animals, care for their offspring for years and can live to be over 50. In fact, chimpanzees are our closest cousins; we share about 98% of our genes.",
     "why_they_matter": "Despite our shared lineage, humans are pushing chimpanzees toward extinction. Chimps have already disappeared completely from four countries and are under tremendous pressure everywhere else they live.",
-    "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Disease",
-      "Disease also stalks chimpanzees: Ebola outbreaks have killed tens of thousands of great apes.",
-      "Illegal Wildlife Trade",
-      "Poaching is another prominent threat. Bushmeat has always been a primary food source in Central and West Africa, but in recent years poaching has become commercialized to satisfy the appetites of wealthy urban residents. Infant chimpanzees are frequently taken alive and sold in cities as pets."
-    ],
-    "facts": {}
+    "related_species": [
+      "Orangutan",
+      "Black Spider Monkey",
+      "Bonobo",
+      "Gorilla",
+      "Mountain Gorilla",
+      "African Elephant",
+      "African forest elephant",
+      "Western Lowland Gorilla",
+      "Eastern Lowland Gorilla"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/cheetah/",
-    "threats": [],
-    "facts": {}
+    "name": "Cheetah"
   },
   {
-    "url": "https://www.worldwildlife.org/species/cheetah",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/cheetah"
   },
   {
-    "url": "https://www.worldwildlife.org/species/bornean-orangutan",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/bornean-orangutan"
   },
   {
-    "url": "https://www.worldwildlife.org/species/bornean-elephant",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/bornean-elephant"
   },
   {
     "url": "https://www.worldwildlife.org/species/bonobo/",
-    "threats": [],
-    "facts": {}
+    "name": "Bonobo"
   },
   {
-    "url": "https://www.worldwildlife.org/species/bonobo",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/bonobo"
   },
   {
-    "url": "https://www.worldwildlife.org/species/bluefin-tuna?ref=ladridosybigotes.com",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/bluefin-tuna?ref=ladridosybigotes.com"
   },
   {
-    "url": "https://www.worldwildlife.org/species/bluefin-tuna",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/bluefin-tuna"
   },
   {
-    "url": "https://www.worldwildlife.org/species/bluefin-tuna/",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/bluefin-tuna/"
   },
   {
     "url": "https://www.worldwildlife.org/species/black-spider-monkey?ref=minimallyuseful.com",
+    "name": "Black Spider Monkey",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Black_Spider_Monkey_Hero_and_Circle_Image/hero_small/36empx8swi_Black_Spider_Monkey_8.1.2012_Hero_and_circle_HI_105023.jpg",
+    "status": "Vulnerable",
+    "scientific_name": "Ateles paniscus",
+    "weight": "15-19 pounds",
+    "length": "16-24 inches (body), 24-32 inches (tail)",
+    "habitats": "Tropical and subtropical moist broadleaf forests",
+    "places": "Amazon",
     "overview": "The black spider monkey—also known as the Guiana or red-faced spider monkey—is found in eastern South America in areas north of the Amazon River. They are one of seven species of spider monkeys found in Latin America and one of the largest primate species in South America.",
-    "why_they_matter": "The black spider monkey is an essential part of the tropical rainforest ecosystem. They play a key role in seed dispersal, allowing their forest environment to continue to grow and thrive.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
       "The destruction of tropical rainforests and threats from hunting pose the greatest challenge to the black spider monkey’s survival. Because they prefer mature tropical forests and seldom venture into disturbed habitats, these monkeys are especially vulnerable to the effects of forest fragmentation."
     ],
-    "facts": {}
+    "why_they_matter": "The black spider monkey is an essential part of the tropical rainforest ecosystem. They play a key role in seed dispersal, allowing their forest environment to continue to grow and thrive.",
+    "related_species": [
+      "Chimpanzee",
+      "Orangutan",
+      "Bonobo",
+      "Gorilla",
+      "Macaw",
+      "Jaguar",
+      "Poison Dart Frog",
+      "Amazon River Dolphin",
+      "Sloth"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/black-rhino/",
+    "name": "Black Rhino",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg/hero_small/5wj13dkb6y_Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg",
+    "status": "Critically Endangered",
+    "population": "Almost 6,500",
+    "scientific_name": "Diceros bicornis",
+    "weight": "1,760 -3,080 pounds",
+    "habitats": "Semi-Desert Savannah, Woodlands, Forests, Wetlands",
+    "places": "Namibia,Kavango Zambezi Transfrontier Conservation Area (KAZA),Southern Africa",
     "overview": "Population distribution of the Black Rhino (Click for larger view)",
     "why_they_matter": "Rhinos are one of the oldest groups of mammals, virtually living fossils. They play an important role in their habitats, and in countries like Namibia, rhinos are an important source of income from ecotourism. This is especially true for local communities in the arid northwestern parts of the country, which are home to Africa’s largest free-roaming black rhino population. Since black rhinos need large territories to survive, their protection benefits many other species, including elephants.",
-    "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Habitat and Population Density",
-      "Black rhinos are mostly solitary and territorial. High population density in some sites leads to lower breeding rates and increases the probability of disease transmission or injuries. With an increasing human footprint on traditional rhino habitat, it becomes more difficult to find suitable and well-protected locations within their former range to start new rhino populations through relocations of individuals from overpopulated sites.",
-      "Illegal Wildlife Trade",
-      "Of all the threats facing black rhinos, poaching is the deadliest. Black rhinos have two horns, which make them lucrative targets for the illegal trade in rhino horn. Due to intense poaching, 96% of the population was wiped out between 1970 and 1990. Political instability and wars have also greatly hampered rhino conservation work over the last decades in places like Angola, the Democratic Republic of the Congo, Rwanda, Somalia, and Sudan.",
-      "Black rhinos remain critically endangered because of demand for rhino horns on the illegal international market, mainly in Asia, where rhino horn is used for traditional medicine, and increasingly as a status symbol to display success and wealth. Between 2008 and 2021, around 11,000 rhinos were poached in Africa. A recent increase in poaching in South Africa threatens to erase our conservation success, reaching an apex in 2014 when 1,215 rhinos were poached. As a sign of hope, increasingly more experts in traditional Chinese medicine no longer support the use of rhino horn and promote herbal ingredients as a replacement."
-    ],
-    "facts": {}
+    "related_species": [
+      "Sumatran Rhino",
+      "White Rhino",
+      "Javan Rhino",
+      "Greater One-Horned Rhino",
+      "African savanna elephant",
+      "Rhino",
+      "Cheetah",
+      "Pangolin",
+      "African Wild Dog",
+      "Lion",
+      "African Elephant"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/black-rhino",
+    "name": "Black Rhino",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg/hero_small/5wj13dkb6y_Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg",
+    "status": "Critically Endangered",
+    "population": "Almost 6,500",
+    "scientific_name": "Diceros bicornis",
+    "weight": "1,760 -3,080 pounds",
+    "habitats": "Semi-Desert Savannah, Woodlands, Forests, Wetlands",
+    "places": "Namibia,Kavango Zambezi Transfrontier Conservation Area (KAZA),Southern Africa",
     "overview": "Population distribution of the Black Rhino (Click for larger view)",
     "why_they_matter": "Rhinos are one of the oldest groups of mammals, virtually living fossils. They play an important role in their habitats, and in countries like Namibia, rhinos are an important source of income from ecotourism. This is especially true for local communities in the arid northwestern parts of the country, which are home to Africa’s largest free-roaming black rhino population. Since black rhinos need large territories to survive, their protection benefits many other species, including elephants.",
-    "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "Habitat and Population Density",
-      "Black rhinos are mostly solitary and territorial. High population density in some sites leads to lower breeding rates and increases the probability of disease transmission or injuries. With an increasing human footprint on traditional rhino habitat, it becomes more difficult to find suitable and well-protected locations within their former range to start new rhino populations through relocations of individuals from overpopulated sites.",
-      "Illegal Wildlife Trade",
-      "Of all the threats facing black rhinos, poaching is the deadliest. Black rhinos have two horns, which make them lucrative targets for the illegal trade in rhino horn. Due to intense poaching, 96% of the population was wiped out between 1970 and 1990. Political instability and wars have also greatly hampered rhino conservation work over the last decades in places like Angola, the Democratic Republic of the Congo, Rwanda, Somalia, and Sudan.",
-      "Black rhinos remain critically endangered because of demand for rhino horns on the illegal international market, mainly in Asia, where rhino horn is used for traditional medicine, and increasingly as a status symbol to display success and wealth. Between 2008 and 2021, around 11,000 rhinos were poached in Africa. A recent increase in poaching in South Africa threatens to erase our conservation success, reaching an apex in 2014 when 1,215 rhinos were poached. As a sign of hope, increasingly more experts in traditional Chinese medicine no longer support the use of rhino horn and promote herbal ingredients as a replacement."
-    ],
-    "facts": {}
+    "related_species": [
+      "Sumatran Rhino",
+      "White Rhino",
+      "Javan Rhino",
+      "Greater One-Horned Rhino",
+      "African savanna elephant",
+      "Rhino",
+      "Cheetah",
+      "Pangolin",
+      "African Wild Dog",
+      "Lion",
+      "African Elephant"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/big-leaf-mahogany",
-    "threats": [],
-    "facts": {}
+    "name": "Page Not Found"
   },
   {
     "url": "https://www.worldwildlife.org/species/bactrian-camel",
-    "threats": [],
-    "facts": {}
+    "name": "Page Not Found"
   },
   {
     "url": "https://www.worldwildlife.org/species/arctic-fox/",
-    "threats": [],
-    "facts": {}
+    "name": "Arctic Foxes: Survival in a Changing Landscape"
   },
   {
-    "url": "https://www.worldwildlife.org/species/arctic-fox",
-    "threats": [],
-    "facts": {}
-  },
-  {
-    "url": "https://worldwildlife.org/species/arctic-fox",
-    "threats": [],
-    "facts": {}
+    "url": "https://www.worldwildlife.org/species/arctic-fox"
   },
   {
     "url": "https://www.worldwildlife.org/species/african-forest-elephant",
+    "name": "African Forest Elephant",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/Forest_Elephants_CAR/hero_small/6i37f2fr99__WW2144438.jpg",
+    "status": "Critically Endangered",
+    "weight": "2-5 tons",
+    "habitats": "dense tropical forests",
+    "places": "Congo Basin",
     "overview": "African forest elephants are the elusive cousin of the African savanna elephant. They inhabit the dense rainforests of west and central Africa. Their preference for dense forest habitat prohibits traditional counting methods such as visual identification. Their population is usually estimated through \"dung counts\"—an analysis on the ground of the density and distribution of the feces.",
-    "why_they_matter": "Forest elephants are found in dense forests and are essential for the germination of many rain forest trees. The seeds of these trees only germinate after passing through the elephant’s digestive tract.",
     "threats": [
-      "No reasonable doubt that the last individual has died",
-      "Known only to survive in cultivation, in captivity or as a naturalised population",
-      "Facing an extremely high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Facing a high risk of extinction in the Wild",
-      "Likely to qualify for a threatened category in the near future",
-      "Does not qualify for Critically Endangered, Endangered, Vulnerable, or Near Threatened",
-      "African elephants have less room to roam than ever before as expanding human populations convert land for agriculture, settlements and developments.",
       "Both African elephant species are threatened foremost by habitat loss and habitat fragmentation due to conversion of forests for agriculture, livestock farming, and human infrastructure. As a result, human-elephant conflict has increased.",
-      "Poaching for ivory is the most immediate threat for African forest elephants. Their populations declined by 62% between 2002 and 2011 and during that period, the species also lost 30% of its geographical range. As this downward trend continues, the African forest elephant was declared Critically Endangered by the IUCN in 2021.",
-      "Habitat Loss and Fragmentation",
-      "African elephants have less room to roam than ever before as expanding human populations convert land for agriculture, settlements and developments. The elephants’ range shrank from three million square miles in 1979 to just over one million square miles in 2007. Commercial logging, plantations for biofuels and extractive industries like logging and mining not only destroy habitat but also open access to remote elephant forests for poachers. Poverty, armed conflict and the displacement of people by civil conflict also add to habitat loss and fragmentation. All of these push elephants into smaller islands of protected areas and hinder elephants’ freedom to roam.",
-      "Illegal Wildlife Trade",
-      "Forest elephants are primarily threatened by poaching for bushmeat and ivory. Despite a globalCITESban on international sales of elephant ivory since 1990, tens of thousands of African elephants are killed annually to meet illicit demand for ivory products like carvings and jewelry. Consumer demand in Asia has created the main market for illegal ivory globally over the past few decades. While poaching in Africa and demand in Asia has declined somewhat since the peak of 2012, there remains a devasting level of poaching of elephant ivory for the markets that persist in Asia, Africa, and globally. The year 2016 saw the highest volume of illegal ivory seized since global records began in 1989, and it was estimated that Africa’s elephant population dropped by 111,000 elephants in the span of a decade prior to 2016, leaving only about 400,000 elephants remaining.",
-      "Facilitated by transnational organized crime networks, with links to drug, human, and weapons trafficking, illegal wildlife trade is a high-profit, low-risk crime that threatens wildlife populations, global security, human health, livelihoods of local communities, and legitimate business operations. Limited resources, combined with large areas of remote elephant habitats, make it difficult to monitor and protect elephant herds. At the same time, advances in technology and connectivity across the world have streamlined the communication, payment and transport of illegal wildlife along the trafficking chain from the wild to the buyer. With the cloak of anonymity and ease of connecting online, wildlife traffickers can identify interested buyers across the globe and complete transactions using everyday apps and services.",
-      "Human-Elephant Conflict",
-      "“Chili bombs,” a mixture of dried elephant dung and hot chili, are placed in crop fields to keep elephants away because they do not like the smell of chili.",
-      "As habitats contract and human populations expand, people and elephants are increasingly coming into contact with each other. Where farms border elephant habitat or cross elephant migration corridors, damage to crops and villages can become commonplace. This often leads to conflicts that elephants invariably lose. But loss of life can occur on both sides, as people may be trampled while trying to protect their livelihoods, and game guards often shoot \"problem\" elephants."
+      "Poaching for ivory is the most immediate threat for African forest elephants. Their populations declined by 62% between 2002 and 2011 and during that period, the species also lost 30% of its geographical range. As this downward trend continues, the African forest elephant was declared Critically Endangered by the IUCN in 2021."
     ],
-    "facts": {}
+    "why_they_matter": "Forest elephants are found in dense forests and are essential for the germination of many rain forest trees. The seeds of these trees only germinate after passing through the elephant’s digestive tract.",
+    "related_species": [
+      "African savanna elephant",
+      "Chimpanzee",
+      "Mountain Gorilla",
+      "African Elephant",
+      "Western Lowland Gorilla",
+      "Gorilla",
+      "Eastern Lowland Gorilla",
+      "Bonobo"
+    ]
   },
   {
     "url": "https://www.worldwildlife.org/species/african-elephant",
+    "name": "African Elephant",
+    "img_url": "https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_7.27.2012_hero_and_circle_HI_53941.jpg/hero_small/37c9k1643y_African_Elephant_7.27.2012_hero_and_circle_HI_53941.jpg",
+    "population": "Approximately 415,000 in the wild",
+    "scientific_name": "Loxodonta africana",
+    "weight": "6 tons",
+    "length": "19-24 feet",
+    "habitats": "Tropical and Subtropical Moist Broadleaf Forests, Flooded Grasslands and Savannahs, Miombo woodlands, Acacia savannahs",
+    "places": "Congo Basin,Southern Africa",
     "overview": "African elephants are the largest animals walking the Earth. Their herds wander through 37 countries in Africa. They are easily recognized by their trunk that is used for communication and handling objects. And their large ears allow them to radiate excess heat. Upper incisor teeth develop into tusks in African elephants and grow throughout their lifetime. There are two species of African elephants—the savanna (or bush) elephant and the forest elephant. Savanna elephants are larger than forest elephants, and their tusks curve outwards. In addition to being smaller, forest elephants are darker and their tusks are straighter and point downward. There are also differences in the size and shape of the skull and skeleton between the two species.",
-    "why_they_matter": "The presence of African elephants helps to maintain suitable habitats for many other species. In central African forests, up to 30 percent of tree species may require elephants to help with dispersal and germination. They play a pivotal role in shaping their habitat because of the enormous impact they have on factors ranging from fresh water to forest cover.",
     "threats": [
-      "Confiscated ivory.",
-      "Numbering three to five million in the last century, African elephant populations were severely reduced to its current levels because of hunting. In the 1980s, an estimated 100,000 elephants were killed each year and up to 80% of herds were lost in some regions. In recent years, growing demand for ivory, particularly from Asia, has led to a surge in poaching. Populations of elephants—especially in southern and eastern Africa—that once showed promising signs of recovery could be at risk due to the recent surge in poaching for the illegal ivory trade.",
-      "Illegal Wildlife Trade",
-      "The illegal demand for ivory is the biggest driver of elephant poaching. Despite a global CITES ban on international sales of ivory since 1990, tens of thousands of elephants are killed to meet a growing demand for ivory products in the Far East. Asia stands behind a steadily increasing trend in illegal ivory and there are still thriving domestic ivory markets in Africa. Limited resources combined with remote and inaccessible elephant habitats make it difficult for governments to monitor and protect elephant herds. The impacts of war and over-exploitation of natural resources often lead to increased poaching as elephants are also regarded as source of wild meat. 2011 saw the highest volume of illegal ivory seized since global records began in 1989.",
-      "Habitat Loss and Fragmentation",
-      "African elephants have less room to roam than ever before as expanding human populations convert land for agriculture, settlements and developments. The elephants’ range shrank from three million square miles in 1979 to just over one million square miles in 2007. Commercial logging, plantations for biofuels and extractive industries like logging and mining not only destroy habitat but also open access to remote elephant forests for poachers. Poverty, armed conflict and the displacement of people by civil conflict also add to habitat loss and fragmentation. All of these push elephants into smaller islands of protected areas and hinder elephants’ freedom to roam.",
-      "Human-Elephant Conflict",
-      "“Chili bombs,” a mixture of dried elephant dung and hot chili, are placed in crop fields to keep elephants away because they do not like the smell of chili.",
-      "As habitats contract and human populations expand, people and elephants are increasingly coming into contact with each other. Where farms border elephant habitat or cross elephant migration corridors, damage to crops and villages can become commonplace. This often leads to conflicts that elephants invariably lose. But loss of life can occur on both sides, as people may be trampled while trying to protect their livelihoods, and game guards often shoot \"problem\" elephants."
+      "Numbering three to five million in the last century, African elephant populations were severely reduced to its current levels because of hunting. In the 1980s, an estimated 100,000 elephants were killed each year and up to 80% of herds were lost in some regions. In recent years, growing demand for ivory, particularly from Asia, has led to a surge in poaching. Populations of elephants—especially in southern and eastern Africa—that once showed promising signs of recovery could be at risk due to the recent surge in poaching for the illegal ivory trade."
     ],
-    "facts": {}
+    "why_they_matter": "The presence of African elephants helps to maintain suitable habitats for many other species. In central African forests, up to 30 percent of tree species may require elephants to help with dispersal and germination. They play a pivotal role in shaping their habitat because of the enormous impact they have on factors ranging from fresh water to forest cover.",
+    "related_species": [
+      "African savanna elephant",
+      "African forest elephant",
+      "Asian Elephant",
+      "Bornean Elephant",
+      "Chimpanzee",
+      "Mountain Gorilla",
+      "African forest elephant",
+      "Western Lowland Gorilla",
+      "Gorilla",
+      "Eastern Lowland Gorilla",
+      "Bonobo",
+      "African Wild Dog",
+      "Black Rhino",
+      "African savanna elephant",
+      "Cheetah",
+      "Pangolin"
+    ]
   }
 ]

@@ -6,65 +6,123 @@ import json
 from warcio.archiveiterator import ArchiveIterator
 import re
 
-def safe_filename(url: str) -> str:
-    name = re.sub(r'^https?://', '', url)
-    # Replace any non-alphanumeric character with underscore
-    name = re.sub(r'[^a-zA-Z0-9_-]+', '_', name)
-    return name[:200] 
+# def safe_filename(url: str) -> str:
+#     name = re.sub(r'^https?://', '', url)
+ 
+#     name = re.sub(r'[^a-zA-Z0-9_-]+', '_', name)
+#     return name[:200] 
 
 
-def html_to_json(html_file):
-    with open(html_file, 'r', encoding='utf-8') as file:
-        soup = BeautifulSoup(file, 'html.parser')
-        json_data = json.dumps(soup, indent=2, ensure_ascii=False)
+# def html_to_json(html_file):
+#     with open(html_file, 'r', encoding='utf-8') as file:
+#         soup = BeautifulSoup(file, 'html.parser')
+#         json_data = json.dumps(soup, indent=2, ensure_ascii=False)
 
-    return json_data
+#     return json_data
 
 
 def extract_wwf_species_data(html_text, source_url):
+
+
+    # object:
+    # {
+    #     "url": source_url,
+     #    "img_url": url_of_image,
+    #     "name": "...",
+    #     "status": "...",
+    #     "population": "...",
+    #     "habitats": "...",
+    #     "places": "...",
+    #     "scientific_name": "...",
+    #     "weight": "...",
+    #     "length": "...",
+    #     "overview": "...",
+    #     "why_they_matter": "...",
+    #     "threats": [ "...", "...", "..."] || "...",
+    #     "related_species": [ "...", "...", "..."] || "...",
+    # }
+
+  
+
     soup = BeautifulSoup(html_text, "html.parser")
+
+    
+
     data = {"url": source_url}
 
-    # ---------- OVERVIEW ----------
-    overview_section = soup.find("div", id="overview")
-    if overview_section:
-        first_p = overview_section.find("p")
-        if first_p:
-            data["overview"] = first_p.get_text(strip=True)
-    
-    # ---------- WHY THEY MATTER ----------
-    why_section = soup.find("div", id="why-they-matter")
-    if why_section:
-        p = why_section.find("p")
-        if p:
-            data["why_they_matter"] = p.get_text(strip=True)
+    name = soup.find("title")
+    if name:
+        data["name"] = name.get_text(strip=True).split("|")[0].strip()
 
-    # ---------- THREATS ----------
-    threats_section = soup.find("div", id="threats")
-    threats_list = []
-    if threats_section:
-        # threats are usually inside <h3> or <p>
-        for item in threats_section.find_all(["h3", "p"]):
-            text = item.get_text(strip=True)
+
+    content = soup.find("div", id="content")
+
+    if content:
+        img = soup.find("div", id="content").find("img")
+        if img and img.has_attr("src"):
+            data["img_url"] = img["src"]
+
+
+    for li in soup.select("ul.list-data li, ul.list-spaced li"):
+        strong = li.find("strong", class_="hdr")
+        if not strong:
+            continue
+        
+        key = strong.get_text(strip=True).lower()
+
+      
+        div = strong.find_next_sibling("div")
+        if not div:
+            continue
+        
+        value = div.get_text(strip=True)
+
+        if "status" in key:
+            data["status"] = value
+        elif "population" in key:
+            data["population"] = value
+        elif "scientific name" in key:
+            data["scientific_name"] = value
+        elif "habitats" in key:
+            data["habitats"] = value
+        elif "places" in key:
+            data["places"] = value
+        elif "length" in key:
+            data["length"] = value
+        elif "weight" in key:
+            data["weight"] = value
+
+
+   
+    overview = soup.select_one("#overview p")
+    if overview:
+        data["overview"] = overview.get_text(strip=True)
+
+    threats = []
+    threat_div = soup.select_one("#threats .lead.wysiwyg")
+
+    if threat_div:
+        for p in threat_div.find_all("p"):
+            text = p.get_text(strip=True)
             if text:
-                threats_list.append(text)
-    data["threats"] = threats_list
+                threats.append(text)
 
-    # ---------- FACTS LIST ----------
-    facts_section = soup.find("div", id="content")
-    facts = {}
+    if threats:
+        data["threats"] = threats
 
-    if facts_section:
-        ul = facts_section.find("ul", class_="listing") or facts_section.find("ul")
-        if ul:
-            for li in ul.find_all("li"):
-                key_tag = li.find("strong")
-                if key_tag:
-                    key = key_tag.get_text(strip=True).rstrip(":")
-                    value = key_tag.next_sibling.strip() if key_tag.next_sibling else ""
-                    facts[key] = value
 
-    data["facts"] = facts
+    why = soup.select_one("#why-they-matter p")
+    if why:
+        data["why_they_matter"] = why.get_text(strip=True)
+
+    related = []
+    for a in soup.select("div.carousel a strong.name"):
+        related.append(a.get_text(strip=True))
+
+    if related:
+        data["related_species"] = related
+
+    
 
     return data
 
@@ -82,8 +140,16 @@ class WwfSpider(scrapy.Spider):
 
 
     def parse_index(self, response):
+
+        pattern = re.compile(r"^https?://www\.worldwildlife\.org/species/[^/]+/?$")
+
+
         for line in response.text.splitlines():
             data = json.loads(line)
+
+            if not pattern.match(data["url"]):
+                continue
+
             warc_url = f"https://data.commoncrawl.org/{data['filename']}"
             meta = {
                 "offset": int(data["offset"]),
@@ -116,6 +182,7 @@ class WwfSpider(scrapy.Spider):
                 html_bytes = record.content_stream().read()
                 html_text = html_bytes.decode("utf-8", errors="ignore")
 
+               
                 extracted = extract_wwf_species_data(html_text, response.meta["original_url"])
 
                 self.collected.append(extracted)
