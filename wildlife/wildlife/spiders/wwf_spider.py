@@ -5,6 +5,7 @@ import scrapy
 import json
 from warcio.archiveiterator import ArchiveIterator
 import re
+from wildlife.utils.text_cleaner import clean_text
 
 # def safe_filename(url: str) -> str:
 #     name = re.sub(r'^https?://', '', url)
@@ -96,7 +97,7 @@ def extract_wwf_species_data(html_text, source_url):
    
     overview = soup.select_one("#overview p")
     if overview:
-        data["overview"] = overview.get_text(strip=True)
+        data["overview"] = clean_text(overview.get_text(strip=True))
 
     threats = []
     threat_div = soup.select_one("#threats .lead.wysiwyg")
@@ -105,7 +106,7 @@ def extract_wwf_species_data(html_text, source_url):
         for p in threat_div.find_all("p"):
             text = p.get_text(strip=True)
             if text:
-                threats.append(text)
+                threats.append(clean_text(text))
 
     if threats:
         data["threats"] = threats
@@ -113,7 +114,7 @@ def extract_wwf_species_data(html_text, source_url):
 
     why = soup.select_one("#why-they-matter p")
     if why:
-        data["why_they_matter"] = why.get_text(strip=True)
+        data["why_they_matter"] = clean_text(why.get_text(strip=True))
 
     related = []
     for a in soup.select("div.carousel a strong.name"):
@@ -121,7 +122,6 @@ def extract_wwf_species_data(html_text, source_url):
 
     if related:
         data["related_species"] = related
-
     
 
     return data
@@ -131,6 +131,7 @@ class WwfSpider(scrapy.Spider):
 
     def __init__(self):
         self.collected = []
+        self.names_seen = []
    
 
     async def start(self):
@@ -185,11 +186,23 @@ class WwfSpider(scrapy.Spider):
                
                 extracted = extract_wwf_species_data(html_text, response.meta["original_url"])
 
+                if not extracted.get("name") or "Page Not Found" in extracted.get("name") or "Sorry" in extracted.get("name"):
+                    return
+                
+                
+                # remove duplicates
+                if extracted["name"].lower() in self.names_seen:
+                    return
+                
+                self.names_seen.append(extracted.get("name").lower())
+
                 self.collected.append(extracted)
 
-                json_filename = "ww-all_wwf_species.json"
-                with open(json_filename, "w", encoding="utf-8") as f:
-                    json.dump(self.collected, f, indent=2, ensure_ascii=False)
+
+                yield extracted
+                # json_filename = "ww-all_wwf_species.json"
+                # with open(json_filename, "w", encoding="utf-8") as f:
+                #     json.dump(self.collected, f, indent=2, ensure_ascii=False)
 
                 
 
