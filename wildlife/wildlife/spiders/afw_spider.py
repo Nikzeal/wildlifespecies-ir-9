@@ -112,6 +112,18 @@ def extract_awf_species_data(html_text, source_url):
 
     data["facts"] = facts
 
+    # ---------- IMAGE URL ----------
+    picture = soup.find("picture")
+    if picture:
+        first_source = picture.find("source")
+        if first_source and first_source.get("srcset"):
+            # take only the first URL from the srcset
+            raw_srcset = first_source["srcset"].strip()
+            first_url = raw_srcset.split()[0]
+
+            # prepend base URL
+            data["image_url"] = "https://www.awf.org" + first_url
+
     return data
 
 class AwfSpider(scrapy.Spider):
