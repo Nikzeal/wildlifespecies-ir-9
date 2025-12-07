@@ -1,6 +1,10 @@
 import requests
+from pyscript import document, when
+
 
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
+
+
 
 def search(query, rows=10):
     params = {
@@ -12,8 +16,36 @@ def search(query, rows=10):
     }
 
     resp = requests.get(SOLR_URL, params=params).json()
-    print(resp)
+    
     return resp["response"]["docs"]
+
+
+
+searchbar = document.querySelector("#search")
+
+@when(searchbar, "search")
+def on_search(event):
+    query = searchbar.value
+    results = search(query)
+    resultsContainer = document.querySelector("#results")
+    resultsContainer.innerHTML = ""
+    for r in results:
+        item = document.createElement("div")
+        item.className = "result-item"
+        item.innerHTML = f"""
+            <h3><a href="{r.get('url')}" target="_blank">{r.get('name')}</a></h3>
+            <p><em>{r.get('scientific_name')}</em></p>
+        """
+        resultsContainer.appendChild(item)
+
+
+
+
+
+
+
+
+
 
 if __name__ == "__main__":
     while True:
@@ -27,3 +59,5 @@ if __name__ == "__main__":
             print("•", r.get("name"), "-", r.get("scientific_name"))
             print(" ", r.get("url"))
         print()
+
+
