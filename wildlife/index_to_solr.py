@@ -8,7 +8,6 @@ def index_file(path, source):
     with open(path, "r", encoding="utf-8") as f:
         raw_items = json.load(f)
 
-    # normalize for Solr schema
     for item in raw_items:
         item["id"] = item.get("url")
         item["source"] = source
