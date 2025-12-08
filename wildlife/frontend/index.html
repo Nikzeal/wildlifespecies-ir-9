@@ -8,14 +8,20 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.10.1/core.js"></script>
+    <py-config>
+        packages = ["requests"]
+    </py-config>
 </head>
 
 <body>
+    
+
     <div class="container">
         <h1>Wildlife Search</h1>
 
         <div class="search-box">
-            <input id="search" type="search" placeholder="Search animals..." />
+            <input id="search" type="search" placeholder="Search animals..." >
+            <button id="search-btn">search</button>
         </div>
 
         <div id="results">
@@ -33,7 +39,7 @@
         </div>
         
     </div>
-    <py-script src="search_cli.py" />
+   <py-script src="search_cli.py"></py-script>
 </body>
 
 </html>
