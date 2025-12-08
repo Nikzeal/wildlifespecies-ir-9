@@ -1,0 +1,44 @@
+# FIELS TAKEN FROM JSON
+
+<field name="about" type="text" indexed="true" stored="true"/>
+  <field name="conservation_status" type="text_general" indexed="true"/>
+  <field name="did_you_know" type="text" indexed="true"/>
+  <field name="diet" type="string" indexed="true" stored="true"/>
+  <field name="distribution" type="text_general" indexed="true"/>
+  <field name="facts" type="text" multiValued="true" indexed="true" stored="true"/>
+  <field name="gestation" type="string" indexed="true" stored="true"/>
+  <field name="habitats" type="text_general" indexed="true" stored="true"/>
+  <field name="height" type="string" indexed="true" stored="true"/>
+  <field name="how_to_identify" type="text" indexed="true"/>
+  <field name="id" type="string" indexed="true" required="true" stored="true"/>
+  <field name="image_url" type="string" indexed="true" stored="true"/>
+  <field name="img_url" type="text_general"/>
+  <field name="length" type="text_general" indexed="true" stored="true"/>
+  <field name="lifespan" type="string" indexed="true" stored="true"/>
+  <field name="location" type="text_general" indexed="true" stored="true"/>
+  <field name="name" type="text_general" indexed="true" stored="true"/>
+  <field name="overview" type="text" indexed="true" stored="true"/>
+  <field name="places" type="text_general" indexed="true" stored="true"/>
+  <field name="population" type="text_general" indexed="true" stored="true"/>
+  <field name="predators" type="text_general" indexed="true" stored="true"/>
+  <field name="related_species" type="text_general" indexed="true" stored="true"/>
+  <field name="scientific_name" type="text_general" indexed="true" stored="true"/>
+  <field name="source" type="string" indexed="true" stored="true"/>
+  <field name="species_name" type="text_general" indexed="true" stored="true"/>
+  <field name="statistics" type="text_general" indexed="true" stored="true"/>
+  <field name="status" type="text" indexed="true" stored="true"/>
+  <field name="summary" type="text" indexed="true" stored="true"/>
+  <field name="threats" type="text" multiValued="true" indexed="true" stored="true"/>
+  <field name="url" type="string" indexed="true" stored="true"/>
+  <field name="weight" type="string" indexed="true" stored="true"/>
+  <field name="why_they_matter" type="text" indexed="true" stored="true"/>
+
+# TO ADD TO MAKE SYNONYMS WORK
+
+<fieldType name="text" class="solr.TextField">
+    <analyzer>
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.SynonymFilterFactory" expand="true" ignoreCase="true" synonyms="synonyms.txt"/>
+      <filter name="lowercase"/>
+    </analyzer>
+  </fieldType>

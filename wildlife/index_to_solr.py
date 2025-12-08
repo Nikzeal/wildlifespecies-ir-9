@@ -18,3 +18,5 @@ def index_file(path, source):
 
 if __name__ == "__main__":
     index_file("wt-all_wildlifetrusts_animals.json", "WT")
+    index_file("awf.json", "AWF")
+    index_file("ww-all_wwf_species.json", "WWF")

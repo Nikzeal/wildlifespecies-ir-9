@@ -1,0 +1,139 @@
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#-----------------------------------------------------------------------
+#some test synonym mappings unlikely to appear in real input text
+aaafoo => aaabar
+bbbfoo => bbbfoo bbbbar
+cccfoo => cccbar cccbaz
+fooaaa,baraaa,bazaaa
+
+# Some synonym groups specific to this example
+GB,gib,gigabyte,gigabytes
+MB,mib,megabyte,megabytes
+Television, Televisions, TV, TVs
+#notice we use "gib" instead of "GiB" so any WordDelimiterGraphFilter coming
+#after us won't split it into two words.
+
+# Synonym mappings can be used for spelling correction too
+pixima => pixma
+
+fish,marine animal,aquatic animal
+shark,whaleshark,greatwhite,tigershark,hammerhead
+dolphin,bottlenosedolphin,orca,killerwhale
+whale,bluewhale,humpbackwhale,spermwhale
+seal,sealion,furseal,walrus
+turtle,seaturtle,leatherback,greenturtle
+stingray,mantaray,eagleray
+octopus,giantoctopus,commonoctopus
+squid,giantsquid,colossalsquid
+jellyfish,boxjellyfish,moonjellyfish
+crab,bluecrab,dungenesscrab
+lobster,homarusamericanus,spinylobster
+eel,congereel,morayeel
+biggest,largest,huge,enormous,giant,massive
+smallest,tiny,miniature,little,minuscule
+fastest,quick,rapid,speedy,swift
+slowest,sluggish,lethargic,gradual
+predator,hunter,carnivore,apexpredator
+prey,hunted,herbivore,foodsource,victim
+bird,seabird,albatross,gull,puffin,pelican,tern
+mammal,marinemammal,aquaticmammal,terrestrialmammal
+reptile,seareptile,aquaticreptile,terrestrialreptile
+amphibian,frog,toad,newt,salamander
+invertebrate,jellyfish,squid,octopus,crab,lobster,clam,starfish
+plant,seagrass,algae,kelp,seaweed,phytoplankton
+coral,coralreef,hardcoral,softcoral,polyp
+ocean,sea,marineenvironment,deepsea,coast,shore
+freshwater,river,lake,pond,stream,wetland
+endangered,threatened,vulnerable,criticallyendangered,rare
+extinct,extinctspecies,lostspecies,dodo,passengerpigeon
+migration,traveling,seasonalmovement,journey,transit
+habitat,environment,ecosystem,biome,territory
+predators,hunters,apexpredator,carnivores
+diet,food,feeding,carnivorous,herbivorous,omnivorous,foraging
+size,length,height,weight,span,dimension
+lifespan,longevity,lifeexpectancy,age
+population,numbers,abundance,community
+conservation,protection,preservation,safeguarding,management
+nocturnal,nightactive,crepuscular
+diurnal,dayactive
+camouflage,concealment,hiding,blend
+venomous,poisonous,toxic,dangerous
+migrationpattern,movementpattern
+breeding,spawning,reproduction
+nesting,burrowing,hatching
+climate,temperature,weather,environmentalconditions
+penguin,emperorpenguin,adeliepenguin,kingpenguin
+seal,harpseal,leopardseal,ringedseal
+otter,seaotter,riverotter,giantotter
+manatee,dugong,sea cow
+narwhal,beluga,white whale
+stingray,bluespottedstingray,devilfish
+crustacean,shrimp,prawn,crab,lobster,krill
+mollusk,clam,oyster,scallop,octopus,squid
+plankton,phytoplankton,zooplankton
+reef,coralreef,fringingreef,barrierreef,atoll
+kelpforest,kelpbed,giantkelp,macroalgae
+mangrove,mangroveforest
+estuary,tidalzone,saltmarsh
+savanna,grassland,prairie,steppe
+forest,jungle,woodland,rainforest,temperateforest
+desert,aridland,sandyland
+tundra,arctic,alpine
+wetland,swamp,marsh,bog
+predatory,aggressive,apex
+herbivore,plant eater,grazer
+omnivore,mixed diet,opportunistic feeder
+carnivore,meat eater,hunter
+forager,scavenger,gatherer
+nocturnal,nightactive,moonactive
+diurnal,dayactive,sunactive
+crepuscular,dawnactive,duskactive
+territorial,dominant,aggressive
+migratory,longdistance,seasonal
+breeding,reproducing,spawning
+nesting,egglaying,denning
+camouflage,concealment,blending,hiding
+venomous,poisonous,toxic,dangerous
+aquatic,marine,waterdwelling
+terrestrial,landdwelling,grounddwelling
+arboreal,tree dwelling,treeclimbing
+flying,gliding,winged,soaring
+swimming,diving,paddling
+climbing,scaling,gripping
+digging,burrowing,excavating
+social,gregarious,pack,livingingroup
+solitary,lone,independent
+juvenile,young,offspring,fry
+adult,mature,fullygrown
+endemic,restricted,native,local
+invasive,alien,non-native
+rare,uncommon,scarce
+common,widespread,abundant
+extinct,vanished,dead
+threatened,at risk,vulnerable
+criticallyendangered,imperiled,extremely rare
+conservation,protection,management,preservation
+ecosystem,biodiversity,habitat,community
+climate,temperature,weather,environment
+pollution,contamination,toxicity
+overfishing,fishingpressure,exploitation
+deforestation,habitatloss,logging
+poaching,illegalhunting,overhunting
+reintroduction,restoration,rehabilitation
+tracking,monitoring,tagging
+observation,camera trap,fieldstudy
+behavior,activity,habit,pattern
+communication,signals,calls,vocalization
+vocalization,soundcall,chirping,barking
+territory,range,domain,home

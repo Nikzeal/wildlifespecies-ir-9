@@ -66,7 +66,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         about_text = about_div.get_text(strip=True)
-        data["about"] = clean_text(about_text)
+        data["overview"] = clean_text(about_text)
 
     # ---------- HOW TO IDENTIFY ----------
     id_div = soup.find("div", class_=lambda c: c and "species-identify" in c)
@@ -97,6 +97,26 @@ def extract_wt_species_data(html_text, source_url):
 
         dyk_text = dyk_div.get_text(strip=True)
         data["did_you_know"] = clean_text(dyk_text)
+
+    # ---------- IMAGE URL ----------
+    img_url = None
+
+    header = soup.find("div", class_="node__header--species")
+    if header:
+        picture = header.find("picture")
+        if picture:
+            first_source = picture.find("source")
+            if first_source and first_source.get("srcset"):
+                raw_src = first_source["srcset"].split(" ")[0]
+                img_url = "https://www.wildlifetrusts.org" + raw_src
+
+            # fallback to <img>
+            if not img_url:
+                img_tag = picture.find("img")
+                if img_tag and img_tag.get("src"):
+                    img_url = "https://www.wildlifetrusts.org" + img_tag["src"]
+
+    data["image_url"] = img_url
 
     return data
 
