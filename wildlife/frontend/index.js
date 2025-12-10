@@ -73,3 +73,30 @@ function initDualSlider(wrapper) {
 }
 
 document.querySelectorAll(".range-wrapper").forEach(initDualSlider);
+
+const toggleBtn = document.querySelector(".filter-toggle");
+const collapsible = document.querySelector(".filters-collapsible");
+
+toggleBtn.addEventListener("click", () => {
+    collapsible.classList.toggle("open");
+    toggleBtn.textContent = collapsible.classList.contains("open")
+        ? "Filters ▲"
+        : "Filters ▼";
+});
+
+document.getElementById("reset-filters").addEventListener("click", () => {
+    document.querySelectorAll(".range-wrapper").forEach(wrapper => {
+        const minLimit = parseInt(wrapper.dataset.min);
+        const maxLimit = parseInt(wrapper.dataset.max);
+
+        const minInput = wrapper.querySelector(".min-input");
+        const maxInput = wrapper.querySelector(".max-input");
+
+        minInput.value = minLimit;
+        maxInput.value = maxLimit;
+
+        minInput.dispatchEvent(new Event("input"));
+        maxInput.dispatchEvent(new Event("input"));
+    });
+});
+

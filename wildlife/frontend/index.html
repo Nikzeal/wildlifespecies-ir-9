@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wildlife Search</title>
 
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.10.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.10.1/core.js"></script>
     <py-config>
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    
+
 
     <div class="container">
         <h1>Wildlife Search</h1>
@@ -25,70 +25,84 @@
             <button id="search-btn">search</button>
         </div>
 
-        <div class="filters">
+        <button class="filter-toggle">Filters ▼</button>
 
-            <div class="filter">
-                <label>Weight (kg)</label>
+        <div class="filters-collapsible">
 
-                <div class="range-wrapper" data-min="0" data-max="500" id="weight-slider">
-                    <div class="dual-inputs">
-                        <input type="number" class="min-input" value="0">
-                        <input type="number" class="max-input" value="500">
+            <div class="filters-inner">
+                <div class="filters">
+
+                    <div class="filter">
+                        <label>Weight (kg)</label>
+
+                        <div class="range-wrapper" data-min="0" data-max="500" id="weight-slider">
+                            <div class="dual-inputs">
+                                <input type="number" class="min-input" value="0">
+                                <input type="number" class="max-input" value="500">
+                            </div>
+
+                            <div class="track">
+                                <div class="range-highlight"></div>
+                                <div class="handle handle-min"></div>
+                                <div class="handle handle-max"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="track">
-                        <div class="range-highlight"></div>
-                        <div class="handle handle-min"></div>
-                        <div class="handle handle-max"></div>
+                    <div class="filter">
+                        <label>Size (cm)</label>
+
+                        <div class="range-wrapper" data-min="0" data-max="500" id="size-slider">
+                            <div class="dual-inputs">
+                                <input type="number" class="min-input" value="0">
+                                <input type="number" class="max-input" value="500">
+                            </div>
+
+                            <div class="track">
+                                <div class="range-highlight"></div>
+                                <div class="handle handle-min"></div>
+                                <div class="handle handle-max"></div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="filter">
+                        <label>Population</label>
+
+                        <div class="range-wrapper" data-min="0" data-max="1000000" id="population-slider">
+                            <div class="dual-inputs">
+                                <input type="number" class="min-input" value="0">
+                                <input type="number" class="max-input" value="1000000">
+                            </div>
+
+                            <div class="track">
+                                <div class="range-highlight"></div>
+                                <div class="handle handle-min"></div>
+                                <div class="handle handle-max"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="reset-filters">Reset Filters</button>
                 </div>
+
             </div>
-
-            <div class="filter">
-                <label>Size (cm)</label>
-
-                <div class="range-wrapper" data-min="0" data-max="500" id="size-slider">
-                    <div class="dual-inputs">
-                        <input type="number" class="min-input" value="0">
-                        <input type="number" class="max-input" value="500">
-                    </div>
-
-                    <div class="track">
-                        <div class="range-highlight"></div>
-                        <div class="handle handle-min"></div>
-                        <div class="handle handle-max"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter">
-                <label>Population</label>
-
-                <div class="range-wrapper" data-min="0" data-max="1000000" id="population-slider">
-                    <div class="dual-inputs">
-                        <input type="number" class="min-input" value="0">
-                        <input type="number" class="max-input" value="1000000">
-                    </div>
-
-                    <div class="track">
-                        <div class="range-highlight"></div>
-                        <div class="handle handle-min"></div>
-                        <div class="handle handle-max"></div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+
 
         <div id="results">
             <div class="item">
-                <img src="https://www.wildlifetrusts.org/sites/default/files/styles/spotlight_double_desk_wide/public/2018-03/wildlifetrusts_40539155522.jpg.webp?h=2a78e284&itok=23S7azCi">
+                <img
+                    src="https://www.wildlifetrusts.org/sites/default/files/styles/spotlight_double_desk_wide/public/2018-03/wildlifetrusts_40539155522.jpg.webp?h=2a78e284&itok=23S7azCi">
                 <div class="text">
-                    <a href="https://www.wildlifetrusts.org/wildlife-explorer/marine/jellyfish/lions-mane-jellyfish" target="_blank">
+                    <a href="https://www.wildlifetrusts.org/wildlife-explorer/marine/jellyfish/lions-mane-jellyfish"
+                        target="_blank">
                         Lion's mane jellyfish - Cyanea capillata
                     </a>
                     <p class="overview">
-                        Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... Sample overview text... 
+                        Sample overview text... Sample overview text... Sample overview text... Sample overview text...
+                        Sample overview text... Sample overview text... Sample overview text... Sample overview text...
+                        Sample overview text... Sample overview text... Sample overview text... Sample overview text...
                     </p>
                 </div>
             </div>
@@ -96,7 +110,7 @@
 
     </div>
 
-    <py-script src="search_cli.py"></py-script>
+    <!-- <py-script src="search_cli.py"></py-script> -->
 
     <script src="index.js"></script>
 
