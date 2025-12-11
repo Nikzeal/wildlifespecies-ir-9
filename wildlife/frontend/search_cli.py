@@ -2,11 +2,7 @@ import requests
 from pyscript import document, when
 from js import console
 
-
-
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
-
-
 
 def search(query, rows=10):
    
@@ -20,13 +16,13 @@ def search(query, rows=10):
         "mm": "2<75%",
         "tie": "0.1",
         "rows": rows,
+        "fl": "id,name,scientific_name,image_url,url,dirty_overview,overview,summary",
         "wt": "json"
     }
    
     resp = requests.get(SOLR_URL, params=params).json()
     
     return resp["response"]["docs"]
-
 
 
 
@@ -43,6 +39,7 @@ def on_search_click(event):
     results = search(query)
     resultsContainer = document.querySelector("#results")
     resultsContainer.innerHTML = ""
+    console.log(f"Returned result for: {query} is \n{results}")
     for r in results:
         item = document.createElement("div")
         item.className = "item"
@@ -52,12 +49,9 @@ def on_search_click(event):
 
 
                 <a href="{r.get('url')}" target="_blank">{r.get('name')} - {r.get('scientific_name')}</a>
-                <p class="overview">{r.get('summary')}</p>
+                <p class="overview">{r.get('dirty_overview')}</p>
 
             </div>
         """
 
         resultsContainer.appendChild(item)
-
-
-

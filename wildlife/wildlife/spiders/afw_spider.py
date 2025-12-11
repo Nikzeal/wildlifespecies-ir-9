@@ -33,13 +33,14 @@ def extract_awf_species_data(html_text, source_url):
     if name_title:
         name = name_title.find("span", class_="field-content")
         if name:
-            data["species_name"] = name.get_text(strip=True)
+            data["name"] = name.get_text(strip=True)
     
     # ---------- OVERVIEW ----------
     overview_section = soup.find("div", id="overview")
     if overview_section:
         first_p = overview_section.find("p")
         if first_p:
+            data["dirty_overview"] = first_p.get_text(strip=True)
             data["overview"] = clean_text(first_p.get_text(strip=True))
 
         facts = overview_section.find_all("div", class_="paragraph--type--facts")
@@ -129,6 +130,9 @@ def extract_awf_species_data(html_text, source_url):
 class AwfSpider(scrapy.Spider):
     name = "awf"
 
+    def __init__(self):
+        self.collected = []
+
     async def start(self):
 
         index_url = "http://index.commoncrawl.org/CC-MAIN-2024-10-index?url=https://www.awf.org/wildlife-conservation/*&output=json"
@@ -176,7 +180,7 @@ class AwfSpider(scrapy.Spider):
                 )
 
                  # skip missing names
-                if not extracted.get("species_name"):
+                if not extracted.get("name"):
                     return
 
                 # force https
@@ -187,5 +191,10 @@ class AwfSpider(scrapy.Spider):
                 if extracted["url"].startswith("https://www."):
                     continue
 
+                self.collected.append(extracted)
+
                 yield extracted
+                json_filename = "awf.json"
+                with open(json_filename, "w", encoding="utf-8") as f:
+                    json.dump(self.collected, f, indent=2, ensure_ascii=False)
         
