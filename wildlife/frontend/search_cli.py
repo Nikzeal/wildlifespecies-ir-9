@@ -49,7 +49,7 @@ def on_search_click(event):
 
 
                 <a href="{r.get('url')}" target="_blank">{r.get('name')} - {r.get('scientific_name')}</a>
-                <p class="overview">{r.get('dirty_overview')}</p>
+                <p class="overview">{r.get('dirty_overview')}</p> 
 
             </div>
         """
