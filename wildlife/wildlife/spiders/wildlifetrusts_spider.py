@@ -66,6 +66,7 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         about_text = about_div.get_text(strip=True)
+        data["dirty_overview"] = about_text
         data["overview"] = clean_text(about_text)
 
     # ---------- HOW TO IDENTIFY ----------

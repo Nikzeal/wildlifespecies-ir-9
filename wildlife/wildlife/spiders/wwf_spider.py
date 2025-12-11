@@ -61,7 +61,7 @@ def extract_wwf_species_data(html_text, source_url):
     if content:
         img = soup.find("div", id="content").find("img")
         if img and img.has_attr("src"):
-            data["img_url"] = img["src"]
+            data["image_url"] = img["src"]
 
 
     for li in soup.select("ul.list-data li, ul.list-spaced li"):
@@ -97,6 +97,7 @@ def extract_wwf_species_data(html_text, source_url):
    
     overview = soup.select_one("#overview p")
     if overview:
+        data["dirty_overview"] = overview.get_text(strip=True)
         data["overview"] = clean_text(overview.get_text(strip=True))
 
     threats = []
@@ -200,9 +201,9 @@ class WwfSpider(scrapy.Spider):
 
 
                 yield extracted
-                # json_filename = "ww-all_wwf_species.json"
-                # with open(json_filename, "w", encoding="utf-8") as f:
-                #     json.dump(self.collected, f, indent=2, ensure_ascii=False)
+                json_filename = "ww-all_wwf_species.json"
+                with open(json_filename, "w", encoding="utf-8") as f:
+                    json.dump(self.collected, f, indent=2, ensure_ascii=False)
 
                 
 
