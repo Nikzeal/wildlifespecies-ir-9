@@ -51,12 +51,13 @@ input[type="search"]:focus {
 
 .item {
     display: flex;
+    flex-direction: column;
     gap: 14px;
     align-items: flex-start;
     padding: 14px;
 }
 
-.item img {
+.animal-img {
     width: 90px;
     height: 90px;
     object-fit: cover;
@@ -247,4 +248,24 @@ input[type="search"]:focus {
 .filters-inner {
     padding: 12px;
     padding-top: 18px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+.logo-img {
+    height: 30px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 8px;
 }
