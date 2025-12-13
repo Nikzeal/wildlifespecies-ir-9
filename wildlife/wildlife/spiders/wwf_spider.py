@@ -22,6 +22,72 @@ from wildlife.utils.type_detector import detect_type
 
 #     return json_data
 
+def extract_numbers(text):
+    """
+    Extract all numeric values from a string.
+    Returns list of floats.
+    """
+    if not text:
+        return []
+    return [float(x) for x in re.findall(r"\d+(?:\.\d+)?", text)]
+
+
+def pounds_to_kg(lb):
+    return lb * 0.453592
+
+
+def tons_to_kg(tons):
+    return tons * 1000.0
+
+
+def feet_to_cm(ft):
+    return ft * 30.48
+
+
+def inches_to_cm(inch):
+    return inch * 2.54
+
+def parse_weight_kg(raw):
+    """
+    Returns [min, max] in kg or single float.
+    """
+    nums = extract_numbers(raw.lower())
+    if not nums:
+        return None
+
+    if "ton" in raw.lower():
+        nums = [tons_to_kg(n) for n in nums]
+    elif "pound" in raw.lower() or "lb" in raw.lower():
+        nums = [pounds_to_kg(n) for n in nums]
+    elif "kg" in raw.lower():
+        pass  # already kg
+
+    return nums if len(nums) > 1 else nums[0]
+
+
+def parse_length_cm(raw):
+    """
+    Handles feet, inches, mixed ranges.
+    """
+    raw_l = raw.lower()
+    nums = extract_numbers(raw_l)
+    if not nums:
+        return None
+
+    values_cm = []
+
+    if "foot" in raw_l or "ft" in raw_l:
+        for n in nums:
+            values_cm.append(feet_to_cm(n))
+
+    elif "inch" in raw_l:
+        for n in nums:
+            values_cm.append(inches_to_cm(n))
+
+    elif "cm" in raw_l:
+        values_cm = nums
+
+    return values_cm if len(values_cm) > 1 else values_cm[0]
 
 def extract_wwf_species_data(html_text, source_url):
 
@@ -82,7 +148,7 @@ def extract_wwf_species_data(html_text, source_url):
         if "status" in key:
             data["status"] = value
         elif "population" in key:
-            data["population"] = value
+            data["raw_population"] = value
         elif "scientific name" in key:
             data["scientific_name"] = value
         elif "habitats" in key:
@@ -90,9 +156,9 @@ def extract_wwf_species_data(html_text, source_url):
         elif "places" in key:
             data["places"] = value
         elif "length" in key:
-            data["length"] = value
+            data["raw_length"] = value
         elif "weight" in key:
-            data["weight"] = value
+            data["raw_weight"] = value
 
 
    
@@ -126,7 +192,26 @@ def extract_wwf_species_data(html_text, source_url):
 
     if related:
         data["related_species"] = related
-    
+
+    statistics = {}
+
+    if "weight" in data:
+        parsed_weight = parse_weight_kg(data["weight"])
+        if parsed_weight:
+            statistics["weight_kg"] = parsed_weight
+
+    if "length" in data:
+        parsed_length = parse_length_cm(data["length"])
+        if parsed_length:
+            statistics["length_cm"] = parsed_length
+
+    if "lifespan" in data:
+        nums = extract_numbers(data["lifespan"])
+        if nums:
+            statistics["lifespan_year"] = nums if len(nums) > 1 else nums[0]
+
+    if statistics:
+        data["statistics"] = statistics
 
     return data
 
