@@ -32,6 +32,16 @@ searchbtn = document.querySelector("#search-btn")
 
 @when("click", searchbtn)
 def on_search_click(event):
+
+    filters = document.querySelectorAll(".filter")
+    for f in filters:
+        filter_name = f.querySelector("label").innerText
+        filter_value_min = f.querySelector(".min-input").value
+        filter_value_max = f.querySelector(".max-input").value 
+        console.log(f"Filter applied: {filter_name} : {filter_value_min} - {filter_value_max}")
+    
+
+
     
     query = searchbar.value
     console.log(f"Searching for: {query}")
@@ -39,7 +49,7 @@ def on_search_click(event):
     results = search(query)
     resultsContainer = document.querySelector("#results")
     resultsContainer.innerHTML = ""
-    console.log(f"Returned result for: {query} is \n{results}")
+    # console.log(f"Returned result for: {query} is \n{results}")
     for r in results:
         item = document.createElement("div")
         item.className = "item"

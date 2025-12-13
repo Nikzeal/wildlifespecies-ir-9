@@ -10,10 +10,86 @@ from wildlife.utils.type_detector import detect_type
 
 # run command: python3 -m scrapy crawl wildlife_trusts
 
+NUMBER = r"([\d\.]+)"
+RANGE = rf"{NUMBER}(?:\s*-\s*{NUMBER})?"
+UNIT = r"(mm|cm|m)"
+
 def safe_filename(url: str) -> str:
     name = re.sub(r'^https?://', '', url)
     name = re.sub(r'[^a-zA-Z0-9_-]+', '_', name)
     return name[:200]
+
+def to_cm(value: float, unit: str) -> float:
+    if unit == "mm":
+        return value / 10
+    if unit == "cm":
+        return value
+    if unit == "m":
+        return value * 100
+
+
+def parse_statistics(stats_text: str) -> dict:
+    stats = {}
+
+    text = stats_text.lower()
+
+    patterns = {
+        "length_cm": rf"length\s+(?:around\s+|approx\s+|up\s+to\s+)?{RANGE}\s*{UNIT}",
+    "height_cm": rf"height\s+{RANGE}\s*{UNIT}",
+    "wingspan_cm": rf"wingspan\s+{RANGE}\s*{UNIT}",
+    "tail_cm": rf"tail\s+{RANGE}\s*{UNIT}",
+    "bell_diameter_cm": rf"bell\s+{RANGE}\s*{UNIT}",
+    "max_size_cm": rf"(?:maximum\s+size|max\s+size)\s+{RANGE}\s*{UNIT}",
+    "weight_kg": r"weight\s+(?:around\s+|approx\s+)?([\d\.]+)(?:\s*-\s*([\d\.]+))?\s*(kg|g)",
+    "lifespan_year": r"(?:average\s+)?life\s*span\s+([\d\.]+)(?:\s*-\s*([\d\.]+))?\s*year",
+    }
+
+    for field, pattern in patterns.items():
+        match = re.search(pattern, text)
+        if not match:
+            continue
+
+        groups = match.groups()
+
+        # ---------- LINEAR MEASUREMENTS ----------
+        if field.endswith("_cm"):
+            min_val = float(groups[0])
+            max_val = groups[1]
+            unit = groups[2]
+
+            min_cm = to_cm(min_val, unit)
+            if max_val:
+                stats[field] = [round(min_cm, 2), round(to_cm(float(max_val), unit), 2)]
+            else:
+                stats[field] = round(min_cm, 2)
+
+        # ---------- WEIGHT ----------
+        elif field == "weight_kg":
+            min_val = float(groups[0])
+            max_val = groups[1]
+            unit = groups[2]
+
+            if unit == "g":
+                min_val /= 1000
+                if max_val:
+                    max_val = float(max_val) / 1000
+
+            stats[field] = (
+                [round(min_val, 3), round(float(max_val), 3)]
+                if max_val else round(min_val, 3)
+            )
+
+        # ---------- LIFESPAN ----------
+        elif field == "lifespan_year":
+            min_val = float(groups[0])
+            max_val = groups[1]
+
+            stats[field] = (
+                [min_val, float(max_val)]
+                if max_val else min_val
+            )
+
+    return stats
 
 def extract_wt_species_data(html_text, source_url):
     soup = BeautifulSoup(html_text, "html.parser")
@@ -56,8 +132,10 @@ def extract_wt_species_data(html_text, source_url):
         if label:
             label.extract()
 
-        stats_text = stats_div.get_text(separator="\n", strip=True)
-        data["statistics"] = clean_text(stats_text)
+        raw_stats = clean_text(stats_div.get_text(" ", strip=True))
+        data["raw_statistics"] = raw_stats
+        data["statistics"] = parse_statistics(raw_stats)
+        
 
     # ---------- ABOUT ----------
     about_div = soup.find("div", class_=lambda c: c and "species-about" in c)
