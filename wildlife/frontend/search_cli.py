@@ -16,7 +16,7 @@ def search(query, rows=10):
         "mm": "2<75%",
         "tie": "0.1",
         "rows": rows,
-        "fl": "id,name,scientific_name,image_url,url,dirty_overview,overview,summary",
+        "fl": "id,name,scientific_name,animal_type,image_url,url,dirty_overview,summary",
         "wt": "json"
     }
    
@@ -44,7 +44,7 @@ def on_search_click(event):
         item = document.createElement("div")
         item.className = "item"
         item.innerHTML = f"""
-            <img src="{r.get('image_url')}" alt="{r.get('name')}"  />
+            
             <div class="text">
 
 
@@ -52,6 +52,7 @@ def on_search_click(event):
                 <p class="overview">{r.get('dirty_overview')}</p> 
 
             </div>
+            <img class="animal-img" src="{r.get('image_url')}" alt="{r.get('name')}"  />
         """
 
         resultsContainer.appendChild(item)

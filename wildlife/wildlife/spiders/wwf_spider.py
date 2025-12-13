@@ -6,6 +6,7 @@ import json
 from warcio.archiveiterator import ArchiveIterator
 import re
 from wildlife.utils.text_cleaner import clean_text
+from wildlife.utils.type_detector import detect_type
 
 # def safe_filename(url: str) -> str:
 #     name = re.sub(r'^https?://', '', url)
@@ -97,6 +98,8 @@ def extract_wwf_species_data(html_text, source_url):
    
     overview = soup.select_one("#overview p")
     if overview:
+        detected_type = detect_type(overview.get_text(strip=True))
+        data["animal_type"] = detected_type
         data["dirty_overview"] = overview.get_text(strip=True)
         data["overview"] = clean_text(overview.get_text(strip=True))
 

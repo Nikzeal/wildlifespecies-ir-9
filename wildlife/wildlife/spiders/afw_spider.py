@@ -6,6 +6,7 @@ import scrapy
 import json
 from warcio.archiveiterator import ArchiveIterator
 from wildlife.utils.text_cleaner import clean_text
+from wildlife.utils.type_detector import detect_type
 
 # run command: scrapy crawl awf -O awf.json
 
@@ -40,6 +41,8 @@ def extract_awf_species_data(html_text, source_url):
     if overview_section:
         first_p = overview_section.find("p")
         if first_p:
+            detected_type = detect_type(first_p.get_text(strip=True))
+            data["animal_type"] = detected_type
             data["dirty_overview"] = first_p.get_text(strip=True)
             data["overview"] = clean_text(first_p.get_text(strip=True))
 

@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import scrapy
 from warcio.archiveiterator import ArchiveIterator
 from wildlife.utils.text_cleaner import clean_text
+from wildlife.utils.type_detector import detect_type
 
 # run command: python3 -m scrapy crawl wildlife_trusts
 
@@ -66,6 +67,8 @@ def extract_wt_species_data(html_text, source_url):
             label.extract()
 
         about_text = about_div.get_text(strip=True)
+        detected_type = detect_type(about_text)
+        data["animal_type"] = detected_type
         data["dirty_overview"] = about_text
         data["overview"] = clean_text(about_text)
 
