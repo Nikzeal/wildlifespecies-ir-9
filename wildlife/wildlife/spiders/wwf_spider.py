@@ -23,10 +23,6 @@ from wildlife.utils.type_detector import detect_type
 #     return json_data
 
 def extract_numbers(text):
-    """
-    Extract all numeric values from a string.
-    Returns list of floats.
-    """
     if not text:
         return []
     return [float(x) for x in re.findall(r"\d+(?:\.\d+)?", text)]
@@ -47,10 +43,10 @@ def feet_to_cm(ft):
 def inches_to_cm(inch):
     return inch * 2.54
 
+def meters_to_cm(m):
+    return m * 100
+
 def parse_weight_kg(raw):
-    """
-    Returns [min, max] in kg or single float.
-    """
     nums = extract_numbers(raw.lower())
     if not nums:
         return None
@@ -64,30 +60,77 @@ def parse_weight_kg(raw):
 
     return nums if len(nums) > 1 else nums[0]
 
+def parse_population(raw):
+    if not raw:
+        return None
 
-def parse_length_cm(raw):
-    """
-    Handles feet, inches, mixed ranges.
-    """
-    raw_l = raw.lower()
-    nums = extract_numbers(raw_l)
+    text = raw.lower().replace(",", "")
+    nums = extract_numbers(text)
+
     if not nums:
         return None
 
-    values_cm = []
+    if "million" in text:
+        nums = [int(n * 1_000_000) for n in nums]
+    elif "thousand" in text:
+        nums = [int(n * 1_000) for n in nums]
+    else:
+        nums = [int(n) for n in nums]
 
-    if "foot" in raw_l or "ft" in raw_l:
-        for n in nums:
-            values_cm.append(feet_to_cm(n))
+    if "less than" in text or "<" in text:
+        return [0, nums[0]]
 
-    elif "inch" in raw_l:
-        for n in nums:
-            values_cm.append(inches_to_cm(n))
+    if len(nums) > 1:
+        return [min(nums), max(nums)]
 
-    elif "cm" in raw_l:
-        values_cm = nums
+    return nums[0]
 
-    return values_cm if len(values_cm) > 1 else values_cm[0]
+def split_clauses(text):
+    return re.split(r"[;,]", text)
+
+def parse_length_clause(clause):
+    clause = clause.lower()
+    nums = extract_numbers(clause)
+
+    if not nums:
+        return None, None
+
+    if len(nums) >= 2:
+        values = [min(nums), max(nums)]
+    else:
+        values = nums[0]
+
+    if "meter" in clause:
+        values = [v * 100 for v in values] if isinstance(values, list) else values * 100
+    elif "foot" in clause or "ft" in clause:
+        values = [v * 30.48 for v in values] if isinstance(values, list) else values * 30.48
+    elif "inch" in clause:
+        values = [v * 2.54 for v in values] if isinstance(values, list) else values * 2.54
+
+    if "tail" in clause:
+        return "tail_length_cm", values
+    if "wing" in clause or "wingspan" in clause:
+        return "wingspan_cm", values
+    if "shoulder" in clause or "tall" in clause or "height" in clause:
+        return "shoulder_height_cm", values
+
+    return "length_cm", values
+
+
+def parse_lengths(raw):
+    if not raw:
+        return {}
+
+    result = {}
+
+    for clause in split_clauses(raw):
+        key, value = parse_length_clause(clause)
+        if key and value is not None:
+            if key not in result:
+                result[key] = value
+
+    return result
+
 
 def extract_wwf_species_data(html_text, source_url):
 
@@ -195,20 +238,20 @@ def extract_wwf_species_data(html_text, source_url):
 
     statistics = {}
 
-    if "weight" in data:
-        parsed_weight = parse_weight_kg(data["weight"])
+    if "raw_weight" in data:
+        parsed_weight = parse_weight_kg(data["raw_weight"])
         if parsed_weight:
             statistics["weight_kg"] = parsed_weight
 
-    if "length" in data:
-        parsed_length = parse_length_cm(data["length"])
-        if parsed_length:
-            statistics["length_cm"] = parsed_length
+    if "raw_length" in data:
+        length_fields = parse_lengths(data["raw_length"])
+        statistics.update(length_fields)
 
-    if "lifespan" in data:
-        nums = extract_numbers(data["lifespan"])
-        if nums:
-            statistics["lifespan_year"] = nums if len(nums) > 1 else nums[0]
+        
+    if "raw_population" in data:
+        parsed_population = parse_population(data["raw_population"])
+        if parsed_population is not None:
+            statistics["population"] = parsed_population
 
     if statistics:
         data["statistics"] = statistics
@@ -289,7 +332,7 @@ class WwfSpider(scrapy.Spider):
 
 
                 yield extracted
-                json_filename = "ww-all_wwf_species.json"
+                json_filename = "wwf.json"
                 with open(json_filename, "w", encoding="utf-8") as f:
                     json.dump(self.collected, f, indent=2, ensure_ascii=False)
 

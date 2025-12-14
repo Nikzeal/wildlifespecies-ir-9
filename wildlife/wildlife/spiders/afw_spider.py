@@ -130,18 +130,21 @@ def extract_awf_species_data(html_text, source_url):
 
     # ---------- WEIGHT ----------
                 elif key == "weight":
+                    data["raw_weight"] = val
                     parsed = parse_weight_kg(val)
                     if parsed:
                         data["statistics"]["weight_kg"] = parsed
     
     # ---------- HEIGHT ----------
                 elif key == "size":
+                    data["raw_size"] = val
                     parsed = parse_length_cm(val)
                     if parsed:
                         data["statistics"]["length_cm"] = parsed
 
     # ---------- LIFE SPAN ---------- 
                 elif key == "life span":
+                    data["raw_lifespan"] = val
                     parsed = parse_lifespan_year(val)
                     if parsed:
                         data["statistics"]["lifespan_year"] = parsed
@@ -152,6 +155,7 @@ def extract_awf_species_data(html_text, source_url):
 
     # ---------- GESTATION ----------
                 elif key == "gestation":
+                    data["raw_gestation"] = val
                     parsed = parse_gestation_days(val)
                     if parsed:
                         data["statistics"]["gestation_days"] = parsed
@@ -267,7 +271,7 @@ class AwfSpider(scrapy.Spider):
                 if extracted["url"].startswith("http://"):
                     extracted["url"] = "https://" + extracted["url"][len("http://"):]
 
-                    # Remove URLs starting with https://www. (to remove duplicates)
+                # remove URLs starting with https://www. (to remove duplicates)
                 if extracted["url"].startswith("https://www."):
                     continue
 

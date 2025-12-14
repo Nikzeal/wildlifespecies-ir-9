@@ -216,7 +216,7 @@ class WildlifeTrustsSpider(scrapy.Spider):
         yield scrapy.Request(index_url, callback=self.parse_index)
 
     def close(self, reason):
-        json_filename = "wt-all_wildlifetrusts_animals.json"
+        json_filename = "wildlifetrusts.json"
         with open(json_filename, "w", encoding="utf-8") as f:
             json.dump(self.collected, f, indent=2, ensure_ascii=False)
 
