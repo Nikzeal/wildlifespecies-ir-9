@@ -58,7 +58,7 @@ def parse_weight_kg(raw):
     elif "kg" in raw.lower():
         pass  # already kg
 
-    return nums if len(nums) > 1 else nums[0]
+    return nums if len(nums) > 1 else [nums[0]]
 
 def parse_population(raw):
     if not raw:
@@ -83,7 +83,7 @@ def parse_population(raw):
     if len(nums) > 1:
         return [min(nums), max(nums)]
 
-    return nums[0]
+    return [nums[0]]
 
 def split_clauses(text):
     return re.split(r"[;,]", text)
@@ -98,14 +98,14 @@ def parse_length_clause(clause):
     if len(nums) >= 2:
         values = [min(nums), max(nums)]
     else:
-        values = nums[0]
+        values = [nums[0]]
 
     if "meter" in clause:
-        values = [v * 100 for v in values] if isinstance(values, list) else values * 100
+        values = [v * 100 for v in values] if isinstance(values, list) else [values * 100]
     elif "foot" in clause or "ft" in clause:
-        values = [v * 30.48 for v in values] if isinstance(values, list) else values * 30.48
+        values = [v * 30.48 for v in values] if isinstance(values, list) else [values * 30.48]
     elif "inch" in clause:
-        values = [v * 2.54 for v in values] if isinstance(values, list) else values * 2.54
+        values = [v * 2.54 for v in values] if isinstance(values, list) else [values * 2.54]
 
     if "tail" in clause:
         return "tail_length_cm", values

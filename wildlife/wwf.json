@@ -27,7 +27,9 @@
       "Dolphins and Porpoises"
     ],
     "statistics": {
-      "length_cm": 6.2,
+      "length_cm": [
+        6.2
+      ],
       "population": [
         1000,
         1800
@@ -89,8 +91,12 @@
       "Rhino"
     ],
     "statistics": {
-      "weight_kg": 11000.0,
-      "length_cm": 60.0
+      "weight_kg": [
+        11000.0
+      ],
+      "length_cm": [
+        60.0
+      ]
     }
   },
   {
@@ -116,7 +122,9 @@
       "Bonobo"
     ],
     "statistics": {
-      "weight_kg": 199.58048
+      "weight_kg": [
+        199.58048
+      ]
     }
   },
   {
@@ -135,7 +143,9 @@
     ],
     "why_they_matter": "million year ago ancestor macropods—the family marsupial includes kangaroo wallabies—descended tree one group macropods known tree kangaroo eventually returned arboreal life",
     "statistics": {
-      "weight_kg": 14.514944,
+      "weight_kg": [
+        14.514944
+      ],
       "length_cm": [
         40.64,
         76.2
@@ -175,8 +185,12 @@
       "Bornean Elephant"
     ],
     "statistics": {
-      "weight_kg": 5000.0,
-      "length_cm": 20.0,
+      "weight_kg": [
+        5000.0
+      ],
+      "length_cm": [
+        20.0
+      ],
       "population": [
         2400,
         2800
@@ -312,8 +326,12 @@
       "Giant Tortoise"
     ],
     "statistics": {
-      "weight_kg": 181.4368,
-      "length_cm": 6.0
+      "weight_kg": [
+        181.4368
+      ],
+      "length_cm": [
+        6.0
+      ]
     }
   },
   {
@@ -428,9 +446,15 @@
       "Beluga"
     ],
     "statistics": {
-      "weight_kg": 49.89512,
-      "length_cm": 4.0,
-      "population": 7000
+      "weight_kg": [
+        49.89512
+      ],
+      "length_cm": [
+        4.0
+      ],
+      "population": [
+        7000
+      ]
     }
   },
   {
@@ -465,8 +489,12 @@
       "Shark"
     ],
     "statistics": {
-      "weight_kg": 317.5144,
-      "length_cm": 4.0
+      "weight_kg": [
+        317.5144
+      ],
+      "length_cm": [
+        4.0
+      ]
     }
   },
   {
@@ -622,7 +650,9 @@
         1.360776,
         36.28736
       ],
-      "population": 6500
+      "population": [
+        6500
+      ]
     }
   },
   {
@@ -698,12 +728,16 @@
       "Pangolin"
     ],
     "statistics": {
-      "weight_kg": 6000.0,
+      "weight_kg": [
+        6000.0
+      ],
       "length_cm": [
         19.0,
         24.0
       ],
-      "population": 415000
+      "population": [
+        415000
+      ]
     }
   }
 ]

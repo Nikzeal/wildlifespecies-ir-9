@@ -79,7 +79,7 @@ def parse_lifespan_year(text):
     nums = extract_numbers(text)
     if not nums:
         return None
-    return [min(nums), max(nums)] if len(nums) > 1 else nums[0]
+    return [min(nums), max(nums)] if len(nums) > 1 else [nums[0]]
 
 
 def parse_gestation_days(text):
@@ -90,7 +90,7 @@ def parse_gestation_days(text):
     if re.search(r"month", text, re.I):
         nums = [n * 30 for n in nums]
 
-    return [min(nums), max(nums)] if len(nums) > 1 else nums[0]
+    return [min(nums), max(nums)] if len(nums) > 1 else [nums[0]]
 
 
 def extract_awf_species_data(html_text, source_url):

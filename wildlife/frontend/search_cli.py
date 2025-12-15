@@ -9,7 +9,7 @@ def search(query, rows=10):
     params = {
         "q": f"{query}~1",
         "defType": "edismax",
-        "qf": "name^5 species_name^5 scientific_name^5 summary^3 overview^3 about^3 how_to_identify^3 did_you_know^2 why_they_matter^2 conservation_status^2 statistics^2 distribution^2 habitats^1 places^1 related_species^1 predators^1 population^1 status^1 length^1 location^1 facts^0.8 threats^0.8 diet^0.5 gestation^0.5 lifespan^0.5 weight^0.5 height^0.5 source^0.2 url^0.2 image_url^0.2",
+        "qf": "name^5 species_name^5 scientific_name^5 summary^3 overview^3 about^3 how_to_identify^3 did_you_know^2 why_they_matter^2 conservation_status^2 statistics^2 distribution^2 habitats^1 places^1 related_species^1 predators^1 population^1 status^1 length^1 location^1 facts^0.8 threats^0.8 diet^0.5 gestation^0.5 lifespan^0.5 weight^0.5 height^0.5",
         "pf": "name^10 scientific_name^6 species_name^6",
         "pf2": "summary^3 overview^3",
         "pf3": "about^2",
@@ -33,13 +33,21 @@ searchbtn = document.querySelector("#search-btn")
 @when("click", searchbtn)
 def on_search_click(event):
 
-    filters = document.querySelectorAll(".filter")
-    for f in filters:
-        filter_name = f.querySelector("label").innerText
-        filter_value_min = f.querySelector(".min-input").value
-        filter_value_max = f.querySelector(".max-input").value 
-        console.log(f"Filter applied: {filter_name} : {filter_value_min} - {filter_value_max}")
-    
+    weight_div = document.querySelector("#weight_cm")
+    size_div = document.querySelector("#length_cm")
+    population_div = document.querySelector("#population")
+
+    weight_value_min = weight_div.querySelector(".min-input").value
+    weight_value_max = weight_div.querySelector(".max-input").value
+    weight_range = [float(weight_value_min), float(weight_value_max)]
+
+    size_value_min = size_div.querySelector(".min-input").value
+    size_value_max = size_div.querySelector(".max-input").value
+    size_range = [float(size_value_min), float(size_value_max)]
+
+    population_value_min = population_div.querySelector(".min-input").value
+    population_value_max = population_div.querySelector(".max-input").value
+    population_range = [float(population_value_min), float(population_value_max)]
 
 
     
@@ -51,6 +59,26 @@ def on_search_click(event):
     resultsContainer.innerHTML = ""
     # console.log(f"Returned result for: {query} is \n{results}")
     for r in results:
+
+        statistics = r.get("statistics", None)
+        if not statistics:
+            continue
+        weight = statistics.get("weight_kg", None)
+        size = statistics.get("length_cm", None)
+        population = statistics.get("population", None)
+
+
+        if weight is not None:
+            if not max(weight[0], weight_range[0]) <= min(weight[-1], weight_range[1]):
+                continue
+        if size is not None:
+            if not max(size[0], size_range[0]) <= min(size[-1], size_range[1]):
+                continue
+        if population is not None:
+            if not max(population[0], population_range[0]) <= min(population[-1], population_range[1]):
+                continue
+
+
         item = document.createElement("div")
         item.className = "item"
         item.innerHTML = f"""

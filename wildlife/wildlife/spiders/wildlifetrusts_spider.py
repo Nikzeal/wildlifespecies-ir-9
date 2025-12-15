@@ -61,7 +61,7 @@ def parse_statistics(stats_text: str) -> dict:
             if max_val:
                 stats[field] = [round(min_cm, 2), round(to_cm(float(max_val), unit), 2)]
             else:
-                stats[field] = round(min_cm, 2)
+                stats[field] = [round(min_cm, 2)]
 
         # ---------- WEIGHT ----------
         elif field == "weight_kg":
@@ -76,7 +76,7 @@ def parse_statistics(stats_text: str) -> dict:
 
             stats[field] = (
                 [round(min_val, 3), round(float(max_val), 3)]
-                if max_val else round(min_val, 3)
+                if max_val else [round(min_val, 3)]
             )
 
         # ---------- LIFESPAN ----------
@@ -86,7 +86,7 @@ def parse_statistics(stats_text: str) -> dict:
 
             stats[field] = (
                 [min_val, float(max_val)]
-                if max_val else min_val
+                if max_val else [min_val]
             )
 
     return stats
