@@ -1,29 +1,127 @@
 import requests
 from pyscript import document, when
 from js import console
+import re
 
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
 
+NUMERIC_PATTERN = re.compile(r"(\d+(?:\.\d+)?)")
+
+FILTER_KEYWORDS = {
+    "weight": ["weight", "weigh", "kg", "kilogram"],
+    "size": ["size", "length", "height", "cm", "meter", "metre"],
+    "population": ["population", "pop", "individuals"],
+    "lifespan": ["lifespan", "age", "years"],
+}
+
+def detect_source(url: str):
+    url = url.lower()
+    if "awf.org" in url:
+        return {
+            "logo": "../resources/images/awf_logo.png",
+            "name": "African Wildlife Foundation"
+        }
+    elif "worldwildlife.org" in url:
+        return {
+            "logo": "../resources/images/wwf_logo.png",
+            "name": "World Wildlife Fund"
+        }
+    elif "wildlifetrusts.org" in url:
+        return {
+            "logo": "../resources/images/wildlifetrusts_logo.png",
+            "name": "The Wildlife Trusts"
+        }
+
+
+def parse_query_intent(query):
+    query_lower = query.lower()
+
+    numbers = [float(n) for n in NUMERIC_PATTERN.findall(query_lower)]
+
+    intent = {
+        "text": query,
+        "numeric": numbers,
+        "filters": {}
+    }
+
+    for key, keywords in FILTER_KEYWORDS.items():
+        if any(k in query_lower for k in keywords):
+            if numbers:
+                intent["filters"][key] = numbers
+
+    return intent
+
+def build_numeric_filter(field, values, tolerance=0.25):
+    v = values[0]
+
+    min_v = v * (1 - tolerance)
+    max_v = v * (1 + tolerance)
+
+    return f"{field}:[{min_v} TO {max_v}]"
+
+def build_range_filter(field, min_v, max_v):
+    return f"{field}:[{min_v} TO {max_v}]"
+
+
 def search(query, rows=10):
-   
+    intent = parse_query_intent(query)
+
+    fq = []
+
+    if "weight" in intent["filters"]:
+        v = intent["filters"]["weight"][0]
+        fq.append(build_range_filter(
+            "weight_kg",
+            v * 0.75,
+            v * 1.25
+        ))
+
+    if "size" in intent["filters"]:
+        v = intent["filters"]["size"][0]
+        fq.append(build_range_filter(
+            "length_cm",
+            v * 0.75,
+            v * 1.25
+        ))
+
+    if "population" in intent["filters"]:
+        v = intent["filters"]["population"][0]
+        fq.append(
+            f"population_min:[* TO {v}] AND population_max:[{v} TO *]"
+        )
+
     params = {
-        "q": f"{query}~1",
+        "q": query if query.strip() else "*:*",
         "defType": "edismax",
-        "qf": "name^5 species_name^5 scientific_name^5 summary^3 overview^3 about^3 how_to_identify^3 did_you_know^2 why_they_matter^2 conservation_status^2 statistics^2 distribution^2 habitats^1 places^1 related_species^1 predators^1 population^1 status^1 length^1 location^1 facts^0.8 threats^0.8 diet^0.5 gestation^0.5 lifespan^0.5 weight^0.5 height^0.5 source^0.2 url^0.2 image_url^0.2",
-        "pf": "name^10 scientific_name^6 species_name^6",
-        "pf2": "summary^3 overview^3",
-        "pf3": "about^2",
-        "mm": "2<75%",
+        "qf": (
+            "name^8 scientific_name^6 species_name^6 "
+            "summary^4 overview^4 about^3 "
+            "habitats^2 distribution^2 "
+            "facts^1.5 threats^1 diet^1"
+        ),
+        "pf": "name^12 scientific_name^8",
+        "mm": "1<75%",
         "tie": "0.1",
         "rows": rows,
-        "fl": "id,name,scientific_name,animal_type,image_url,url,dirty_overview,summary",
+        "fl": "id,name,scientific_name,animal_type,image_url,url,dirty_overview",
         "wt": "json"
     }
-   
-    resp = requests.get(SOLR_URL, params=params).json()
-    
-    return resp["response"]["docs"]
 
+    if fq:
+        params["fq"] = fq
+
+    resp = requests.get(SOLR_URL, params=params)
+    try:
+        data = resp.json()
+    except Exception:
+        console.error("Invalid JSON from Solr")
+        return []
+
+    if "error" in data:
+        console.error("Solr error:", data["error"]["msg"])
+        return []
+
+    return data.get("response", {}).get("docs", [])
 
 
 searchbar = document.querySelector("#search")
@@ -49,20 +147,34 @@ def on_search_click(event):
     results = search(query)
     resultsContainer = document.querySelector("#results")
     resultsContainer.innerHTML = ""
-    # console.log(f"Returned result for: {query} is \n{results}")
+
     for r in results:
+        source = detect_source(r.get("url", ""))
+
         item = document.createElement("div")
         item.className = "item"
+
         item.innerHTML = f"""
-            
-            <div class="text">
-
-
-                <a href="{r.get('url')}" target="_blank">{r.get('name')} - {r.get('scientific_name')}</a>
-                <p class="overview">{r.get('dirty_overview')}</p> 
-
+            <div class="logo">
+                <img class="logo-img" src="{source['logo']}" alt="{source['name']}">
+                <p>{source['name']}</p>
             </div>
-            <img class="animal-img" src="{r.get('image_url')}" alt="{r.get('name')}"  />
+
+            <div class="result">
+                <div class="text">
+                    <a href="{r.get('url')}" target="_blank">
+                        {r.get('name')} - {r.get('scientific_name')}
+                    </a>
+                    <p class="overview">
+                        {r.get('dirty_overview', '')}
+                    </p>
+                </div>
+
+                <img class="animal-img"
+                    src="{r.get('image_url', '')}"
+                    alt="{r.get('name', '')}">
+            </div>
         """
 
         resultsContainer.appendChild(item)
+

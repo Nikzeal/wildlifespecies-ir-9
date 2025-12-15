@@ -79,7 +79,7 @@ def parse_lifespan_year(text):
     nums = extract_numbers(text)
     if not nums:
         return None
-    return [min(nums), max(nums)] if len(nums) > 1 else nums[0]
+    return [min(nums), max(nums)]
 
 
 def parse_gestation_days(text):
@@ -90,14 +90,12 @@ def parse_gestation_days(text):
     if re.search(r"month", text, re.I):
         nums = [n * 30 for n in nums]
 
-    return [min(nums), max(nums)] if len(nums) > 1 else nums[0]
+    return [min(nums), max(nums)]
 
 
 def extract_awf_species_data(html_text, source_url):
     soup = BeautifulSoup(html_text, "html.parser")
     data = {"url": source_url}
-    data["statistics"] = {}
-
     # ---------- NAME ----------
     name_title = soup.find("h1", class_="views-field-title")
     if name_title:
@@ -133,21 +131,24 @@ def extract_awf_species_data(html_text, source_url):
                     data["raw_weight"] = val
                     parsed = parse_weight_kg(val)
                     if parsed:
-                        data["statistics"]["weight_kg"] = parsed
+                        data["weight_kg_min"] = parsed[0]
+                        data["weight_kg_max"] = parsed[-1]
     
     # ---------- HEIGHT ----------
                 elif key == "size":
-                    data["raw_size"] = val
+                    data["raw_length"] = val
                     parsed = parse_length_cm(val)
                     if parsed:
-                        data["statistics"]["length_cm"] = parsed
+                        data["length_cm_min"] = parsed[0]
+                        data["length_cm_max"] = parsed[-1]
 
     # ---------- LIFE SPAN ---------- 
                 elif key == "life span":
                     data["raw_lifespan"] = val
                     parsed = parse_lifespan_year(val)
                     if parsed:
-                        data["statistics"]["lifespan_year"] = parsed
+                        data["lifespan_year_min"] = parsed[0]
+                        data["lifespan_year_max"] = parsed[-1]
 
     # ---------- DIET ----------
                 elif key == "diet":
@@ -158,7 +159,8 @@ def extract_awf_species_data(html_text, source_url):
                     data["raw_gestation"] = val
                     parsed = parse_gestation_days(val)
                     if parsed:
-                        data["statistics"]["gestation_days"] = parsed
+                        data["gestation_days_min"] = parsed[0]
+                        data["gestation_days_max"] = parsed[-1]
 
     # ---------- PREDATORS ----------
                 elif key == "predators":

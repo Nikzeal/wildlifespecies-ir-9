@@ -58,7 +58,7 @@ def parse_weight_kg(raw):
     elif "kg" in raw.lower():
         pass  # already kg
 
-    return nums if len(nums) > 1 else nums[0]
+    return nums
 
 def parse_population(raw):
     if not raw:
@@ -80,10 +80,7 @@ def parse_population(raw):
     if "less than" in text or "<" in text:
         return [0, nums[0]]
 
-    if len(nums) > 1:
-        return [min(nums), max(nums)]
-
-    return nums[0]
+    return nums
 
 def split_clauses(text):
     return re.split(r"[;,]", text)
@@ -95,41 +92,35 @@ def parse_length_clause(clause):
     if not nums:
         return None, None
 
-    if len(nums) >= 2:
-        values = [min(nums), max(nums)]
-    else:
-        values = nums[0]
-
     if "meter" in clause:
-        values = [v * 100 for v in values] if isinstance(values, list) else values * 100
+        nums = [v * 100 for v in nums]
     elif "foot" in clause or "ft" in clause:
-        values = [v * 30.48 for v in values] if isinstance(values, list) else values * 30.48
+        nums = [v * 30.48 for v in nums]
     elif "inch" in clause:
-        values = [v * 2.54 for v in values] if isinstance(values, list) else values * 2.54
+        nums = [v * 2.54 for v in nums]
 
     if "tail" in clause:
-        return "tail_length_cm", values
+        return "tail_length_cm", nums
     if "wing" in clause or "wingspan" in clause:
-        return "wingspan_cm", values
+        return "wingspan_cm", nums
     if "shoulder" in clause or "tall" in clause or "height" in clause:
-        return "shoulder_height_cm", values
+        return "shoulder_height_cm", nums
 
-    return "length_cm", values
+    return "length_cm", nums
 
 
-def parse_lengths(raw):
+def parse_lengths(data, raw):
     if not raw:
-        return {}
-
-    result = {}
+        return data
 
     for clause in split_clauses(raw):
         key, value = parse_length_clause(clause)
         if key and value is not None:
-            if key not in result:
-                result[key] = value
+            if key not in data:
+                data[key + "_min"] = value[0]
+                data[key + "_max"] = value[-1]
 
-    return result
+    return data
 
 
 def extract_wwf_species_data(html_text, source_url):
@@ -236,25 +227,20 @@ def extract_wwf_species_data(html_text, source_url):
     if related:
         data["related_species"] = related
 
-    statistics = {}
-
     if "raw_weight" in data:
         parsed_weight = parse_weight_kg(data["raw_weight"])
         if parsed_weight:
-            statistics["weight_kg"] = parsed_weight
+            data["weight_kg_min"] = parsed_weight[0]
+            data["weight_kg_max"] = parsed_weight[-1]
 
     if "raw_length" in data:
-        length_fields = parse_lengths(data["raw_length"])
-        statistics.update(length_fields)
+        data = parse_lengths(data, data["raw_length"])
 
-        
     if "raw_population" in data:
         parsed_population = parse_population(data["raw_population"])
         if parsed_population is not None:
-            statistics["population"] = parsed_population
-
-    if statistics:
-        data["statistics"] = statistics
+            data["population_min"] = parsed_population[0]
+            data["population_max"] = parsed_population[-1]
 
     return data
 

@@ -63,6 +63,7 @@ input[type="search"]:focus {
     object-fit: cover;
     border-radius: 8px;
     flex-shrink: 0;
+    margin-left: auto;
 }
 
 .item .text {
@@ -259,8 +260,8 @@ input[type="search"]:focus {
 
 .result {
     display: flex;
-    flex-direction: row;
-    gap: 10px
+    flex-direction: row-reverse;
+    gap: 10px;
 }
 
 .logo-img {
