@@ -60,21 +60,18 @@ def on_search_click(event):
     # console.log(f"Returned result for: {query} is \n{results}")
     for r in results:
 
-        statistics = r.get("statistics", None)
-        if not statistics:
-            continue
-        weight = statistics.get("weight_kg", None)
-        size = statistics.get("length_cm", None)
-        population = statistics.get("population", None)
+        weight = [r.get("weight_kg_min", None), r.get("weight_kg_max", None)]
+        size = [r.get("length_cm_min", None), r.get("length_cm_max", None)]
+        population = [r.get("population_min", None), r.get("population_max", None)]
 
 
-        if weight is not None:
+        if not None in weight :
             if not max(weight[0], weight_range[0]) <= min(weight[-1], weight_range[1]):
                 continue
-        if size is not None:
+        if not None in size:
             if not max(size[0], size_range[0]) <= min(size[-1], size_range[1]):
                 continue
-        if population is not None:
+        if not None in population:
             if not max(population[0], population_range[0]) <= min(population[-1], population_range[1]):
                 continue
 
