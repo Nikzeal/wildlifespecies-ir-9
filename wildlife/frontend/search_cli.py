@@ -94,7 +94,7 @@ def search(query, rows=10):
         "q": query if query.strip() else "*:*",
         "defType": "edismax",
         "qf": (
-            "name^8 scientific_name^6 species_name^6 "
+            "name^8 scientific_name^6"
             "summary^4 overview^4 about^3 "
             "habitats^2 distribution^2 "
             "facts^1.5 threats^1 diet^1"
@@ -131,13 +131,21 @@ searchbtn = document.querySelector("#search-btn")
 @when("click", searchbtn)
 def on_search_click(event):
 
-    filters = document.querySelectorAll(".filter")
-    for f in filters:
-        filter_name = f.querySelector("label").innerText
-        filter_value_min = f.querySelector(".min-input").value
-        filter_value_max = f.querySelector(".max-input").value 
-        console.log(f"Filter applied: {filter_name} : {filter_value_min} - {filter_value_max}")
-    
+    weight_div = document.querySelector("#weight_cm")
+    size_div = document.querySelector("#length_cm")
+    population_div = document.querySelector("#population")
+
+    weight_value_min = weight_div.querySelector(".min-input").value
+    weight_value_max = weight_div.querySelector(".max-input").value
+    weight_range = [float(weight_value_min), float(weight_value_max)]
+
+    size_value_min = size_div.querySelector(".min-input").value
+    size_value_max = size_div.querySelector(".max-input").value
+    size_range = [float(size_value_min), float(size_value_max)]
+
+    population_value_min = population_div.querySelector(".min-input").value
+    population_value_max = population_div.querySelector(".max-input").value
+    population_range = [float(population_value_min), float(population_value_max)]
 
 
     
@@ -150,6 +158,22 @@ def on_search_click(event):
 
     for r in results:
         source = detect_source(r.get("url", ""))
+
+        weight = [r.get("weight_kg_min", None), r.get("weight_kg_max", None)]
+        size = [r.get("length_cm_min", None), r.get("length_cm_max", None)]
+        population = [r.get("population_min", None), r.get("population_max", None)]
+
+
+        if not None in weight :
+            if not max(weight[0], weight_range[0]) <= min(weight[-1], weight_range[1]):
+                continue
+        if not None in size:
+            if not max(size[0], size_range[0]) <= min(size[-1], size_range[1]):
+                continue
+        if not None in population:
+            if not max(population[0], population_range[0]) <= min(population[-1], population_range[1]):
+                continue
+
 
         item = document.createElement("div")
         item.className = "item"
