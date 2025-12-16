@@ -3,7 +3,6 @@ from pyscript import document, when
 from js import console
 import re
 from collections import defaultdict
-from pyodide.ffi import create_proxy
 
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
 
@@ -184,6 +183,7 @@ def on_search_click(event):
     
     results_to_display = 3
     clusters = cluster_by_animal_type(results=results[results_to_display:])
+
     for r in results[:results_to_display]:
         source = detect_source(r.get("url", ""))
 
@@ -216,6 +216,15 @@ def on_search_click(event):
         item = document.createElement("div")
         item.className = "item"
 
+        url = r.get("url", "Unknown")
+        name = r.get("name", ["Unknown"])
+        scientific_name = r.get("scientific_name", ["Unknown"])
+        dirty_overview = r.get("dirty_overview", ["No overview available."])
+        image_url = r.get("image_url", "../resources/images/anto19.png")
+
+
+
+
         item.innerHTML = f"""
             <div class="logo">
                 <img class="logo-img" src="{source['logo']}" alt="{source['name']}">
@@ -224,17 +233,17 @@ def on_search_click(event):
 
             <div class="result">
                 <div class="text">
-                    <a href="{solr_get(r.get('url'))}" target="_blank">
-                        {solr_get(r.get('name'))} - {solr_get(r.get('scientific_name'))}
+                    <a href="{url}" target="_blank">
+                        {name[0]} - {scientific_name[0]}
                     </a>
                     <p class="overview">
-                        {solr_get(r.get('dirty_overview'))}
+                        {dirty_overview[0]}
                     </p>
                 </div>
 
                 <img class="animal-img"
-                    src="{solr_get(r.get('image_url'))}"
-                    alt="{solr_get(r.get('name'))}">
+                    src="{image_url}"
+                    alt="{name[0]}">
             </div>
         """
 
@@ -255,25 +264,21 @@ def on_search_click(event):
         cluster_div.className = "cluster"
         cluster_div.style.display = "none"
 
-        def make_toggle(btn, container, label):
+
+        def make_toggle(cluster_div, toggle_btn, animal_type):
             def toggle(evt):
-                open_ = container.style.display == "block"
-                container.style.display = "none" if open_ else "block"
-                btn.innerText = f"{label} {'▲' if not open_ else '▼'}"
+                open_ = cluster_div.style.display == "block"
+                cluster_div.style.display = "none" if open_ else "block"
+                toggle_btn.innerText = f"{animal_type} {'▲' if not open_ else '▼'}"
             return toggle
 
-        toggle_handler = create_proxy(
-            make_toggle(toggle_btn, cluster_div, animal_type)
-        )
-
-        toggle_btn.addEventListener("click", toggle_handler)
-
+        when("click", toggle_btn)(make_toggle(cluster_div, toggle_btn, animal_type))
 
         clusterContainer.appendChild(toggle_btn)
         clusterContainer.appendChild(cluster_div)
 
-        for r in data["docs"]:
-            source = detect_source(r.get("url", ""))
+        for doc in data["docs"]:
+            source = detect_source(doc.get("url", ""))
 
             item = document.createElement("div")
             item.className = "item"
@@ -286,15 +291,15 @@ def on_search_click(event):
 
                 <div class="result">
                     <div class="text">
-                        <a href="{solr_get(r.get('url'))}" target="_blank">
-                            {solr_get(r.get('name'))} - {solr_get(r.get('scientific_name'))}
+                        <a href="{doc.get('url', 'Unkown')}" target="_blank">
+                            {doc.get('name', 'Unknown')} - {doc.get('scientific_name', 'Unknown')}
                         </a>
-                        <p class="overview">{solr_get(r.get('dirty_overview'))}</p>
+                        <p class="overview">{doc.get('dirty_overview', 'No overview available.')}</p>
                     </div>
 
                     <img class="animal-img"
-                         src="{solr_get(r.get('image_url'))}"
-                         alt="{solr_get(r.get('name'))}">
+                         src="{doc.get('image_url', '../resources/images/anto19.png')}"
+                         alt="{doc.get('name', 'Unknown')}">
                 </div>
             """
 
