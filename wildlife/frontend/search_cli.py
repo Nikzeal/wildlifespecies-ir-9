@@ -247,7 +247,10 @@ def on_search_click(event):
 
     clusterContainer = document.querySelector("#topics-container")
     clusterContainer.innerHTML = ""
+    title = document.querySelector("#related-topics-title")
+    title.innerHTML = ""
     for animal_type, data in clusters:
+        title.innerHTML = "Related Topics"
 
         toggle_btn = document.createElement("button")
         toggle_btn.className = "filter-toggle"
