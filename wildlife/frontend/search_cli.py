@@ -2,6 +2,8 @@ import requests
 from pyscript import document, when
 from js import console
 import re
+from collections import defaultdict
+from pyodide.ffi import create_proxy
 
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
 
@@ -79,6 +81,24 @@ def build_numeric_filter(field, values, tolerance=0.25):
 
 def build_range_filter(field, min_v, max_v):
     return f"{field}:[{min_v} TO {max_v}]"
+
+def cluster_by_animal_type(results):
+    clusters = defaultdict(lambda: {"count": 0, "docs": []})
+
+    for r in results:
+        animal_types = r.get("animal_type", ["Animal"])
+
+        for atype in animal_types:
+            clusters[atype]["count"] += 1
+            clusters[atype]["docs"].append(r)
+
+    sorted_clusters = sorted(
+        clusters.items(),
+        key=lambda item: item[1]["count"],
+        reverse=True
+    )
+
+    return sorted_clusters
 
 
 def search(query, rows=10):
@@ -159,8 +179,6 @@ def on_search_click(event):
     population_value_min = population_div.querySelector(".min-input").value
     population_value_max = population_div.querySelector(".max-input").value
     population_range = [float(population_value_min), float(population_value_max)]
-
-
     
     query = searchbar.value
     console.log(f"Searching for: {query}")
@@ -168,8 +186,10 @@ def on_search_click(event):
     results = search(query)
     resultsContainer = document.querySelector("#results")
     resultsContainer.innerHTML = ""
-
-    for r in results:
+    
+    results_to_display = 3
+    clusters = cluster_by_animal_type(results=results[results_to_display:])
+    for r in results[:results_to_display]:
         source = detect_source(r.get("url", ""))
 
         weight = [
@@ -224,3 +244,60 @@ def on_search_click(event):
         """
 
         resultsContainer.appendChild(item)
+
+    clusterContainer = document.querySelector("#topics-container")
+    clusterContainer.innerHTML = ""
+    for animal_type, data in clusters:
+
+        toggle_btn = document.createElement("button")
+        toggle_btn.className = "filter-toggle"
+        toggle_btn.innerText = f"{animal_type} ▼"
+
+        cluster_div = document.createElement("div")
+        cluster_div.className = "cluster"
+        cluster_div.style.display = "none"
+
+        def make_toggle(btn, container, label):
+            def toggle(evt):
+                open_ = container.style.display == "block"
+                container.style.display = "none" if open_ else "block"
+                btn.innerText = f"{label} {'▲' if not open_ else '▼'}"
+            return toggle
+
+        toggle_handler = create_proxy(
+            make_toggle(toggle_btn, cluster_div, animal_type)
+        )
+
+        toggle_btn.addEventListener("click", toggle_handler)
+
+
+        clusterContainer.appendChild(toggle_btn)
+        clusterContainer.appendChild(cluster_div)
+
+        for r in data["docs"]:
+            source = detect_source(r.get("url", ""))
+
+            item = document.createElement("div")
+            item.className = "item"
+
+            item.innerHTML = f"""
+                <div class="logo">
+                    <img class="logo-img" src="{source['logo']}" alt="{source['name']}">
+                    <p>{source['name']}</p>
+                </div>
+
+                <div class="result">
+                    <div class="text">
+                        <a href="{solr_get(r.get('url'))}" target="_blank">
+                            {solr_get(r.get('name'))} - {solr_get(r.get('scientific_name'))}
+                        </a>
+                        <p class="overview">{solr_get(r.get('dirty_overview'))}</p>
+                    </div>
+
+                    <img class="animal-img"
+                         src="{solr_get(r.get('image_url'))}"
+                         alt="{solr_get(r.get('name'))}">
+                </div>
+            """
+
+            cluster_div.appendChild(item)
