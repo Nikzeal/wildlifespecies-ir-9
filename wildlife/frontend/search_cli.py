@@ -3,7 +3,6 @@ from pyscript import document, when
 from js import console
 import re
 from collections import defaultdict
-# from pyodide.ffi import create_proxy
 
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
 
@@ -222,11 +221,11 @@ def on_search_click(event):
         item = document.createElement("div")
         item.className = "item"
 
-        url = r.get("url")
-        name = r.get("name")
-        scientific_name = r.get("scientific_name")
-        dirty_overview = r.get("dirty_overview")
-        image_url = r.get("image_url")
+        url = r.get("url", "Unknown")
+        name = r.get("name", ["Unknown"])
+        scientific_name = r.get("scientific_name", ["Unknown"])
+        dirty_overview = r.get("dirty_overview", ["No overview available."])
+        image_url = r.get("image_url", "../resources/images/anto19.png")
 
 
 
@@ -239,17 +238,17 @@ def on_search_click(event):
 
             <div class="result">
                 <div class="text">
-                    <a href="{url[0] if url else "Unkown"}" target="_blank">
-                        {name[0] if name else "Unknown"} - {scientific_name[0] if scientific_name else "Unknown"}
+                    <a href="{url}" target="_blank">
+                        {name[0]} - {scientific_name[0]}
                     </a>
                     <p class="overview">
-                        {dirty_overview[0] if dirty_overview else "No overview available."}
+                        {dirty_overview[0]}
                     </p>
                 </div>
 
                 <img class="animal-img"
-                    src="{image_url if image_url else '../resources/images/anto19.png'}"
-                    alt="{name[0] if name else "Unknown"}">
+                    src="{image_url}"
+                    alt="{name[0]}">
             </div>
         """
 
@@ -271,25 +270,20 @@ def on_search_click(event):
         cluster_div.style.display = "none"
 
 
-        @when("click", toggle_btn)
-        def toggle(evt):
-            open_ = cluster_div.style.display == "block"
-            cluster_div.style.display = "none" if open_ else "block"
-            toggle_btn.innerText = f"{animal_type} {'▲' if not open_ else '▼'}"
+        def make_toggle(cluster_div, toggle_btn, animal_type):
+            def toggle(evt):
+                open_ = cluster_div.style.display == "block"
+                cluster_div.style.display = "none" if open_ else "block"
+                toggle_btn.innerText = f"{animal_type} {'▲' if not open_ else '▼'}"
             return toggle
 
-        # toggle_handler = create_proxy(
-        #     make_toggle(toggle_btn, cluster_div, animal_type)
-        # )
-
-        # toggle_btn.addEventListener("click", toggle_handler)
-
+        when("click", toggle_btn)(make_toggle(cluster_div, toggle_btn, animal_type))
 
         clusterContainer.appendChild(toggle_btn)
         clusterContainer.appendChild(cluster_div)
 
-        for r in data["docs"]:
-            source = detect_source(r.get("url", ""))
+        for doc in data["docs"]:
+            source = detect_source(doc.get("url", ""))
 
             item = document.createElement("div")
             item.className = "item"
@@ -302,15 +296,15 @@ def on_search_click(event):
 
                 <div class="result">
                     <div class="text">
-                        <a href="{r.get('url')[0] if r.get('url') else 'Unknown'}" target="_blank">
-                            {name[0] if name else "Unknown"} - {scientific_name[0] if scientific_name else "Unknown"}
+                        <a href="{doc.get('url', 'Unkown')}" target="_blank">
+                            {doc.get('name', 'Unknown')} - {doc.get('scientific_name', 'Unknown')}
                         </a>
-                        <p class="overview">{dirty_overview[0] if dirty_overview else "No overview available."}</p>
+                        <p class="overview">{doc.get('dirty_overview', 'No overview available.')}</p>
                     </div>
 
                     <img class="animal-img"
-                         src="{image_url if image_url else '../resources/images/anto19.png'}"
-                         alt="{name[0] if name else "Unknown"}">
+                         src="{doc.get('image_url', '../resources/images/anto19.png')}"
+                         alt="{doc.get('name', 'Unknown')}">
                 </div>
             """
 
