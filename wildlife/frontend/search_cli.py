@@ -14,7 +14,25 @@ FILTER_KEYWORDS = {
     "lifespan": ["lifespan", "age", "years"],
 }
 
+def solr_get(elem):
+    if not elem:
+        return 1.0
+    if isinstance(elem, list):
+        elem = elem[0]
+    return elem
+
+def solr_float(elem):
+    val = solr_get(elem)
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return None
+
 def detect_source(url: str):
+    if not url:
+        return None
+    if isinstance(url, list):
+        url = url[0]
     url = url.lower()
     if "awf.org" in url:
         return {
@@ -93,12 +111,7 @@ def search(query, rows=10):
     params = {
         "q": query if query.strip() else "*:*",
         "defType": "edismax",
-        "qf": (
-            "name^8 scientific_name^6"
-            "summary^4 overview^4 about^3 "
-            "habitats^2 distribution^2 "
-            "facts^1.5 threats^1 diet^1"
-        ),
+        "qf": "name^8 scientific_name^6 summary^4 overview^4 habitats^2 distribution^2 facts^1.5 threats^1 diet^1",
         "pf": "name^12 scientific_name^8",
         "mm": "1<75%",
         "tie": "0.1",
@@ -159,10 +172,20 @@ def on_search_click(event):
     for r in results:
         source = detect_source(r.get("url", ""))
 
-        weight = [r.get("weight_kg_min", None), r.get("weight_kg_max", None)]
-        size = [r.get("length_cm_min", None), r.get("length_cm_max", None)]
-        population = [r.get("population_min", None), r.get("population_max", None)]
+        weight = [
+            solr_float(r.get("weight_kg_min")),
+            solr_float(r.get("weight_kg_max"))
+        ]
 
+        size = [
+            solr_float(r.get("length_cm_min")),
+            solr_float(r.get("length_cm_max"))
+        ]
+
+        population = [
+            solr_float(r.get("population_min")),
+            solr_float(r.get("population_max"))
+        ]
 
         if not None in weight :
             if not max(weight[0], weight_range[0]) <= min(weight[-1], weight_range[1]):
@@ -186,19 +209,18 @@ def on_search_click(event):
 
             <div class="result">
                 <div class="text">
-                    <a href="{r.get('url')}" target="_blank">
-                        {r.get('name')} - {r.get('scientific_name')}
+                    <a href="{solr_get(r.get('url'))}" target="_blank">
+                        {solr_get(r.get('name'))} - {solr_get(r.get('scientific_name'))}
                     </a>
                     <p class="overview">
-                        {r.get('dirty_overview', '')}
+                        {solr_get(r.get('dirty_overview'))}
                     </p>
                 </div>
 
                 <img class="animal-img"
-                    src="{r.get('image_url', '')}"
-                    alt="{r.get('name', '')}">
+                    src="{solr_get(r.get('image_url'))}"
+                    alt="{solr_get(r.get('name'))}">
             </div>
         """
 
         resultsContainer.appendChild(item)
-
