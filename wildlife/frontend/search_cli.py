@@ -3,7 +3,7 @@ from pyscript import document, when
 from js import console
 import re
 from collections import defaultdict
-from pyodide.ffi import create_proxy
+# from pyodide.ffi import create_proxy
 
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
 
@@ -189,37 +189,47 @@ def on_search_click(event):
     
     results_to_display = 3
     clusters = cluster_by_animal_type(results=results[results_to_display:])
+
     for r in results[:results_to_display]:
         source = detect_source(r.get("url", ""))
 
         weight = [
-            solr_float(r.get("weight_kg_min")),
-            solr_float(r.get("weight_kg_max"))
+            r.get("weight_kg_min"),
+            r.get("weight_kg_max")
         ]
 
         size = [
-            solr_float(r.get("length_cm_min")),
-            solr_float(r.get("length_cm_max"))
+            r.get("length_cm_min"),
+            r.get("length_cm_max")
         ]
 
         population = [
-            solr_float(r.get("population_min")),
-            solr_float(r.get("population_max"))
+            r.get("population_min"),
+            r.get("population_max")
         ]
 
-        if not None in weight :
-            if not max(weight[0], weight_range[0]) <= min(weight[-1], weight_range[1]):
+        if not None in weight:
+            if not max(float(weight[0]), weight_range[0]) <= min(float(weight[-1]), weight_range[1]):
                 continue
         if not None in size:
-            if not max(size[0], size_range[0]) <= min(size[-1], size_range[1]):
+            if not max(float(size[0]), size_range[0]) <= min(float(size[-1]), size_range[1]):
                 continue
         if not None in population:
-            if not max(population[0], population_range[0]) <= min(population[-1], population_range[1]):
+            if not max(float(population[0]), population_range[0]) <= min(float(population[-1]), population_range[1]):
                 continue
 
 
         item = document.createElement("div")
         item.className = "item"
+
+        url = r.get("url")
+        name = r.get("name")
+        scientific_name = r.get("scientific_name")
+        dirty_overview = r.get("dirty_overview")
+        image_url = r.get("image_url")
+
+
+
 
         item.innerHTML = f"""
             <div class="logo">
@@ -229,17 +239,17 @@ def on_search_click(event):
 
             <div class="result">
                 <div class="text">
-                    <a href="{solr_get(r.get('url'))}" target="_blank">
-                        {solr_get(r.get('name'))} - {solr_get(r.get('scientific_name'))}
+                    <a href="{url[0] if url else "Unkown"}" target="_blank">
+                        {name[0] if name else "Unknown"} - {scientific_name[0] if scientific_name else "Unknown"}
                     </a>
                     <p class="overview">
-                        {solr_get(r.get('dirty_overview'))}
+                        {dirty_overview[0] if dirty_overview else "No overview available."}
                     </p>
                 </div>
 
                 <img class="animal-img"
-                    src="{solr_get(r.get('image_url'))}"
-                    alt="{solr_get(r.get('name'))}">
+                    src="{image_url if image_url else '../resources/images/anto19.png'}"
+                    alt="{name[0] if name else "Unknown"}">
             </div>
         """
 
@@ -260,18 +270,19 @@ def on_search_click(event):
         cluster_div.className = "cluster"
         cluster_div.style.display = "none"
 
-        def make_toggle(btn, container, label):
-            def toggle(evt):
-                open_ = container.style.display == "block"
-                container.style.display = "none" if open_ else "block"
-                btn.innerText = f"{label} {'▲' if not open_ else '▼'}"
+
+        @when("click", toggle_btn)
+        def toggle(evt):
+            open_ = cluster_div.style.display == "block"
+            cluster_div.style.display = "none" if open_ else "block"
+            toggle_btn.innerText = f"{animal_type} {'▲' if not open_ else '▼'}"
             return toggle
 
-        toggle_handler = create_proxy(
-            make_toggle(toggle_btn, cluster_div, animal_type)
-        )
+        # toggle_handler = create_proxy(
+        #     make_toggle(toggle_btn, cluster_div, animal_type)
+        # )
 
-        toggle_btn.addEventListener("click", toggle_handler)
+        # toggle_btn.addEventListener("click", toggle_handler)
 
 
         clusterContainer.appendChild(toggle_btn)
@@ -291,15 +302,15 @@ def on_search_click(event):
 
                 <div class="result">
                     <div class="text">
-                        <a href="{solr_get(r.get('url'))}" target="_blank">
-                            {solr_get(r.get('name'))} - {solr_get(r.get('scientific_name'))}
+                        <a href="{r.get('url')[0] if r.get('url') else 'Unknown'}" target="_blank">
+                            {name[0] if name else "Unknown"} - {scientific_name[0] if scientific_name else "Unknown"}
                         </a>
-                        <p class="overview">{solr_get(r.get('dirty_overview'))}</p>
+                        <p class="overview">{dirty_overview[0] if dirty_overview else "No overview available."}</p>
                     </div>
 
                     <img class="animal-img"
-                         src="{solr_get(r.get('image_url'))}"
-                         alt="{solr_get(r.get('name'))}">
+                         src="{image_url if image_url else '../resources/images/anto19.png'}"
+                         alt="{name[0] if name else "Unknown"}">
                 </div>
             """
 
