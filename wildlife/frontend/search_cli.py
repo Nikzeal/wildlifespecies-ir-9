@@ -71,14 +71,6 @@ def parse_query_intent(query):
 
     return intent
 
-def build_numeric_filter(field, values, tolerance=0.25):
-    v = values[0]
-
-    min_v = v * (1 - tolerance)
-    max_v = v * (1 + tolerance)
-
-    return f"{field}:[{min_v} TO {max_v}]"
-
 def build_range_filter(field, min_v, max_v):
     return f"{field}:[{min_v} TO {max_v}]"
 
@@ -108,19 +100,15 @@ def search(query, rows=10):
 
     if "weight" in intent["filters"]:
         v = intent["filters"]["weight"][0]
-        fq.append(build_range_filter(
-            "weight_kg",
-            v * 0.75,
-            v * 1.25
-        ))
+        fq.append(
+            f"weight_kg_min:[* TO {v}] AND weight_kg_max:[{v} TO *]"
+        )
 
     if "size" in intent["filters"]:
         v = intent["filters"]["size"][0]
-        fq.append(build_range_filter(
-            "length_cm",
-            v * 0.75,
-            v * 1.25
-        ))
+        fq.append(
+            f"length_cm_min:[* TO {v}] AND length_cm_max:[{v} TO *]"
+        )
 
     if "population" in intent["filters"]:
         v = intent["filters"]["population"][0]
@@ -136,7 +124,14 @@ def search(query, rows=10):
         "mm": "1<75%",
         "tie": "0.1",
         "rows": rows,
-        "fl": "id,name,scientific_name,animal_type,image_url,url,dirty_overview",
+        "fl": ",".join([
+            "id", "name", "scientific_name", "animal_type", "image_url", "url", "dirty_overview",
+            "weight_kg_min", "weight_kg_max",
+            "length_cm_min", "length_cm_max",
+            "lifespan_year_min", "lifespan_year_max",
+            "population_min", "population_max",
+            "how_to_identify", "summary", "overview"
+        ]),
         "wt": "json"
     }
 
@@ -193,28 +188,28 @@ def on_search_click(event):
         source = detect_source(r.get("url", ""))
 
         weight = [
-            solr_float(r.get("weight_kg_min")),
-            solr_float(r.get("weight_kg_max"))
+            r.get("weight_kg_min"),
+            r.get("weight_kg_max")
         ]
 
         size = [
-            solr_float(r.get("length_cm_min")),
-            solr_float(r.get("length_cm_max"))
+            r.get("length_cm_min"),
+            r.get("length_cm_max")
         ]
 
         population = [
-            solr_float(r.get("population_min")),
-            solr_float(r.get("population_max"))
+            r.get("population_min"),
+            r.get("population_max")
         ]
-
-        if not None in weight :
-            if not max(weight[0], weight_range[0]) <= min(weight[-1], weight_range[1]):
+        
+        if None not in weight :
+            if not max(float(weight[0][0]), weight_range[0]) <= min(float(weight[0][-1]), weight_range[1]):
                 continue
-        if not None in size:
-            if not max(size[0], size_range[0]) <= min(size[-1], size_range[1]):
+        if None not in size:
+            if not max(float(size[0][0]), size_range[0]) <= min(float(size[0][-1]), size_range[1]):
                 continue
-        if not None in population:
-            if not max(population[0], population_range[0]) <= min(population[-1], population_range[1]):
+        if None not in population:
+            if not max(float(population[0][0]), population_range[0]) <= min(float(population[0][-1]), population_range[1]):
                 continue
 
 

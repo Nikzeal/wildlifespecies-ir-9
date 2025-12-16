@@ -267,6 +267,7 @@ input[type="search"]:focus {
     display: flex;
     flex-direction: row-reverse;
     gap: 10px;
+    text-align: left;
 }
 
 .logo-img {
