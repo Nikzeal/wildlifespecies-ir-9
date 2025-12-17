@@ -237,7 +237,7 @@ def on_search_click(event):
                         {name[0]} - {scientific_name[0]}
                     </a>
                     <p class="overview">
-                        {dirty_overview[0]}
+                        {dirty_overview}
                     </p>
                 </div>
 
