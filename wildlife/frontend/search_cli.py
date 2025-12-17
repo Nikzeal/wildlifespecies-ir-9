@@ -190,6 +190,10 @@ def on_search_click(event):
     clusters = cluster_by_animal_type(results=results[results_to_display:])
 
     for r in results[:results_to_display]:
+        
+        for key, value in r.items():
+            console.log(f"{key} => {value}")
+            
         source = detect_source(r.get("url", ""))
 
         weight = [
@@ -206,6 +210,8 @@ def on_search_click(event):
             r.get("population_min"),
             r.get("population_max")
         ]
+
+        console.log("Checking filters:", r.get("raw_weight"))
 
         if not None in weight:
             if not max(float(weight[0]), weight_range[0]) <= min(float(weight[-1]), weight_range[1]):
@@ -296,15 +302,15 @@ def on_search_click(event):
 
                 <div class="result">
                     <div class="text">
-                        <a href="{doc.get('url', 'Unkown')}" target="_blank">
-                            {doc.get('name', 'Unknown')} - {doc.get('scientific_name', 'Unknown')}
+                        <a href="{doc.get('url', 'Unknown')}" target="_blank">
+                            {doc.get('name', ['Unknown'])[0]} - {doc.get('scientific_name', ['Unknown'])[0]}
                         </a>
-                        <p class="overview">{doc.get('dirty_overview', 'No overview available.')}</p>
+                        <p class="overview">{doc.get('dirty_overview', ['No overview available.'])[0]}</p>
                     </div>
 
                     <img class="animal-img"
                          src="{doc.get('image_url', '../resources/images/anto19.png')}"
-                         alt="{doc.get('name', 'Unknown')}">
+                         alt="{doc.get('name', ['Unknown'])[0]}">
                 </div>
             """
 
