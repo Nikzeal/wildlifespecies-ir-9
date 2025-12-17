@@ -186,6 +186,10 @@ def on_search_click(event):
     clusters = cluster_by_animal_type(results=results[results_to_display:])
 
     for r in results[:results_to_display]:
+        
+        for key, value in r.items():
+            console.log(f"{key} => {value}")
+            
         source = detect_source(r.get("url", ""))
 
         weight = [

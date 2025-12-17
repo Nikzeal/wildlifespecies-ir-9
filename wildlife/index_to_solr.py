@@ -9,6 +9,23 @@ def clear_index():
     resp = requests.post(url, json=payload)
     print("Delete all docs:", resp.status_code, resp.text)
 
+def reset_collection():
+    print("Deleting all documents from Solr collection...")
+
+    delete_payload = {
+        "delete": {"query": "*:*"},
+        "commit": {}
+    }
+
+    resp = requests.post(
+        "http://localhost:8983/solr/wild_life/update",
+        json=delete_payload
+    )
+
+    resp.raise_for_status()
+    print("Collection reset complete.")
+
+
 def index_file(path, source):
     print(f"Indexing: {path} ({source})")
     with open(path, "r", encoding="utf-8") as f:
