@@ -1,7 +1,14 @@
 import json
 import requests
 
-SOLR_URL = "http://localhost:8983/solr/wild_life/update?commit=true"
+SOLR_URL = "http://localhost:8983/solr/wild_life"
+
+def clear_index():
+    """Delete all documents in the Solr core."""
+    url = f"{SOLR_URL}/update?commit=true"
+    payload = {"delete": {"query": "*:*"}}
+    resp = requests.post(url, json=payload)
+    print("Delete all docs:", resp.status_code, resp.text)
 
 def reset_collection():
     print("Deleting all documents from Solr collection...")
@@ -29,7 +36,7 @@ def index_file(path, source):
         item["id"] = item.get("url")
         item["source"] = source
 
-    resp = requests.post(SOLR_URL, json=raw_items)
+    resp = requests.post(f"{SOLR_URL}/update?commit=true", json=raw_items)
     print(resp.status_code, resp.text)
 
 
