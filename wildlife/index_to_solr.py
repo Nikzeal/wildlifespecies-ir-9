@@ -4,7 +4,6 @@ import requests
 SOLR_URL = "http://localhost:8983/solr/wild_life"
 
 def clear_index():
-    """Delete all documents in the Solr core."""
     url = f"{SOLR_URL}/update?commit=true"
     payload = {"delete": {"query": "*:*"}}
     resp = requests.post(url, json=payload)
@@ -24,10 +23,8 @@ def index_file(path, source):
 
 
 if __name__ == "__main__":
-    # Clear existing documents first
     clear_index()
 
-    # Index new files
     index_file("wildlifetrusts.json", "WT")
     index_file("awf.json", "AWF")
     index_file("wwf.json", "WWF")

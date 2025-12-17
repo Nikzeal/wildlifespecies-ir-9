@@ -84,6 +84,21 @@ toggleBtn.addEventListener("click", () => {
         : "Filters ▼";
 });
 
+document.getElementById("topics-container").addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-toggle");
+    if (!btn) return;
+
+    const cluster = btn.nextElementSibling;
+    if (!cluster || !cluster.classList.contains("cluster")) return;
+
+    cluster.classList.toggle("open");
+
+    const label = btn.textContent.replace(/[▲▼]/g, "").trim();
+    btn.textContent = cluster.classList.contains("open")
+        ? `${label} ▲`
+        : `${label} ▼`;
+});
+
 document.getElementById("reset-filters").addEventListener("click", () => {
     document.querySelectorAll(".range-wrapper").forEach(wrapper => {
         const minLimit = parseInt(wrapper.dataset.min);

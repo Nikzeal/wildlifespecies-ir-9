@@ -4,6 +4,12 @@ from js import console
 import re
 from collections import defaultdict
 
+def dom_ready():
+    return document.readyState == "complete"
+
+while not dom_ready():
+    pass
+
 SOLR_URL = "http://localhost:8983/solr/wild_life/select"
 
 NUMERIC_PATTERN = re.compile(r"(\d+(?:\.\d+)?)")
@@ -15,19 +21,17 @@ FILTER_KEYWORDS = {
     "lifespan": ["lifespan", "age", "years"],
 }
 
-def solr_get(elem):
-    if not elem:
-        return 1.0
-    if isinstance(elem, list):
-        elem = elem[0]
-    return elem
+def safe_get(doc, key, default=""):
+    val = doc.get(key, default)
+    if isinstance(val, list) and val:
+        return val[0]
+    if val is None:
+        return default
+    return val
 
-def solr_float(elem):
-    val = solr_get(elem)
-    try:
-        return float(val)
-    except (TypeError, ValueError):
-        return None
+def is_filter_enabled(filter_id):
+    checkbox = document.querySelector(f"#{filter_id} input.filter-enable")
+    return checkbox.checked
 
 def detect_source(url: str):
     if not url:
@@ -69,9 +73,6 @@ def parse_query_intent(query):
                 intent["filters"][key] = numbers
 
     return intent
-
-def build_range_filter(field, min_v, max_v):
-    return f"{field}:[{min_v} TO {max_v}]"
 
 def cluster_by_animal_type(results):
     clusters = defaultdict(lambda: {"count": 0, "docs": []})
@@ -158,7 +159,7 @@ searchbtn = document.querySelector("#search-btn")
 @when("click", searchbtn)
 def on_search_click(event):
 
-    weight_div = document.querySelector("#weight_cm")
+    weight_div = document.querySelector("#weight_kg")
     size_div = document.querySelector("#length_cm")
     population_div = document.querySelector("#population")
 
@@ -202,28 +203,38 @@ def on_search_click(event):
             r.get("population_max")
         ]
         
-        if None not in weight :
-            if not max(float(weight[0][0]), weight_range[0]) <= min(float(weight[0][-1]), weight_range[1]):
-                continue
-        if None not in size:
-            if not max(float(size[0][0]), size_range[0]) <= min(float(size[0][-1]), size_range[1]):
-                continue
-        if None not in population:
-            if not max(float(population[0][0]), population_range[0]) <= min(float(population[0][-1]), population_range[1]):
+        if is_filter_enabled("weight_kg"):
+            if None in weight:
                 continue
 
+            w_min = float(weight[0][0])
+            w_max = float(weight[1][0])
+
+            if not (max(w_min, weight_range[0]) <= min(w_max, weight_range[1])):
+                continue
+        
+        if is_filter_enabled("length_cm"):
+            if None in size:
+                continue
+
+            s_min = float(size[0][0])
+            s_max = float(size[1][0])
+
+            if not (max(s_min, size_range[0]) <= min(s_max, size_range[1])):
+                continue
+        
+        if is_filter_enabled("population"):
+            if None in population:
+                continue
+
+            p_min = float(population[0][0])
+            p_max = float(population[1][0])
+
+            if not (max(p_min, population_range[0]) <= min(p_max, population_range[1])):
+                continue
 
         item = document.createElement("div")
         item.className = "item"
-
-        url = r.get("url", "Unknown")
-        name = r.get("name", ["Unknown"])
-        scientific_name = r.get("scientific_name", ["Unknown"])
-        dirty_overview = r.get("dirty_overview", ["No overview available."])
-        image_url = r.get("image_url", "../resources/images/anto19.png")
-
-
-
 
         item.innerHTML = f"""
             <div class="logo">
@@ -233,17 +244,17 @@ def on_search_click(event):
 
             <div class="result">
                 <div class="text">
-                    <a href="{url}" target="_blank">
-                        {name[0]} - {scientific_name[0]}
+                    <a href="{safe_get(r, "url", "Unknown")}" target="_blank">
+                        {safe_get(r, "name", "Unknown")} - {safe_get(r, "scientific_name", "Unknown")}
                     </a>
                     <p class="overview">
-                        {dirty_overview[0]}
+                        {safe_get(r, "dirty_overview", "No overview available")}
                     </p>
                 </div>
 
                 <img class="animal-img"
-                    src="{image_url}"
-                    alt="{name[0]}">
+                    src="{safe_get(r, "image_url", "../resources/images/anto19.png")}"
+                    alt="{safe_get(r, "name", "Unknown")}">
             </div>
         """
 
@@ -251,34 +262,19 @@ def on_search_click(event):
 
     clusterContainer = document.querySelector("#topics-container")
     clusterContainer.innerHTML = ""
-    title = document.querySelector("#related-topics-title")
-    title.innerHTML = ""
     for animal_type, data in clusters:
-        title.innerHTML = "Related Topics"
-
         toggle_btn = document.createElement("button")
         toggle_btn.className = "filter-toggle"
         toggle_btn.innerText = f"{animal_type} ▼"
 
         cluster_div = document.createElement("div")
         cluster_div.className = "cluster"
-        cluster_div.style.display = "none"
-
-
-        def make_toggle(cluster_div, toggle_btn, animal_type):
-            def toggle(evt):
-                open_ = cluster_div.style.display == "block"
-                cluster_div.style.display = "none" if open_ else "block"
-                toggle_btn.innerText = f"{animal_type} {'▲' if not open_ else '▼'}"
-            return toggle
-
-        when("click", toggle_btn)(make_toggle(cluster_div, toggle_btn, animal_type))
 
         clusterContainer.appendChild(toggle_btn)
         clusterContainer.appendChild(cluster_div)
 
         for doc in data["docs"]:
-            source = detect_source(doc.get("url", ""))
+            source = detect_source(safe_get(doc, "url"))
 
             item = document.createElement("div")
             item.className = "item"
@@ -291,15 +287,15 @@ def on_search_click(event):
 
                 <div class="result">
                     <div class="text">
-                        <a href="{doc.get('url', 'Unkown')}" target="_blank">
-                            {doc.get('name', 'Unknown')} - {doc.get('scientific_name', 'Unknown')}
+                        <a href="{safe_get(doc, "url", "Unknown")}" target="_blank">
+                            {safe_get(doc, "name", "Unknown")} - {safe_get(doc, "scientific_name", "Unknown")}
                         </a>
-                        <p class="overview">{doc.get('dirty_overview', 'No overview available.')}</p>
+                        <p class="overview">{safe_get(doc, "dirty_overview", "No overview available.")}</p>
                     </div>
 
                     <img class="animal-img"
-                         src="{doc.get('image_url', '../resources/images/anto19.png')}"
-                         alt="{doc.get('name', 'Unknown')}">
+                         src="{safe_get(doc, "image_url", "../resources/images/anto19.png")}"
+                         alt="{safe_get(doc, "name", "Unknown")}">
                 </div>
             """
 

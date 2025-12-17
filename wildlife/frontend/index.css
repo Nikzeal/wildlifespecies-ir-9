@@ -186,13 +186,13 @@ input[type="search"]:focus {
     text-align: left;
 }
 
-.filters-collapsible {
+.filters-collapsible, .cluster {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.35s ease;
 }
 
-.filters-collapsible.open {
+.filters-collapsible.open, .cluster.open {
     max-height: 1000px;
 }
 
