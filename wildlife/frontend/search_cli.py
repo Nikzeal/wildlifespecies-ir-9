@@ -211,7 +211,7 @@ def show_related(doc):
     scored.sort(key=lambda x: x[0], reverse=True)
 
 
-    limit = 5
+    limit = 7
     reccomended = []
 
     for pair in scored[:limit]:
@@ -231,11 +231,6 @@ def show_related(doc):
         item.className = "item"
 
         item.innerHTML = f"""
-            <div class="logo">
-                <img class="logo-img" src="{source['logo']}" alt="{source['name']}">
-                <p>{source['name']}</p>
-            </div>
-
             <div class="result">
                 <div class="text">
                     <a href="{safe_get(r, "url", "Unknown")}" target="_blank">
@@ -247,7 +242,7 @@ def show_related(doc):
                 </div>
 
                 <img class="animal-img"
-                    src="{safe_get(r, "image_url", "../resources/images/anto19.png")}"
+                    src="{safe_get(r, "image_url", "../resources/images/wf_basic_logo.png")}"
                     alt="{safe_get(r, "name", "Unknown")}">
             </div>
         """
@@ -368,7 +363,7 @@ def on_search_click(event):
 
         # TODO also add to user profile
        
-        show_related(r);
+        show_related(r)
             
         source = detect_source(r.get("url", ""))
 
@@ -442,7 +437,7 @@ def on_search_click(event):
 
             <div class="result">
                 <img class="animal-img"
-                    src="{safe_get(r, "image_url", "../resources/images/anto19.png")}"
+                    src="{safe_get(r, "image_url", "../resources/images/wf_basic_logo.png")}"
                     alt="{safe_get(r, "name", "Unknown")}">
                 <div class="text">
                     <a href="{safe_get(r, "url", "Unknown")}" target="_blank">
@@ -561,7 +556,7 @@ def on_search_click(event):
 
                 <div class="result">
                     <img class="animal-img"
-                        src="{safe_get(doc, "image_url", "../resources/images/anto19.png")}"
+                        src="{safe_get(doc, "image_url", "../resources/images/wf_basic_logo.png")}"
                         alt="{safe_get(doc, "name", "Unknown")}">
                     <div class="text">
                         <a href="{safe_get(doc, "url", "Unknown")}" target="_blank">
