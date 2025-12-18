@@ -1,10 +1,18 @@
+import json
 import requests
-from pyscript import document, when
+from pyscript import document, when, window
 from js import console
 import re
 from collections import defaultdict
 
+
+def show_for_you(user_profile):
+    return
+
+
 def dom_ready():
+    ls = window.localStorage
+    show_for_you(ls.getItem("user_profile"))
     return document.readyState == "complete"
 
 while not dom_ready():
@@ -91,6 +99,140 @@ def cluster_by_animal_type(results):
 
     return sorted_clusters
 
+def text_similarity(a, b):
+    if not a or not b:
+        return 0.0
+
+    tokens_a = set(re.findall(r"\w+", a.lower()))
+    tokens_b = set(re.findall(r"\w+", b.lower()))
+
+    if not tokens_a or not tokens_b:
+        return 0.0
+
+    return len(tokens_a & tokens_b) / len(tokens_a | tokens_b)
+
+def range_overlap(a_min, a_max, b_min, b_max):
+    if "" in (a_min, a_max, b_min, b_max):
+        return 0.0
+
+    a_min, a_max = float(a_min), float(a_max)
+    b_min, b_max = float(b_min), float(b_max)
+
+    overlap = max(0, min(a_max, b_max) - max(a_min, b_min))
+    span = max(a_max - a_min, b_max - b_min)
+
+    return overlap / span if span > 0 else 0.0
+
+def compute_similarity(base, cand):
+    score = 0.0
+
+    # 0.4 text similarity
+    score += 0.4 * text_similarity(
+        safe_get(base, "overview"),
+        safe_get(cand, "overview")
+    )
+
+    # 0.3 same animal type
+    if safe_get(base, "animal_type") == safe_get(cand, "animal_type"):
+        score += 0.3
+
+    # 0.2 size overlap
+    score += 0.2 * range_overlap(
+        safe_get(base, "length_cm_min"),
+        safe_get(base, "length_cm_max"),
+        safe_get(cand, "length_cm_min"),
+        safe_get(cand, "length_cm_max")
+    )
+
+    return score
+
+
+def fetch_related(doc, rows=30):
+
+    animal_type = doc.get("animal_type", ['Animal'])
+
+    
+    params = {
+        "q": f"animal_type:{animal_type[0]}",
+        "rows": rows,
+        "fl": ",".join([
+            "id", "name", "scientific_name", "animal_type",
+            "overview",
+            "length_cm_min", "length_cm_max",
+            "image_url", "url"
+        ]),
+        "wt": "json"
+    }
+
+    resp = requests.get(SOLR_URL, params=params)
+    data = resp.json()
+
+    # console.log(
+    #     "docs:",
+    #     json.dumps(data.get("response", {}).get("docs", []), indent=2)
+    # )
+
+    return data.get("response", {}).get("docs", [])
+
+
+def show_related(doc):
+
+    candidates = fetch_related(doc)
+    scored = []
+    for cand in candidates:
+        if cand.get("id") == doc.get("id"):
+            continue 
+
+        score = compute_similarity(doc, cand)
+        scored.append((score, cand))
+
+    # sort based on similarity
+    scored.sort(key=lambda x: x[0], reverse=True)
+
+
+    limit = 5
+    reccomended = []
+
+    for pair in scored[:limit]:
+        doc = pair[1]
+        reccomended.append(doc)
+
+
+    results_container = document.querySelector(".reccomended-results")
+    results_container.innerHTML = f"<h2>You might also like, based on {safe_get(doc, "animal_type")}</h2>"
+    
+
+    for r in reccomended:
+        
+        source = detect_source(r.get("url", ""))
+
+        item = document.createElement("div")
+        item.className = "item"
+
+        item.innerHTML = f"""
+            <div class="logo">
+                <img class="logo-img" src="{source['logo']}" alt="{source['name']}">
+                <p>{source['name']}</p>
+            </div>
+
+            <div class="result">
+                <div class="text">
+                    <a href="{safe_get(r, "url", "Unknown")}" target="_blank">
+                        {safe_get(r, "name", "Unknown")} - {safe_get(r, "scientific_name", "Unknown")}
+                    </a>
+                    <p class="overview">
+                        {safe_get(r, "dirty_overview", "No overview available")}
+                    </p>
+                </div>
+
+                <img class="animal-img"
+                    src="{safe_get(r, "image_url", "../resources/images/anto19.png")}"
+                    alt="{safe_get(r, "name", "Unknown")}">
+            </div>
+        """
+        
+        results_container.appendChild(item)
+
 
 def search(query, rows=10):
     intent = parse_query_intent(query)
@@ -155,39 +297,46 @@ searchbar = document.querySelector("#search")
 searchbtn = document.querySelector("#search-btn")
 
 
+
 @when("click", searchbtn)
 def on_search_click(event):
 
+
+    # filters
     weight_div = document.querySelector("#weight_kg")
     size_div = document.querySelector("#length_cm")
     population_div = document.querySelector("#population")
+    min_class = ".min-input"
+    max_class = ".max-input"
 
-    weight_value_min = weight_div.querySelector(".min-input").value
-    weight_value_max = weight_div.querySelector(".max-input").value
+    weight_value_min = weight_div.querySelector(min_class).value
+    weight_value_max = weight_div.querySelector(max_class).value
     weight_range = [float(weight_value_min), float(weight_value_max)]
 
-    size_value_min = size_div.querySelector(".min-input").value
-    size_value_max = size_div.querySelector(".max-input").value
+    size_value_min = size_div.querySelector(min_class).value
+    size_value_max = size_div.querySelector(max_class).value
     size_range = [float(size_value_min), float(size_value_max)]
 
-    population_value_min = population_div.querySelector(".min-input").value
-    population_value_max = population_div.querySelector(".max-input").value
+    population_value_min = population_div.querySelector(min_class).value
+    population_value_max = population_div.querySelector(max_class).value
     population_range = [float(population_value_min), float(population_value_max)]
     
     query = searchbar.value
-    console.log(f"Searching for: {query}")
+    #console.log(f"Searching for: {query}")
 
     results = search(query)
-    results_container = document.querySelector("#results")
-    results_container.innerHTML = ""
+    results_container = document.querySelector(".top-results")
+    results_container.innerHTML = '<h2 class="title">TOP RESULTS</h2>'
+
     
     results_to_display = 3
     clusters = cluster_by_animal_type(results=results[results_to_display:])
 
     for r in results[:results_to_display]:
-        
-        for key, value in r.items():
-            console.log(f"{key} => {value}")
+
+        # TODO also add to user profile
+       
+        show_related(r);
             
         source = detect_source(r.get("url", ""))
 

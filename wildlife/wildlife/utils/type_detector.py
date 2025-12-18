@@ -33,7 +33,7 @@ def detect_type(text: str):
 
     # ---------------- FISH ----------------
     fish_keywords = [
-        "fish", "shark", "ray", "eel", "gill", "fins", "school",
+        "fish", "shark","whale shark", "ray", "eel", "gill", "fins", "school",
         "cartilaginous", "bony fish", "teleost", "swim bladder",
         "lateral line", "spawning", "aquatic", "freshwater", "saltwater",
         "turtles", "turtle", "sea turtles", "sea turtle", "tentacles"

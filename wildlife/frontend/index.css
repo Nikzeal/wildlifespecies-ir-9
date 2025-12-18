@@ -76,13 +76,13 @@ input[type="search"]:focus {
 }
 
 .item a {
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: bold;
     color: black
 }
 
 .item a:hover {
-    text-decoration: none;
+    text-decoration: underline;
     color: #0015ff
 }
 
