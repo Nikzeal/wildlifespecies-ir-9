@@ -8,7 +8,7 @@ from warcio.archiveiterator import ArchiveIterator
 from wildlife.utils.text_cleaner import clean_text
 from wildlife.utils.type_detector import detect_type
 
-# run command: python3 -m scrapy crawl wildlife_trusts
+# run command: scrapy crawl wildlife_trusts
 
 NUMBER = r"([\d\.]+)"
 RANGE = rf"{NUMBER}(?:\s*-\s*{NUMBER})?"
@@ -60,7 +60,7 @@ def parse_statistics(data, stats_text: str) -> dict:
                 data[field + "_min"] = round(min_cm, 2)
                 data[field + "_max"] = round(to_cm(float(max_val), unit), 2)
             else:
-                data[field + "_min"] = round(min_cm, 2)
+                data[field + "_min"] = 0
                 data[field + "_max"] = round(min_cm, 2)
 
         # ---------- WEIGHT ----------
@@ -78,7 +78,7 @@ def parse_statistics(data, stats_text: str) -> dict:
                 data[field + "_min"] = round(min_val, 3)
                 data[field + "_max"] = round(float(max_val), 3)
             else:
-                data[field + "_min"] = round(min_val, 3)
+                data[field + "_min"] = 0
                 data[field + "_max"] = round(min_val, 3)
 
         # ---------- LIFESPAN ----------
@@ -90,7 +90,7 @@ def parse_statistics(data, stats_text: str) -> dict:
                 data[field + "_min"] = min_val
                 data[field + "_max"] = float(max_val)
             else:
-                data[field + "_min"] = min_val
+                data[field + "_min"] = 0
                 data[field + "_max"] = min_val
 
     return data

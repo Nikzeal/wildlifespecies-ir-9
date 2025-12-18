@@ -1,5 +1,4 @@
 import io
-from pathlib import Path
 import re
 from bs4 import BeautifulSoup
 import scrapy
@@ -8,11 +7,10 @@ from warcio.archiveiterator import ArchiveIterator
 from wildlife.utils.text_cleaner import clean_text
 from wildlife.utils.type_detector import detect_type
 
-# run command: scrapy crawl awf -O awf.json
+# run command: scrapy crawl awf
 
 def safe_filename(url: str) -> str:
     name = re.sub(r'^https?://', '', url)
-    # Replace any non-alphanumeric character with underscore
     name = re.sub(r'[^a-zA-Z0-9_-]+', '_', name)
     return name[:200] 
 
@@ -27,43 +25,30 @@ def html_to_json(html_file):
 def extract_numbers(text):
     return [float(x) for x in re.findall(r"\d+(?:\.\d+)?", text)]
 
+def strip_parentheses(text: str) -> str:
+    return re.sub(r"\([^)]*\)", "", text)
 
 def parse_weight_kg(text):
+    if not text:
+        return None
+
+    text = strip_parentheses(text)
+
     mins, maxs = [], []
 
     for part in text.split(";"):
         nums = extract_numbers(part)
-
         if not nums:
             continue
 
-        if re.search(r"ton", part, re.I):
-            nums = [n * 1000 for n in nums]
-        elif re.search(r"pound|lb", part, re.I):
-            nums = [n * 0.453592 for n in nums]
-        # else assume kg
+        part_l = part.lower()
 
-        mins.append(min(nums))
-        maxs.append(max(nums))
-
-    if mins:
-        return [min(mins), max(maxs)]
-    return None
-
-
-def parse_length_cm(text):
-    mins, maxs = [], []
-
-    for part in text.split(";"):
-        nums = extract_numbers(part)
-
-        if not nums:
-            continue
-
-        if re.search(r"meter|meters|\bm\b", part):
-            nums = [n * 100 for n in nums]
-        elif re.search(r"centimeter|cm", part):
+        if re.search(r"\bkilogram(s)?\b|\bkg\b", part_l):
             nums = nums
+        elif re.search(r"\bton(s)?\b", part_l):
+            nums = [n * 1000 for n in nums]
+        elif re.search(r"\bgram(s)?\b|\bg\b", part_l):
+            nums = [n / 1000 for n in nums]
         else:
             continue
 
@@ -71,6 +56,43 @@ def parse_length_cm(text):
         maxs.append(max(nums))
 
     if mins:
+        if min(mins) == max(maxs):
+            return [0, max(maxs)]
+        return [min(mins), max(maxs)]
+    return None
+
+
+
+def parse_length_cm(text):
+    if not text:
+        return None
+
+    text = strip_parentheses(text)
+
+    mins, maxs = [], []
+
+    for part in text.split(";"):
+        nums = extract_numbers(part)
+        if not nums:
+            continue
+
+        part_l = part.lower()
+
+        if re.search(r"\bmillimeter(s)?\b|\bmm\b", part_l):
+            nums = [n / 10 for n in nums]
+        elif re.search(r"\bcentimeter(s)?\b|\bcm\b", part_l):
+            nums = nums
+        elif re.search(r"\bmeter(s)?\b|\bm\b", part_l):
+            nums = [n * 100 for n in nums]
+        else:
+            continue
+
+        mins.append(min(nums))
+        maxs.append(max(nums))
+
+    if mins:
+        if min(mins) == max(maxs):
+            return [0, max(maxs)]
         return [min(mins), max(maxs)]
     return None
 
