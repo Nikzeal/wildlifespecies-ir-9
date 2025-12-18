@@ -68,9 +68,8 @@ def parse_query_intent(query):
     }
 
     for key, keywords in FILTER_KEYWORDS.items():
-        if any(k in query_lower for k in keywords):
-            if numbers:
-                intent["filters"][key] = numbers
+        if any(k in query_lower for k in keywords) and numbers:
+            intent["filters"][key] = numbers
 
     return intent
 
@@ -179,8 +178,8 @@ def on_search_click(event):
     console.log(f"Searching for: {query}")
 
     results = search(query)
-    resultsContainer = document.querySelector("#results")
-    resultsContainer.innerHTML = ""
+    results_container = document.querySelector("#results")
+    results_container.innerHTML = ""
     
     results_to_display = 3
     clusters = cluster_by_animal_type(results=results[results_to_display:])
@@ -214,7 +213,7 @@ def on_search_click(event):
             w_min = float(weight[0][0])
             w_max = float(weight[1][0])
 
-            if not (max(w_min, weight_range[0]) <= min(w_max, weight_range[1])):
+            if max(w_min, weight_range[0]) > min(w_max, weight_range[1]):
                 continue
         
         if is_filter_enabled("length_cm"):
@@ -224,7 +223,7 @@ def on_search_click(event):
             s_min = float(size[0][0])
             s_max = float(size[1][0])
 
-            if not (max(s_min, size_range[0]) <= min(s_max, size_range[1])):
+            if max(s_min, size_range[0]) > min(s_max, size_range[1]):
                 continue
         
         if is_filter_enabled("population"):
@@ -234,7 +233,7 @@ def on_search_click(event):
             p_min = float(population[0][0])
             p_max = float(population[1][0])
 
-            if not (max(p_min, population_range[0]) <= min(p_max, population_range[1])):
+            if max(p_min, population_range[0]) > min(p_max, population_range[1]):
                 continue
 
         item = document.createElement("div")
@@ -262,10 +261,10 @@ def on_search_click(event):
             </div>
         """
 
-        resultsContainer.appendChild(item)
+        results_container.appendChild(item)
 
-    clusterContainer = document.querySelector("#topics-container")
-    clusterContainer.innerHTML = ""
+    cluster_container = document.querySelector("#topics-container")
+    cluster_container.innerHTML = ""
     for animal_type, data in clusters:
         toggle_btn = document.createElement("button")
         toggle_btn.className = "filter-toggle"
@@ -274,8 +273,8 @@ def on_search_click(event):
         cluster_div = document.createElement("div")
         cluster_div.className = "cluster"
 
-        clusterContainer.appendChild(toggle_btn)
-        clusterContainer.appendChild(cluster_div)
+        cluster_container.appendChild(toggle_btn)
+        cluster_container.appendChild(cluster_div)
 
         for doc in data["docs"]:
             source = detect_source(safe_get(doc, "url"))
