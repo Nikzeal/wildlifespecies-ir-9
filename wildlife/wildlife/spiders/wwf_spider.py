@@ -8,25 +8,15 @@ import re
 from wildlife.utils.text_cleaner import clean_text
 from wildlife.utils.type_detector import detect_type
 
-# def safe_filename(url: str) -> str:
-#     name = re.sub(r'^https?://', '', url)
- 
-#     name = re.sub(r'[^a-zA-Z0-9_-]+', '_', name)
-#     return name[:200] 
-
-
-# def html_to_json(html_file):
-#     with open(html_file, 'r', encoding='utf-8') as file:
-#         soup = BeautifulSoup(file, 'html.parser')
-#         json_data = json.dumps(soup, indent=2, ensure_ascii=False)
-
-#     return json_data
+# run command: scrapy crawl wwf
 
 def extract_numbers(text):
     if not text:
         return []
-    return [float(x) for x in re.findall(r"\d+(?:\.\d+)?", text)]
 
+    text = re.sub(r"(?<=\d),(?=\d{3}\b)", "", text)
+
+    return [float(x) for x in re.findall(r"\d+(?:\.\d+)?", text)]
 
 def pounds_to_kg(lb):
     return lb * 0.453592
@@ -58,6 +48,8 @@ def parse_weight_kg(raw):
     elif "kg" in raw.lower():
         pass  # already kg
 
+    if nums[0] == nums[-1]:
+        return [0, nums[-1]]
     return nums
 
 def parse_population(raw):
@@ -77,7 +69,7 @@ def parse_population(raw):
     else:
         nums = [int(n) for n in nums]
 
-    if "less than" in text or "<" in text:
+    if "less than" in text or "<" in text or nums[0] == nums[-1]:
         return [0, nums[0]]
 
     return nums
@@ -94,10 +86,13 @@ def parse_length_clause(clause):
 
     if "meter" in clause:
         nums = [v * 100 for v in nums]
-    elif "foot" in clause or "ft" in clause:
+    elif "foot" in clause or "ft" in clause or "feet" in clause:
         nums = [v * 30.48 for v in nums]
     elif "inch" in clause:
         nums = [v * 2.54 for v in nums]
+
+    if nums[0] == nums[-1]:
+        nums = [0, nums[-1]]
 
     if "tail" in clause:
         return "tail_length_cm", nums
@@ -105,7 +100,7 @@ def parse_length_clause(clause):
         return "wingspan_cm", nums
     if "shoulder" in clause or "tall" in clause or "height" in clause:
         return "shoulder_height_cm", nums
-
+        
     return "length_cm", nums
 
 

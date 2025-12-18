@@ -41,6 +41,27 @@ def is_filter_enabled(filter_id):
     checkbox = document.querySelector(f"#{filter_id} input.filter-enable")
     return checkbox.checked
 
+def fmt(x, decimals=1, small_sig=3):
+    if x == 0:
+        return "0"
+    if abs(x) < 1:
+        return f"{x:.{small_sig}g}"
+    return f"{x:.{decimals}f}".rstrip("0").rstrip(".")
+
+def format_stat(stat, unit="", default="Unknown", decimals=1):
+    if not stat or None in stat:
+        return default
+    s_min = stat[0][0]
+    s_max = stat[1][0]
+    def fmt_local(x):
+        return fmt(x, decimals=decimals)
+    if s_min == 0:
+        return f"Up to {fmt_local(s_max)} {unit}"
+    if s_min == s_max:
+        return f"{fmt_local(s_min)} {unit}"
+    return f"{fmt_local(s_min)}–{fmt_local(s_max)} {unit}"
+
+
 def detect_source(url: str):
     if not url:
         return None
@@ -308,6 +329,7 @@ def on_search_click(event):
     population_div = document.querySelector("#population")
     min_class = ".min-input"
     max_class = ".max-input"
+    animal_type_div = document.querySelector("#animal-type")
 
     weight_value_min = weight_div.querySelector(min_class).value
     weight_value_max = weight_div.querySelector(max_class).value
@@ -320,6 +342,16 @@ def on_search_click(event):
     population_value_min = population_div.querySelector(min_class).value
     population_value_max = population_div.querySelector(max_class).value
     population_range = [float(population_value_min), float(population_value_max)]
+
+    checkboxes = animal_type_div.querySelectorAll(
+        ".animal-type-options input[type='checkbox']"
+    )
+
+    selected_types = [
+        cb.value
+        for cb in checkboxes
+        if cb.checked
+    ]
     
     query = searchbar.value
     #console.log(f"Searching for: {query}")
@@ -354,6 +386,8 @@ def on_search_click(event):
             r.get("population_min"),
             r.get("population_max")
         ]
+
+        animal_type = r.get("animal_type")
         
         if is_filter_enabled("weight_kg"):
             if None in weight:
@@ -385,6 +419,18 @@ def on_search_click(event):
             if max(p_min, population_range[0]) > min(p_max, population_range[1]):
                 continue
 
+        if is_filter_enabled("animal-type"):
+            if animal_type is None:
+                continue
+
+            type = animal_type[0]
+
+            if type not in selected_types:
+                continue
+
+        format_weight = format_stat(weight, "kg")
+        format_size = format_stat(size, "cm")
+        format_population = format_stat(population)
         item = document.createElement("div")
         item.className = "item"
 
@@ -395,6 +441,9 @@ def on_search_click(event):
             </div>
 
             <div class="result">
+                <img class="animal-img"
+                    src="{safe_get(r, "image_url", "../resources/images/anto19.png")}"
+                    alt="{safe_get(r, "name", "Unknown")}">
                 <div class="text">
                     <a href="{safe_get(r, "url", "Unknown")}" target="_blank">
                         {safe_get(r, "name", "Unknown")} - {safe_get(r, "scientific_name", "Unknown")}
@@ -403,10 +452,24 @@ def on_search_click(event):
                         {safe_get(r, "dirty_overview", "No overview available")}
                     </p>
                 </div>
-
-                <img class="animal-img"
-                    src="{safe_get(r, "image_url", "../resources/images/anto19.png")}"
-                    alt="{safe_get(r, "name", "Unknown")}">
+                <div class="animal-information">
+                    <div class="animal-type-info">
+                        <p>Animal Type</p>
+                        <p>{animal_type[0]}</p>
+                    </div>
+                    <div class="animal-weight">
+                        <p>Weight</p>
+                        <p>{format_weight}</p>
+                    </div>
+                    <div class="animal-size">
+                        <p>Lenght</p>
+                        <p>{format_size}</p>
+                    </div>
+                    <div class="animal-population">
+                        <p>Population</p>
+                        <p>{format_population}</p>
+                    </div>
+                </div>
             </div>
         """
 
@@ -428,6 +491,65 @@ def on_search_click(event):
         for doc in data["docs"]:
             source = detect_source(safe_get(doc, "url"))
 
+            weight2 = [
+                doc.get("weight_kg_min"),
+                doc.get("weight_kg_max")
+            ]
+
+            size2 = [
+                doc.get("length_cm_min"),
+                doc.get("length_cm_max")
+            ]
+
+            population2 = [
+                doc.get("population_min"),
+                doc.get("population_max")
+            ]
+
+            animal_type2 = doc.get("animal_type")
+            
+            if is_filter_enabled("weight_kg"):
+                if None in weight2:
+                    continue
+
+                w_min2 = float(weight2[0][0])
+                w_max2 = float(weight2[1][0])
+
+                if max(w_min2, weight_range[0]) > min(w_max2, weight_range[1]):
+                    continue
+            
+            if is_filter_enabled("length_cm"):
+                if None in size2:
+                    continue
+
+                s_min2 = float(size2[0][0])
+                s_max2 = float(size2[1][0])
+
+                if max(s_min2, size_range[0]) > min(s_max2, size_range[1]):
+                    continue
+            
+            if is_filter_enabled("population"):
+                if None in population2:
+                    continue
+
+                p_min2 = float(population2[0][0])
+                p_max2 = float(population2[1][0])
+
+                if max(p_min2, population_range[0]) > min(p_max2, population_range[1]):
+                    continue
+
+            if is_filter_enabled("animal-type"):
+                if animal_type2 is None:
+                    continue
+
+                type2 = animal_type2[0]
+
+                if type2 not in selected_types:
+                    continue
+
+            format_weight2 = format_stat(weight2, "kg")
+            format_size2 = format_stat(size2, "cm")
+            format_population2 = format_stat(population2)
             item = document.createElement("div")
             item.className = "item"
 
@@ -438,16 +560,33 @@ def on_search_click(event):
                 </div>
 
                 <div class="result">
+                    <img class="animal-img"
+                        src="{safe_get(doc, "image_url", "../resources/images/anto19.png")}"
+                        alt="{safe_get(doc, "name", "Unknown")}">
                     <div class="text">
                         <a href="{safe_get(doc, "url", "Unknown")}" target="_blank">
                             {safe_get(doc, "name", "Unknown")} - {safe_get(doc, "scientific_name", "Unknown")}
                         </a>
                         <p class="overview">{safe_get(doc, "dirty_overview", "No overview available.")}</p>
                     </div>
-
-                    <img class="animal-img"
-                         src="{safe_get(doc, "image_url", "../resources/images/anto19.png")}"
-                         alt="{safe_get(doc, "name", "Unknown")}">
+                    <div class="animal-information">
+                        <div class="animal-type-info">
+                            <p>Animal Type</p>
+                            <p>{animal_type2[0]}</p>
+                        </div>
+                        <div class="animal-weight">
+                            <p>Weight</p>
+                            <p>{format_weight2}</p>
+                        </div>
+                        <div class="animal-size">
+                            <p>Lenght</p>
+                            <p>{format_size2}</p>
+                        </div>
+                        <div class="animal-population">
+                            <p>Population</p>
+                            <p>{format_population2}</p>
+                        </div>
+                    </div>
                 </div>
             """
 

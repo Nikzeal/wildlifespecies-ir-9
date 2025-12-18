@@ -12,7 +12,7 @@ body {
     margin: auto;
     text-align: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
 }
 
 h1 {
@@ -26,7 +26,6 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -76,13 +75,23 @@ input[type="search"]:focus {
 }
 
 .item a {
+<<<<<<< HEAD
     text-decoration: underline;
+=======
+>>>>>>> 1ee43146fea1a99a254778f4e89e27fad294c9f9
     font-weight: bold;
-    color: black
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item a:hover {
+<<<<<<< HEAD
     text-decoration: underline;
+=======
+>>>>>>> 1ee43146fea1a99a254778f4e89e27fad294c9f9
     color: #0015ff
 }
 
@@ -263,16 +272,91 @@ input[type="search"]:focus {
     align-items: center;
 }
 
-.result {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 10px;
-    text-align: left;
-}
+
 
 .logo-img {
     height: 30px;
     width: auto;
     object-fit: cover;
     border-radius: 8px;
+}
+
+.item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.result {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "image text"
+        "stats stats";
+    gap: 14px;
+}
+
+.animal-img {
+    grid-area: image;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.result .text {
+    grid-area: text;
+}
+
+.result .text a {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.result .overview {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.animal-information div {
+    background: #f7f9fc;
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: center;
+    flex: 1;
+    margin-top: 6px;
+    width:25%
+}
+
+.animal-information div p:first-child  {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #777;
+    margin: 0;
+}
+
+.animal-information div p:last-child {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 4px;
+    color: #222;
+}
+
+.animal-information {
+    grid-area: stats;
+    display:inline-flex;
+    gap: 10px
+}
+
+.animal-type-options {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.animal-type-options label {
+    font-size: 14px;
+    color: #444;
 }

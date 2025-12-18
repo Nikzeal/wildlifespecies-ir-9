@@ -110,8 +110,13 @@ document.getElementById("reset-filters").addEventListener("click", () => {
         minInput.value = minLimit;
         maxInput.value = maxLimit;
 
+        initDualSlider(wrapper)
+
         minInput.dispatchEvent(new Event("input"));
         maxInput.dispatchEvent(new Event("input"));
+    });
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+        cb.checked = false;
     });
 });
 
